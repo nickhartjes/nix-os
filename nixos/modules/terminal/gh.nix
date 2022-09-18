@@ -24,5 +24,5 @@
 
   home.file.".config/gh/hosts.yml".source = ./source/hosts.yml;
   home.file.".ssh/id_ed25519_github_cli".source = ./source/id_ed25519;
-  home.file.".ssh/id_ed25519_github_cli.pub".source = ./source/id_ed25519;
+  home.file.".ssh/id_ed25519_github_cli.pub".source = ./source/id_ed25519.pub;
 }
