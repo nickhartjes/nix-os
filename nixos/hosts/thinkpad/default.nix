@@ -22,6 +22,10 @@
       "/crypto_keyfile.bin" = null;
     };
 
+    # Enable swap on luks
+    boot.initrd.luks.devices."luks-b4067d27-b4d7-423a-a223-c5f447a202dc".device = "/dev/disk/by-uuid/b4067d27-b4d7-423a-a223-c5f447a202dc";
+    boot.initrd.luks.devices."luks-b4067d27-b4d7-423a-a223-c5f447a202dc".keyFile = "/crypto_keyfile.bin";
+
     ##################
     ## Hardware specific sytem settings
     ##################
