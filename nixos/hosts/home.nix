@@ -35,11 +35,11 @@
       # Development
       jetbrains.idea-ultimate # IDE
       jetbrains.idea-community
-      jetbrains.jdk
-#      eclipse-java
+      #jetbrains.jdk
+      # eclipse-java
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      #jdk17                   # Java development kit
+      jdk17                   # Java development kit
 
       # Communication
       slack
