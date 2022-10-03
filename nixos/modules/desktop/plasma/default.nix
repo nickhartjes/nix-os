@@ -57,5 +57,6 @@
 
     plasma-integration
     plasma-applet-caffeine-plus
+    plasma-thunderbolt
   ];
 }

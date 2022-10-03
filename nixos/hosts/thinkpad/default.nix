@@ -51,8 +51,9 @@
     };
 
     services = {
-      xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
+      xserver.videoDrivers = [ "displaylink" "modesetting" ];
       logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
       auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
+      hardware.bolt.enable = true;
     };
 }
