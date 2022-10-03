@@ -39,8 +39,11 @@
       # eclipse-java
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      jdk17                   # Java development kit
-
+      #jdk17                   # Java development kit
+      #jdk17_headless
+      openjdk17
+      gradle
+      maven
       # Communication
       slack
       signal-desktop
