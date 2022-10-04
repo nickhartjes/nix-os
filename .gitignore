@@ -1,5 +1,6 @@
 result
 .idea
 ./darwin/result
-stow/kube/.kube/cache
+stow/kube/.kube/cache/
+stow/kube/.kube/http-cache/
 *.iml

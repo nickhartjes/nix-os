@@ -34,20 +34,14 @@
 
       # Development
       jetbrains.idea-ultimate # IDE
-      jetbrains.idea-community
-      #jetbrains.jdk
-      # eclipse-java
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      #jdk17                   # Java development kit
-      #jdk17_headless
-      openjdk17
-      gradle
-      maven
+      openjdk17                   # Java development kit
+
       # Communication
       slack
       signal-desktop
-
+      tdesktop
       # Authentication
       authy
       bitwarden
