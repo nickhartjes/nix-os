@@ -151,7 +151,7 @@
   system = {
    # Allow auto update
     autoUpgrade = {
-      enable = true;
+      enable = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
     stateVersion = "22.05";
