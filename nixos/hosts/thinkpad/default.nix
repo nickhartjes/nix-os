@@ -5,7 +5,7 @@
     [(import ./hardware-configuration.nix)] ++
     [(import ../../modules/desktop/plasma/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-    [(import ../../modules/hardware/displaylink.nix)] ++
+    #[(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 
     ##################
@@ -40,18 +40,13 @@
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
     #hardware.opengl.enable = true;
 
-    environment = {
-      systemPackages = with pkgs; [
-        displaylink
-      ];
-    };
 
     programs = {
       light.enable = true;                    # No xbacklight, this is the alterantive
     };
 
     services = {
-      xserver.videoDrivers = [ "displaylink" "modesetting" ];
+      xserver.videoDrivers = [ "modesetting" ];
       logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
       auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
       hardware.bolt.enable = true;
