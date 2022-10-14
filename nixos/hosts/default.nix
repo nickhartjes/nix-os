@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, location, hyprland, ... }:
 
 let
   # System architecture
@@ -62,9 +62,10 @@ in
   ##################
   thinkpad = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location hyprland; };
     modules = [
       nur.nixosModules.nur
+      hyprland.nixosModules.default
       ./thinkpad
       ./configuration.nix
 

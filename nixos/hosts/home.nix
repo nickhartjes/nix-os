@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, nur, ... }:
+{ config, lib, pkgs, user, nur, hyprland, ... }:
 
 {
   imports =                                   # Home Manager Modules
