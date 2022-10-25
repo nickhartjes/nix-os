@@ -36,7 +36,8 @@
       jetbrains.idea-ultimate # IDE
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      openjdk17                   # Java development kit
+      openjdk17               # Java development kit
+      act                     # Local Github Actions
 
       # Communication
       slack

@@ -8,6 +8,9 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [];
+  networking.firewall.allowedUDPPorts = [];
   networking.extraHosts =
     ''
     '';
@@ -121,6 +124,11 @@
   security = {
     rtkit.enable = true;
     apparmor.enable = true;
+  };
+
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
   };
 
   ##################
