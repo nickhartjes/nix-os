@@ -28,6 +28,11 @@
     systemPackages = with pkgs; [       # Packages installed
       wofi
       waybar
+      wdisplays
+      variety
+      slurp
+      grim
+      mpd
     ];
   };
 
