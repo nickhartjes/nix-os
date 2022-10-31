@@ -115,6 +115,7 @@
         HostKeyAlgorithms +ssh-rsa
       '';                                   # Temporary extra config so ssh will work in guacamole
     };
+    fwupd.enable = true;
   };
 
   ##################
