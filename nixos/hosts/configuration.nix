@@ -6,7 +6,7 @@
     [
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+#  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [];

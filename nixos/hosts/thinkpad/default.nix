@@ -5,12 +5,15 @@
     [(import ./hardware-configuration.nix)] ++
     [(import ../../modules/desktop/gnome/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-    #[(import ../../modules/hardware/displaylink.nix)] ++
+    [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 
     ##################
     ## System boot
     ##################
+
+    #boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_5_19;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
