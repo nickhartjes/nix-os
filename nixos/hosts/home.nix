@@ -34,10 +34,24 @@
 
       # Development
       jetbrains.idea-ultimate # IDE
+      jetbrains.pycharm-professional
       vscode                  # IDE
       graphviz                # For plantuml plugin
       openjdk17               # Java development kit
       act                     # Local Github Actions
+
+      mdbook
+      cargo
+      rust-up
+
+      python39Full
+      python39Packages.pip
+      python39Packages.virtualenv
+      mkdocs
+#      python39Packages.pytorch-bin
+#      python39Packages.webrtcvad
+#      ffmpeg
+#      gcc
 
       # Communication
       slack
