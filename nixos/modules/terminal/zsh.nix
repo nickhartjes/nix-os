@@ -42,6 +42,9 @@
         export PATH=~/.npm-packages/bin:$PATH
         export NODE_PATH=~/.npm-packages/lib/node_modules
 
+        # Added cargo
+        export PATH=~/.cargo/bin:$PATH
+
         # Krew
         export PATH=~/.krew/bin:$PATH
 

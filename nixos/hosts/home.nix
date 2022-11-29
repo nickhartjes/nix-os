@@ -32,6 +32,11 @@
       onlyoffice-bin
       corefonts               # Fonts for Microsoft
 
+      # Browser
+      brave
+
+      insomnia
+
       # Development
       jetbrains.idea-ultimate # IDE
       jetbrains.pycharm-professional
@@ -42,7 +47,9 @@
 
       mdbook
       cargo
-      rust-up
+      gcc
+      openssl
+      #rustup
 
       python39Full
       python39Packages.pip
@@ -52,6 +59,10 @@
 #      python39Packages.webrtcvad
 #      ffmpeg
 #      gcc
+
+      obs-studio
+      #obs-studio-plugins.obs-ndi
+      obs-studio-plugins.wlrobs
 
       # Communication
       slack

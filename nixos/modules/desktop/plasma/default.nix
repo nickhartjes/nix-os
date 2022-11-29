@@ -58,5 +58,7 @@
     plasma-integration
     plasma-applet-caffeine-plus
     plasma-thunderbolt
+
+    libsForQt5.bismuth
   ];
 }
