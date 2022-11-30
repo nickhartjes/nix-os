@@ -6,14 +6,16 @@
   services = {
     xserver = {
       enable = true;                    # Display Manager
+#      defaultSession = "plasmawayland";
       displayManager = {                          # Display Manager
-        autoLogin = {
-          enable = true;
-          user = "nh";
-        };
-        lightdm = {
+#        autoLogin = {
+#          enable = true;
+#          user = "nh";
+#        };
+        sddm = {
           enable = true;                          # Wallpaper and gtk theme
-          greeters = {
+          settings.Wayland.SessionDir = "${pkgs.plasma5Packages.plasma-workspace}/share/wayland-sessions";
+#          greeters = {
 #            mini = {
 #              enable = true;
 #              user = "your-username";
@@ -24,7 +26,7 @@
 #                  background-image = ""
 #              '';
 #            };
-          };
+#          };
         };
       };
       desktopManager= {
@@ -60,5 +62,7 @@
     plasma-thunderbolt
 
     libsForQt5.bismuth
+    libsForQt5.plasma-workspace
+    libsForQt5.plasma-workspace-wallpapers
   ];
 }
