@@ -56,13 +56,13 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    alacritty # gpu accelerated terminal
+    alacritty               # gpu accelerated terminal
     sway
+    wayland
     dbus-sway-environment
     configure-gtk
-    wayland
-    glib # gsettings
-    dracula-theme # gtk theme
+    glib                    # gsettings
+    dracula-theme           # gtk theme
     gnome3.adwaita-icon-theme  # default gnome cursors
     swaylock
     swayidle
@@ -75,6 +75,28 @@ in
     wofi
     waybar
     ranger
+    pcmanfm
+
+    mpd
+
+    playerctl
+
+
+    pango             # Text renderer
+    dejavu_fonts      # Font
+
+    gnome-icon-theme
+    arc-theme
+    fira
+    ulauncher
+    pop-gtk-theme
+    pop-icon-theme
+    gnome.gnome-tweaks
+
+    blueman     # Bluetooth manager
+    haskellPackages.network-manager-tui # Network manager
+    light               # Brightness control
+    pavucontrol         # Sound
   ];
 
 

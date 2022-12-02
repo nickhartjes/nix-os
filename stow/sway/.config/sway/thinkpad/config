@@ -1,0 +1,36 @@
+# Output configuration
+set $scr_laptop_name eDP-1
+set $scr_laptop_res 1920x1080
+
+set $scr_home_01_name DP-2
+set $scr_home_01_res 2560x1440
+set $scr_home_02_name HDMI-A-1
+set $scr_home_02_res 2560x1440
+
+
+# Default outputs for workspaces
+
+# workspaces
+set $ws1   1:
+set $ws2   2:
+set $ws3   3:3
+
+# Screen modes. Note mirroring is not yet properly supported by sway :(
+set $mode_display AUX SCREEN: (1) Home (r) RIGHT (o) OFF (m) MIRROR
+mode "$mode_display" {
+    bindsym 1 {
+      output $scr_home_01_name pos 0 0 res 2560x1440; output $scr_home_02_name pos 2560 0 res 2560x1440; output $scr_laptop_name pos 5120 360 res $scr_laptop_res;
+    }
+    bindsym o output $scr_home_01_name disable; $scr_home_02_name disable, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_display"
+
+
+workspace $ws1 output $scr_home_01_name;
+workspace $ws2 output $scr_home_02_name;
+workspace $ws3 output $scr_laptop_name;
+workspace $ws1
