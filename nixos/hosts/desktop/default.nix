@@ -3,7 +3,7 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/desktop/plasma)] ++
+    [(import ../../modules/desktop/sway)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
 
