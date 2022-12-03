@@ -254,8 +254,9 @@ bindsym $mod+Ctrl+e mode "$mode_system"
 
 # include /etc/sway/config.d/*
 
+exec swaync
 
-exec_always ~/.config/waybar/waybar.sh
+# exec_always ~/.config/waybar/waybar.sh
 
 include ~/.config/sway/$(hostname)/*
 
@@ -268,3 +269,5 @@ for_window [instance="alacritty_scratchpad"] floating enable; move scratchpad; s
 
 
 for_window [app_id="ulauncher"] floating enable; border none
+
+

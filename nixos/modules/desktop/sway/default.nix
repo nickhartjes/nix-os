@@ -79,15 +79,27 @@ in
     slurp                      # screenshot functionality
     wl-clipboard               # wl-copy and wl-paste for copy/paste from stdin / stdout
     bemenu                     # wayland clone of dmenu
-    mako                       # notification system developed by swaywm maintainer
+    #mako                       # notification system developed by swaywm maintainer
     wdisplays
     wofi
     waybar
     ranger
     pcmanfm
 
-    mpd
+    nwg-bar                   # Bar logout, reboot shutdown
+    nwg-menu                  # Windows like start menu
+    nwg-panel                 # Bars
+    nwg-drawer                # Application start grid
+    nwg-launchers
+
+    # For desktop/panel controle
+    brightnessctl
+    ddcutil
     playerctl
+    swaynotificationcenter
+    gopsuinfo
+
+    mpd
 
     pango             # Text renderer
     dejavu_fonts      # Font
@@ -123,12 +135,33 @@ in
     };
   };
 
+#  systemd.user.services.mako = {
+#    Unit = {
+#      Description = "Mako notification daemon";
+#      PartOf = [ "graphical-session.target" ];
+#    };
+#    Install = {
+#      WantedBy = [ "graphical-session.target" ];
+#    };
+#    Service = {
+#      Type = "dbus";
+#      BusName = "org.freedesktop.Notifications";
+#      ExecStart = "${pkgs.mako}/bin/mako";
+#      RestartSec = 5;
+#      Restart = "always";
+#    };
+#  };
 
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
+
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+    dbus.enable = true;
+    upower.enable = true;
   };
 
   security.polkit.enable = true;
@@ -140,7 +173,7 @@ in
   # (/org/freedesktop/portal/desktop).
   # The portal interfaces include APIs for file access, opening URIs,
   # printing and others.
-  services.dbus.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
