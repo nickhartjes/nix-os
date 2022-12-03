@@ -58,12 +58,6 @@ let
 
 in
 {
-
-
-
-
-
-
   environment.systemPackages = with pkgs; [
     dbus-sway-environment
     configure-gtk

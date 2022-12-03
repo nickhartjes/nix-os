@@ -18,15 +18,10 @@
     "modules-left": [
       "sway-workspaces"
     ],
-    "modules-center": [
-      "executor-cpubar",
-      "executor-cpuav",
-      "executor-memory",
-      "executor-temp"
-    ],
+    "modules-center": [],
     "modules-right": [
-      "tray",
-      "playerctl"
+      "playerctl",
+      "tray"
     ],
     "controls-settings": {
       "components": [
@@ -333,6 +328,9 @@
     ],
     "modules-center": [],
     "modules-right": [
+      "executor-cpuav",
+      "executor-memory",
+      "executor-temp",
       "scratchpad",
       "clock"
     ],
@@ -529,6 +527,47 @@
     },
     "homogeneous": true,
     "exclusive-zone": true,
-    "tray": {}
+    "tray": {},
+    "executor-cpuav": {
+      "script": "gopsuinfo -i a",
+      "interval": 2,
+      "tooltip-text": "CPU average load",
+      "on-left-click": "foot -e htop",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left",
+      "root-css-name": "",
+      "angle": 0.0
+    },
+    "executor-temp": {
+      "script": "gopsuinfo -i t",
+      "interval": 5,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left"
+    },
+    "executor-memory": {
+      "script": "gopsuinfo -i m",
+      "interval": 5,
+      "tooltip-text": "",
+      "on-left-click": "",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "css-name": "",
+      "icon-size": 16,
+      "icon-placement": "left"
+    }
   }
 ]
