@@ -15,19 +15,24 @@ set $term alacritty
 
 # Your preferred application launcher
 set $menu wofi --show drun
+#set $menu ulauncher-toggle
 
 # Add gaps to Windows
 default_border pixel 5
+gaps inner 5
+gaps outer 5
+
 
 # Auto start
-exec nm-applet --indicator
-exec blueman-applet
 exec mako
+exec sleep 5; systemctl --user start kanshi.service
+exec dbus-sway-environment
+exec configure-gtk
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -248,17 +253,16 @@ bindsym $mod+Ctrl+e mode "$mode_system"
 # include /etc/sway/config.d/*
 
 
-# GTK3 themes
-set $gnome-schema org.gnome.desktop.interface
-
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
-    gsettings set $gnome-schema icon-theme 'Pop'
-    gsettings set $gnome-schema cursor-theme 'Pop'
-    #gsettings set $gnome-schema font-name 'Your font name'
-}
-font pango:DejaVu Sans Mono 10
-
 exec_always ~/.config/waybar/waybar.sh
 
 include ~/.config/sway/$(hostname)/*
+
+
+# Open a small terminal at startup
+exec --no-startup-id alacritty -name alacritty_scratchpad --geometry 70x15
+
+# Workaround size&position
+for_window [instance="alacritty_scratchpad"] floating enable; move scratchpad; scratchpad show; move position 865px 512px; move scratchpad
+
+
+for_window [app_id="ulauncher"] floating enable; border none

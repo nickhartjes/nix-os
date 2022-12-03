@@ -17,6 +17,8 @@
       # Power Management
       auto-cpufreq                       # Power management
       tlp                                # Power management
+
+      kanshi
     ];
   };
 
@@ -25,4 +27,6 @@
 
   services = {
   };
+
+
 }

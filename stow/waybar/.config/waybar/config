@@ -14,6 +14,10 @@
         "format": "{name}",
         "disable-scroll": true
     },
+    "wlr/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
     "sway/window": {
         "max-length": 80,
         "tooltip": false

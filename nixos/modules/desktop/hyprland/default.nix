@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hyprland, ... }:
 
 {
 #  imports = [ ../../programs/waybar.nix ];
@@ -27,16 +27,20 @@
 #    };
     systemPackages = with pkgs; [       # Packages installed
       wofi
-      waybar
+#      waybar
       wdisplays
       variety
       slurp
       grim
       mpd
+      hyprpaper
     ];
   };
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      package = hyprland.packages.${pkgs.system}.default;
+    } ;
   };
 }

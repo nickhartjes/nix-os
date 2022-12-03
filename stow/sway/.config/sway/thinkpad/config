@@ -18,10 +18,7 @@ set $ws3   3:3
 # Screen modes. Note mirroring is not yet properly supported by sway :(
 set $mode_display AUX SCREEN: (1) Home (r) RIGHT (o) OFF (m) MIRROR
 mode "$mode_display" {
-    bindsym 1 {
-      output $scr_home_01_name pos 0 0 res 2560x1440; output $scr_home_02_name pos 2560 0 res 2560x1440; output $scr_laptop_name pos 5120 360 res $scr_laptop_res;
-    }
-    bindsym o output $scr_home_01_name disable; $scr_home_02_name disable, mode "default"
+    bindsym 1 workspace 1 output DP-2; workspace 2 output HDMI-A-1; workspace 3 output eDP-1;
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -30,7 +27,7 @@ mode "$mode_display" {
 bindsym $mod+x mode "$mode_display"
 
 
-workspace $ws1 output $scr_home_01_name;
-workspace $ws2 output $scr_home_02_name;
-workspace $ws3 output $scr_laptop_name;
-workspace $ws1
+output * background ~/.wallpapers/coding/digital-world.jpeg fill
+output eDP-1 {
+  background ~/.wallpapers/coding/digital-world.jpeg fill
+}

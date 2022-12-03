@@ -155,6 +155,14 @@
   # Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
+  systemd.user.services.kanshi = {
+    description = "kanshi daemon";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''${pkgs.kanshi}/bin/kanshi'';
+    };
+  };
+
   # NixOS settings
   system = {
    # Allow auto update
