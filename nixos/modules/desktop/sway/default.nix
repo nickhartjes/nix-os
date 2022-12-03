@@ -58,23 +58,28 @@ let
 
 in
 {
+
+
+
+
+
+
   environment.systemPackages = with pkgs; [
     dbus-sway-environment
     configure-gtk
 
-    alacritty               # gpu accelerated terminal
     sway
-    wayland
-    glib                    # gsettings
-    dracula-theme           # gtk theme
-    gnome3.adwaita-icon-theme  # default gnome cursors
     swaylock
     swayidle
-    grim # screenshot functionality
-    slurp # screenshot functionality
-    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-    bemenu # wayland clone of dmenu
-    mako # notification system developed by swaywm maintainer
+    wayland
+    glib                       # gsettings
+    dracula-theme              # gtk theme
+    gnome3.adwaita-icon-theme  # default gnome cursors
+    grim                       # screenshot functionality
+    slurp                      # screenshot functionality
+    wl-clipboard               # wl-copy and wl-paste for copy/paste from stdin / stdout
+    bemenu                     # wayland clone of dmenu
+    mako                       # notification system developed by swaywm maintainer
     wdisplays
     wofi
     waybar
@@ -82,26 +87,17 @@ in
     pcmanfm
 
     mpd
-
     playerctl
-
 
     pango             # Text renderer
     dejavu_fonts      # Font
 
-#    gnome-icon-theme
-#    arc-theme
-#    fira
-    ulauncher
-#    pop-gtk-theme
-#    pop-icon-theme
-#    gnome.gnome-tweaks
     kanshi
 
-    blueman     # Bluetooth manager
+    blueman           # Bluetooth manager
     haskellPackages.network-manager-tui # Network manager
-    light               # Brightness control
-    pavucontrol         # Sound
+    light                               # Brightness control
+    pavucontrol                         # Sound
   ];
 
   environment.loginShellInit = ''
@@ -109,6 +105,24 @@ in
       exec sway
     fi
   '';                                   # Will automatically open sway when logged into tty1
+
+  # Configuring Kanshi
+  systemd.user.services.kanshi = {
+    description = "Kanshi output autoconfig ";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    environment = { XDG_CONFIG_HOME="~/home/nh/.config"; };
+    serviceConfig = {
+      # kanshi doesn't have an option to specifiy config file yet, so it looks
+      # at .config/kanshi/config
+      ExecStart = ''
+      ${pkgs.kanshi}/bin/kanshi
+      '';
+      RestartSec = 5;
+      Restart = "always";
+    };
+  };
+
 
 
   services.pipewire = {

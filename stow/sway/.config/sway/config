@@ -167,6 +167,8 @@ exec configure-gtk
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+Shift+z exec systemctl restart --user kanshi.service
 #
 # Scratchpad:
 #

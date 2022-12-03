@@ -1,11 +1,16 @@
-profile "Home 3-way setup" {
+profile "Thinkpad Home 3-way setup" {
 	output DP-2 mode 2560x1440 position 0,0
 	output HDMI-A-1 mode 2560x1440 position 2560,0
 	output eDP-1 mode 1920x1080 position 5120,360
 }
 
-profile "Home 2-way setup" {
+profile "Thinkpad  2-way setup" {
 	output DP-2 mode 2560x1440 position 0,0
 	output HDMI-A-1 mode 2560x1440 position 2560,0
 	output eDP-1 disable
+}
+
+profile "Desktop 2-way setup" {
+	output DP-1 mode 2560x1440 position 0,0
+	output DP-2 mode 2560x1440 position 2560,0
 }
