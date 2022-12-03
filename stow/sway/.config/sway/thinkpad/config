@@ -5,4 +5,4 @@ output eDP-1 {
   background ~/.wallpapers/coding/digital-world.jpeg fill
 }
 
-exec nwg-panel
+exec nwg-panel -c config-desktop
