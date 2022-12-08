@@ -2,21 +2,21 @@
   {
     "label": "Lock",
     "exec": "swaylock -f -c 000000",
-    "icon": "/nix/store/m0v9mljd8rkai4syfnqkv9q0iy8dvicv-nwg-bar-unstable-2021-09-23/share/nwg-bar/images/system-lock-screen.svg"
+    "icon": "~/.config/nwg-bar/images/system-lock-screen.svg"
   },
   {
     "label": "Logout",
     "exec": "swaymsg exit",
-    "icon": "/nix/store/m0v9mljd8rkai4syfnqkv9q0iy8dvicv-nwg-bar-unstable-2021-09-23/share/nwg-bar/images/system-log-out.svg"
+    "icon": "~/.config/nwg-bar/images/system-log-out.svg"
   },
   {
     "label": "Reboot",
     "exec": "systemctl reboot",
-    "icon": "/nix/store/m0v9mljd8rkai4syfnqkv9q0iy8dvicv-nwg-bar-unstable-2021-09-23/share/nwg-bar/images/system-reboot.svg"
+    "icon": "~/.config/nwg-bar/images/system-reboot.svg"
   },
   {
     "label": "Shutdown",
     "exec": "systemctl -i poweroff",
-    "icon": "/nix/store/m0v9mljd8rkai4syfnqkv9q0iy8dvicv-nwg-bar-unstable-2021-09-23/share/nwg-bar/images/system-shutdown.svg"
+    "icon": "~/.config/nwg-bar/images/system-shutdown.svg"
   }
 ]

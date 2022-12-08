@@ -5,7 +5,7 @@
     "layer": "bottom",
     "position": "top",
     "controls": "right",
-    "menu-start": "left",
+    "menu-start": "off",
     "width": "auto",
     "height": 0,
     "margin-top": 0,
@@ -13,7 +13,7 @@
     "padding-horizontal": 0,
     "padding-vertical": 0,
     "spacing": 0,
-    "icons": "",
+    "icons": "light",
     "css-name": "primary-top",
     "modules-left": [
       "sway-workspaces"
@@ -21,6 +21,7 @@
     "modules-center": [],
     "modules-right": [
       "playerctl",
+      "openweather",
       "tray"
     ],
     "controls-settings": {
@@ -33,13 +34,13 @@
       ],
       "commands": {
         "net": "",
-        "bluetooth": "",
+        "bluetooth": "blueberry",
         "battery": ""
       },
-      "show-values": false,
+      "show-values": true,
       "interval": 1,
       "icon-size": 16,
-      "hover-opens": true,
+      "hover-opens": false,
       "leave-closes": true,
       "root-css-name": "controls-overview",
       "css-name": "controls-window",
@@ -56,7 +57,7 @@
         "icon": "",
         "items": []
       },
-      "output-switcher": false,
+      "output-switcher": true,
       "backlight-controller": "brightnessctl",
       "backlight-device": "",
       "window-width": 0,
@@ -120,11 +121,14 @@
       ],
       "show-icon": true,
       "image-size": 16,
-      "show-name": true,
+      "show-name": false,
       "name-length": 40,
       "mark-autotiling": true,
       "mark-content": true,
-      "show-layout": true
+      "show-layout": true,
+      "custom-labels": [],
+      "focused-labels": [],
+      "angle": 0.0
     },
     "clock": {
       "format": "%a %d %b  %H:%M:%S",
@@ -170,29 +174,29 @@
       "title-limit": 55
     },
     "openweather": {
-      "appid": "",
+      "appid": "da3c1dee047330bc78041b74cfd90f5b",
       "weatherbit-api-key": "",
-      "lat": null,
-      "long": null,
+      "lat": 51.8882,
+      "long": 6.543,
       "lang": "en",
       "units": "metric",
       "interval": 1800,
-      "loc-name": "",
+      "loc-name": "IJzerlo",
       "weather-icons": "color",
       "on-right-click": "",
       "on-middle-click": "",
       "on-scroll": "",
       "icon-placement": "start",
-      "icon-size": 24,
+      "icon-size": 16,
       "css-name": "weather",
       "show-name": false,
       "angle": 0.0,
-      "ow-popup-icons": "light",
+      "ow-popup-icons": "dark",
       "popup-icon-size": 24,
-      "popup-text-size": "medium",
+      "popup-text-size": "small",
       "popup-css-name": "weather-forecast",
       "popup-placement": "right",
-      "popup-margin-horizontal": 0,
+      "popup-margin-horizontal": 3,
       "popup-margin-top": 0,
       "popup-margin-bottom": 0,
       "show-humidity": true,
@@ -201,7 +205,9 @@
       "show-cloudiness": true,
       "show-visibility": true,
       "show-pop": true,
-      "show-volume": true
+      "show-volume": true,
+      "module-id": "1670501639.7683973",
+      "popup-header-icon-size": 48
     },
     "brightness-slider": {
       "show-values": true,
@@ -321,7 +327,7 @@
     "padding-horizontal": 0,
     "padding-vertical": 0,
     "spacing": 0,
-    "icons": "",
+    "icons": "dark",
     "css-name": "primary-bottom",
     "modules-left": [
       "sway-taskbar"
@@ -400,15 +406,16 @@
       "name-max-len": 20,
       "image-size": 16,
       "workspaces-spacing": 0,
-      "task-padding": 0,
+      "task-padding": 5,
       "show-app-icon": true,
       "show-app-name": true,
       "show-layout": true,
-      "workspace-buttons": true,
+      "workspace-buttons": false,
       "all-workspaces": true,
       "mark-autotiling": true,
       "mark-xwayland": true,
-      "all-outputs": false
+      "all-outputs": false,
+      "angle": 0.0
     },
     "sway-workspaces": {
       "numbers": [
@@ -532,7 +539,7 @@
       "script": "gopsuinfo -i a",
       "interval": 2,
       "tooltip-text": "CPU average load",
-      "on-left-click": "foot -e htop",
+      "on-left-click": "alacritty -e btop",
       "on-middle-click": "",
       "on-right-click": "",
       "on-scroll-up": "",
@@ -559,15 +566,17 @@
     "executor-memory": {
       "script": "gopsuinfo -i m",
       "interval": 5,
-      "tooltip-text": "",
-      "on-left-click": "",
+      "tooltip-text": "Memory",
+      "on-left-click": "alacritty -e btop",
       "on-middle-click": "",
       "on-right-click": "",
       "on-scroll-up": "",
       "on-scroll-down": "",
       "css-name": "",
       "icon-size": 16,
-      "icon-placement": "left"
+      "icon-placement": "left",
+      "root-css-name": "",
+      "angle": 0.0
     }
   }
 ]

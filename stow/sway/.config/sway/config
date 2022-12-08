@@ -267,5 +267,7 @@ exec --no-startup-id alacritty -name alacritty_scratchpad --geometry 70x15
 # Workaround size&position
 for_window [instance="alacritty_scratchpad"] floating enable; move scratchpad; scratchpad show; move position 865px 512px; move scratchpad
 
+exec nm-applet --indicator
+
 
 

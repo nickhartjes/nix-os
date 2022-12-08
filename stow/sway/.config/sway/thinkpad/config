@@ -1,8 +1,8 @@
 
 
-output * background ~/.wallpapers/coding/digital-world.jpeg fill
+output * background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpeg fill
 output eDP-1 {
-  background ~/.wallpapers/coding/digital-world.jpeg fill
+  background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpeg fill
 }
 
 exec nwg-panel -c config-desktop

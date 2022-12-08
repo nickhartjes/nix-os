@@ -1,8 +1,16 @@
 /***** SUGGESTED TO CHANGE CAREFULLY *****/
+* {
+  font-family: "Noto Sans", monospace;
+}
+
 
 /* Recommended if panel "height" unset or smaller then your theme default button height */
 button {
-    margin: 2px
+  /*margin: 2px;*/
+  background: rgba(255, 255, 255, 0.12);
+  /*border-color: rgba(61, 56, 56, 0.12);*/
+  border: 1px;
+  border-radius: 0;
 }
 
 /* SwayTaskBar and SwayWorkspaces use custom widgets, that need this and the next name
@@ -13,7 +21,7 @@ button {
 }
 
 #task-box-focused {
-    background-color: rgba (255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.12);
     padding-left: 4px;
     padding-right: 4px
 }
@@ -23,19 +31,19 @@ button {
 
 /* Sample button in sample config w/ no background nor border */
 #button-custom {
-    background: rgba (0, 0, 0, 0.0);
+    background: rgba(0, 0, 0, 0.0);
     border: 0
 }
 
 /* Top panel in sample config uses this name */
 #primary-top {
-  background: #101010;
+  background: rgba(0, 0, 0, 0.7);
   color: #eeeeee
 }
 
 /* Bottom panel in sample config uses this name */
 #primary-bottom {
-  background: #3b4559;
+  background: rgba(0, 0, 0, 0.7);
   color: #eeeeee
 }
 
@@ -70,18 +78,20 @@ button {
 
 /* Executors usually behave better in monospace fonts */
 #executor-label {
-    font-family: monospace
+  font-family: "Noto Sans", monospace;
 }
 
 /* and so does the Clock */
 #clock {
-    font-family: monospace;
+
+  font-family: "Noto Sans", serif;
     font-size: 16px
 }
 
 /* Sample executor-weather uses "css-name": "weather" */
 #weather {
-    font-size: 16px
+  font-size: 12px;
+  font-family: "Noto Sans", monospace;
 }
 
 /* dwl-tags module */
@@ -101,7 +111,7 @@ button {
 #dwl-tag-free {
 	font-family: monospace;
 	color: #eee;
-    background-color: rgba (32, 50, 90, 1.0);
+    background-color: rgba(32, 50, 90, 1.0);
     padding-left: 3px;
     padding-right: 3px;
 }
