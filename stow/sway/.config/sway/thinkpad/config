@@ -6,3 +6,4 @@ output eDP-1 {
 }
 
 exec nwg-panel -c config-desktop
+bindsym Ctrl+k exec kanshi; exec nwg-panel -c config-desktop

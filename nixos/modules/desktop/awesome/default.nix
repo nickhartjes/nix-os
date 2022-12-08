@@ -4,38 +4,47 @@
 
   hardware.opengl.enable = true;
 
-  services.xserver = {
-    enable = true;
+  services = {
+     xserver = {
+       enable = true;
+       desktopManager = {
+          xterm.enable = false;
+          xfce = {
+            enable = true;
+            noDesktop = true;
+            enableXfwm = false;
+          };
+       };
+       displayManager.defaultSession = "none+awesome";
+       windowManager.awesome = {
+         enable = true;
+         luaModules = with pkgs.luaPackages; [
+           luarocks # is the package manager for Lua modules
+           luadbi-mysql # Database abstraction layer
+         ];
 
-    displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+awesome";
-    };
-
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks # is the package manager for Lua modules
-        luadbi-mysql # Database abstraction layer
-      ];
-
-    };
+       };
+     };
   };
 
+
+
   environment = {
-#    loginShellInit = ''
-#      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-#        exec Hyprland
-#      fi
-#    '';                                   # Will automatically open sway when logged into tty1
-#    variables = {
-#      #LIBCL_ALWAYS_SOFTWARE = "1";       # For applications in VM like alacritty to work
-#      #WLR_NO_HARDWARE_CURSORS = "1";     # For cursor in VM
-#    };
     systemPackages = with pkgs; [       # Packages installed
-      wofi
-      waybar
-      arandr
+      lxappearance
+      dex
+      #xss-lock
+      picom
+
+      ulauncher
+
+
+      rofi
+      polybar
+      pywal
+      calc
+      networkmanager_dmenu
+
     ];
   };
 

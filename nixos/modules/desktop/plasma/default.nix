@@ -8,13 +8,12 @@
       enable = true;                    # Display Manager
 #      defaultSession = "plasmawayland";
       displayManager = {                          # Display Manager
-#        autoLogin = {
-#          enable = true;
-#          user = "nh";
-#        };
+        autoLogin = {
+          enable = true;
+          user = "nh";
+        };
         sddm = {
           enable = true;                          # Wallpaper and gtk theme
-          settings.Wayland.SessionDir = "${pkgs.plasma5Packages.plasma-workspace}/share/wayland-sessions";
 #          greeters = {
 #            mini = {
 #              enable = true;

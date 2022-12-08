@@ -27,6 +27,8 @@ let
 
     text = ''
   dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE=wayland
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_DESKTOP=sway
   systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
   systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
       '';
@@ -86,6 +88,10 @@ in
     nwg-drawer                # Application start grid
     nwg-launchers
 
+    blueberry
+    # https://grimoire.science/working-with-wayland-and-sway/
+    i3status-rust
+
     # For desktop/panel controle
     brightnessctl
     ddcutil
@@ -93,6 +99,7 @@ in
     swaynotificationcenter
     gopsuinfo
 
+    autotiling
     mpd
 
     pango             # Text renderer
@@ -111,6 +118,8 @@ in
       exec sway
     fi
   '';                                   # Will automatically open sway when logged into tty1
+
+  #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configuring Kanshi
   systemd.user.services.kanshi = {
@@ -152,6 +161,7 @@ in
     pipewire = {
       enable = true;
       alsa.enable = true;
+      alsa.support32Bit = true;
       pulse.enable = true;
     };
     dbus.enable = true;
@@ -172,7 +182,10 @@ in
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
 #    gtkUsePortal = true;
   };
 
@@ -181,4 +194,21 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
+  programs.nm-applet.enable = true;
+
+  nixpkgs.overlays = [(
+    self: super: {
+      slack  = super.slack.overrideAttrs (old: {
+        installPhase = old.installPhase + ''
+          rm $out/bin/slack
+
+          makeWrapper $out/lib/slack/slack $out/bin/slack \
+          --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
+          --prefix PATH : ${lib.makeBinPath [pkgs.xdg-utils]} \
+          --add-flags "--enable-features=WebRTCPipeWireCapturer %U"
+        '';
+      });
+    }
+  )];
 }
