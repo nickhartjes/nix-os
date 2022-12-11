@@ -1,9 +1,7 @@
-
-
 output * background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpeg fill
 output eDP-1 {
   background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpeg fill
 }
 
 exec nwg-panel -c config-desktop
-bindsym Ctrl+k exec kanshi; exec nwg-panel -c config-desktop
+bindsym Ctrl+Shift+k exec kanshi; exec nwg-panel -c config-desktop
