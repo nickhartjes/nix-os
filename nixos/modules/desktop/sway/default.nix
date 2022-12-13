@@ -49,7 +49,7 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Dracula'
+        gsettings set $gnome_schema gtk-theme 'Pop-dark'
         # gsettings set $gnome-schema icon-theme 'Your icon theme'
         # gsettings set $gnome-schema cursor-theme 'Your cursor Theme'
         # gsettings set $gnome-schema font-name 'Your font name'
@@ -103,6 +103,8 @@ in
 
     pango             # Text renderer
     dejavu_fonts      # Font
+    noto-fonts
+    nerdfonts
 
     kanshi
     flameshot
@@ -110,10 +112,19 @@ in
     nmon
     glances
 
+    networkmanagerapplet
+
     blueman           # Bluetooth manager
     haskellPackages.network-manager-tui # Network manager
     light                               # Brightness control
     pavucontrol                         # Sound
+
+    # GTK Themes
+    themechanger
+    theme-vertex
+    pop-gtk-theme
+    yaru-theme
+    zuki-themes
   ];
 
   environment.loginShellInit = ''

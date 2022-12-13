@@ -83,6 +83,9 @@
       vim
       wget
       zip
+      nix-prefetch
+      nix-prefetch-git
+      nix-prefetch-github
     ];
   };
 
