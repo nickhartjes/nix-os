@@ -49,10 +49,11 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Pop-dark'
-        # gsettings set $gnome-schema icon-theme 'Your icon theme'
-        # gsettings set $gnome-schema cursor-theme 'Your cursor Theme'
-        # gsettings set $gnome-schema font-name 'Your font name'
+        gsettings set $gnome_schema gtk-theme 'Yaru-dark'
+        gsettings set $gnome_schema theme 'Yaru-dark'
+        gsettings set $gnome-schema icon-theme 'Yaru-bark'
+        gsettings set $gnome-schema cursor-theme 'Yaru'
+        gsettings set $gnome-schema font-name 'SourceCodePro'
         '';
   };
 
@@ -118,6 +119,8 @@ in
     haskellPackages.network-manager-tui # Network manager
     light                               # Brightness control
     pavucontrol                         # Sound
+
+    selectdefaultapplication
 
     # GTK Themes
     themechanger

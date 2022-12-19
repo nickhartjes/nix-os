@@ -282,5 +282,7 @@ for_window [instance="alacritty_scratchpad"] floating enable; move scratchpad; s
 
 exec nm-applet --indicator
 
+font pango:SourceCodePro Regular 11
+
 
 

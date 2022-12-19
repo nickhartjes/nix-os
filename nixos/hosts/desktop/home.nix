@@ -11,7 +11,7 @@
 
   home = {
     packages = with pkgs; [
-        linuxPackages.rtl88x2bu
+#        linuxPackages.rtl88x2bu
     ];
   };
 

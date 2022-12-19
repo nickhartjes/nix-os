@@ -20,7 +20,6 @@
     ],
     "modules-center": [],
     "modules-right": [
-      "playerctl",
       "openweather",
       "tray"
     ],
@@ -327,13 +326,14 @@
     "padding-horizontal": 0,
     "padding-vertical": 0,
     "spacing": 0,
-    "icons": "dark",
+    "icons": "light",
     "css-name": "primary-bottom",
     "modules-left": [
       "sway-taskbar"
     ],
     "modules-center": [],
     "modules-right": [
+      "playerctl",
       "executor-cpuav",
       "executor-memory",
       "executor-temp",
@@ -459,13 +459,16 @@
       "calendar-on": true
     },
     "playerctl": {
-      "buttons-position": "left",
+      "buttons-position": "right",
       "icon-size": 16,
       "chars": 30,
       "scroll": false,
       "button-css-name": "",
       "label-css-name": "",
-      "interval": 1
+      "interval": 1,
+      "show-cover": true,
+      "cover-size": 24,
+      "angle": 0.0
     },
     "scratchpad": {
       "css-name": "",

@@ -84,6 +84,8 @@
 #      zsh-you-should-use
 #      zsh-completions
 #      zsh-history
+
+      audacity
     ];
 
     # Wallpaper
