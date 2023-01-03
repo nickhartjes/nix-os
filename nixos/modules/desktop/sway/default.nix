@@ -116,7 +116,7 @@ in
     networkmanagerapplet
 
     blueman           # Bluetooth manager
-    haskellPackages.network-manager-tui # Network manager
+    # haskellPackages.network-manager-tui # Network manager
     light                               # Brightness control
     pavucontrol                         # Sound
 

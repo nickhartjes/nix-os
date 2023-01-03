@@ -33,7 +33,6 @@
     systemPackages = with pkgs; [       # Packages installed
       lxappearance
       dex
-      #xss-lock
       picom
 
       ulauncher
@@ -44,6 +43,7 @@
       pywal
       calc
       networkmanager_dmenu
+      feh
 
     ];
   };
