@@ -38,6 +38,9 @@
 
         export GH_EDITOR='vim'
 
+        # Add local bin
+        export PATH=~/.local/bin:$PATH
+
         # NPM
         export PATH=~/.npm-packages/bin:$PATH
         export NODE_PATH=~/.npm-packages/lib/node_modules

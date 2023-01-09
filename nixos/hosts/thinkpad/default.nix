@@ -3,7 +3,7 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/desktop/awesome/default.nix)] ++
+    [(import ../../modules/desktop/sway/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
 #    [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
@@ -53,7 +53,6 @@
 
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
     #hardware.opengl.enable = true;
-
 
     programs = {
       light.enable = true;                    # No xbacklight, this is the alterantive

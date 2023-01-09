@@ -51,9 +51,10 @@
       openssl
       #rustup
 
-      python39Full
-      python39Packages.pip
-      python39Packages.virtualenv
+      python3Full
+      python3Packages.pip
+      python3Packages.virtualenv
+      chromedriver
       mkdocs
 #      python39Packages.pytorch-bin
 #      python39Packages.webrtcvad

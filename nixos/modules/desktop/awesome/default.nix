@@ -27,17 +27,18 @@
      };
   };
 
-
-
+programs.nm-applet.enable = true;
+programs.nm-applet.indicator = true;
   environment = {
     systemPackages = with pkgs; [       # Packages installed
+      arandr
       lxappearance
       dex
       picom
 
       ulauncher
 
-
+      libgnome-keyring
       rofi
       polybar
       pywal

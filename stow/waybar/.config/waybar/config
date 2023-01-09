@@ -1,67 +1,89 @@
 {
-    "layer": "bottom",
-    "position": "top",
-    "height": 30,
-
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 24, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/spotify", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock", "tray"],
-
-    "sway/mode": {
-        "format": " {}"
-    },
+    "modules-right": ["custom/spotify", "custom/storage","pulseaudio", "network", "cpu", "memory", "battery", "bluetooth", "tray", "clock"],
     "sway/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "9": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
     },
-    "wlr/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
+    "sway/mode": {
+        "format": "{} mode"
     },
-    "sway/window": {
-        "max-length": 80,
-        "tooltip": false
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueberry"
     },
     "clock": {
-        "format": "{:%a %d %b %H:%M}",
-        "tooltip": false
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% ",
-        "interval": 30,
+        "bat": "BAT0",
         "states": {
-            "warning": 25,
-            "critical": 10
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
         },
-        "tooltip": false
+        "format": "{capacity}% {icon}",
+        "format-good": "", // An empty format will hide the module
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format": "{icon}",
-        "format-alt": "{ipaddr}/{cidr} {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": {
-            "wifi": ["", "" ,""],
-            "ethernet": [""],
-            "disconnected": [""]
-        },
-        "on-click": "termite -e nmtui",
-        "tooltip": false
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume} {icon}",
-        "format-alt-click": "click-right",
-        "format-muted": "",
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
         "format-icons": {
-            "phone": [" ", " ", " ", " "],
-            "default": ["", "", "", ""]
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
         },
-        "scroll-step": 10,
-        "on-click": "pavucontrol",
-        "tooltip": false
+        "on-click": "pavucontrol"
     },
     "custom/spotify": {
         "interval": 1,
@@ -78,6 +100,15 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
     },
+     "custom/weather": {
+          "format": "{}",
+          "format-alt": "{alt}: {}",
+          "format-alt-click": "click-right",
+          "interval": 1800,
+          "return-type": "json",
+          "exec": "~/.config/waybar/modules/weather.sh",
+          "exec-if": "ping wttr.in -c1"
+      },
     "backlight": {
         "format": "{icon}",
         "format-alt": "{percent}% {icon}",

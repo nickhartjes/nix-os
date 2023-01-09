@@ -122,6 +122,9 @@ in
 
     selectdefaultapplication
 
+    sway-contrib.grimshot
+    sway-contrib.inactive-windows-transparency
+
     # GTK Themes
     themechanger
     theme-vertex
