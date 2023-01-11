@@ -1,12 +1,3 @@
-output * background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpg fill
-output eDP-1 {
-  background ~/.wallpapers/4k-minimalist-dark-aesthetic-mountains.jpg fill
-}
-
-exec nwg-panel -c config-desktop
-bindsym Ctrl+Shift+k exec kanshi; exec nwg-panel -c config-desktop
-
-
 set $output01 HDMI-A-1
 set $output02 DP-2
 set $output_default eDP-1

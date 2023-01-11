@@ -26,7 +26,7 @@ let
     executable = true;
 
     text = ''
-      systemctl --user import DISPLAY WAYLAND_DISPLAY SWAYSOCK
+      systemctl --user import DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
       systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
       systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
@@ -77,16 +77,19 @@ in
     bemenu                     # wayland clone of dmenu
     #mako                       # notification system developed by swaywm maintainer
     wdisplays
-    wofi
     waybar
     ranger
     pcmanfm
 
-    nwg-bar                   # Bar logout, reboot shutdown
-    nwg-menu                  # Windows like start menu
-    nwg-panel                 # Bars
-    nwg-drawer                # Application start grid
-    nwg-launchers
+    # Launchers
+    wofi
+    fuzzel
+
+#    nwg-bar                   # Bar logout, reboot shutdown
+#    nwg-menu                  # Windows like start menu
+#    nwg-panel                 # Bars
+#    nwg-drawer                # Application start grid
+#    nwg-launchers
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
@@ -109,6 +112,8 @@ in
 
     kanshi
     flameshot
+
+    swaybg
 
     nmon
     glances

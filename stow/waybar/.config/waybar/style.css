@@ -1,19 +1,19 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "Ubuntu Nerd Font";
+  font-family: "JetBrains Mono";
   font-size: 13px;
   min-height: 0;
 }
 
 window#waybar {
-  background: transparent;
+  background: rgba(0,0,0,0.6);
   color: white;
 }
 
 #window {
   font-weight: bold;
-  font-family: "Ubuntu";
+  font-family: "JetBrains Mono";
 }
 /*
 #workspaces {

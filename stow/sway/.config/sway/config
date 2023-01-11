@@ -14,8 +14,8 @@ set $right l
 set $term alacritty
 
 # Your preferred application launcher
-set $menu wofi --show drun
-#set $menu ulauncher-toggle
+# set $menu wofi --show drun
+set $menu fuzzel
 
 # Add gaps to Windows
 default_border pixel 5
@@ -242,8 +242,9 @@ bindsym $mod+Ctrl+e mode "$mode_system"
 # include /etc/sway/config.d/*
 
 exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
 
-# exec_always ~/.config/waybar/waybar.sh
+exec_always ~/.config/waybar/waybar.sh
 
 include ~/.config/sway/$(hostname)/*
 
@@ -259,4 +260,9 @@ exec nm-applet --indicator
 font pango:SourceCodePro Regular 11
 
 
+# For screensharing
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment WAYLAND_DISPLAY
 
+
+exec ~/.config/sway/random-background.sh
