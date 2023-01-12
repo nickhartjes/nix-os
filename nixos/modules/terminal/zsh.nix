@@ -45,6 +45,8 @@
         export PATH=~/.npm-packages/bin:$PATH
         export NODE_PATH=~/.npm-packages/lib/node_modules
 
+        export GOCACHE=~/.go-cache
+
         # Added cargo
         export PATH=~/.cargo/bin:$PATH
 

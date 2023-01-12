@@ -35,15 +35,23 @@
       # Browser
       brave
 
-      insomnia
+#      insomnia
 
       # Development
       jetbrains.idea-ultimate # IDE
-      jetbrains.pycharm-professional
+      jetbrains.goland
+#      jetbrains.pycharm-professional
       vscode                  # IDE
       graphviz                # For plantuml plugin
       openjdk17               # Java development kit
       act                     # Local Github Actions
+      helix
+      asciinema
+
+      go
+
+#      foxitreader
+      adobe-reader
 
       mdbook
       cargo

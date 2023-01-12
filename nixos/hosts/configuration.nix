@@ -156,7 +156,12 @@
   };
 
   # Allow proprietary software.
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "adobe-reader-9.5.5"
+    ];
+  };
 
   # NixOS settings
   system = {

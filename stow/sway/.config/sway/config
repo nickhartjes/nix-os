@@ -139,7 +139,7 @@ client.background       $base07
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
+    # Make the current focus fullscreens
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode

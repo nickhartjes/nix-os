@@ -9,7 +9,7 @@
 #      defaultSession = "plasmawayland";
       displayManager = {                          # Display Manager
         autoLogin = {
-          enable = true;
+          enable = false;
           user = "nh";
         };
         sddm = {
