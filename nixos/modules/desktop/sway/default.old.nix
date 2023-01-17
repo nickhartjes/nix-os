@@ -66,7 +66,6 @@ in
 
     sway
     swaylock
-    swaylock-fancy
     swayidle
     wayland
     glib                       # gsettings
@@ -81,16 +80,16 @@ in
     waybar
     ranger
     pcmanfm
-    swayws
 
     # Launchers
     wofi
     fuzzel
 
-    gtk3
-    gcc
-
-    dolphin
+#    nwg-bar                   # Bar logout, reboot shutdown
+#    nwg-menu                  # Windows like start menu
+#    nwg-panel                 # Bars
+#    nwg-drawer                # Application start grid
+#    nwg-launchers
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
@@ -137,28 +136,12 @@ in
     pop-gtk-theme
     yaru-theme
     zuki-themes
-
-    # Markdown editors
-    retext
-    marker
-    apostrophe
-    cutemarked-ng
-    zettlr
-    notes-up
-    ghostwriter
-    marktext
-    mindforger
-
-    dolphin
   ];
 
   environment.loginShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 
-      #
       # GTK environment
-      #
-
       export GDK_BACKEND="wayland,x11"
       export TDESKTOP_DISABLE_GTK_INTEGRATION=1
       export CLUTTER_BACKEND=wayland
@@ -167,21 +150,15 @@ in
       # Firefox
       export MOZ_ENABLE_WAYLAND=1
 
-      #
       # Qt environment
-      #
       export QT_QPA_PLATFORM=wayland
       export QT_WAYLAND_FORCE_DPI=physical
       export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
-      #
       # SDL environment
-      #
       export SDL_VIDEODRIVER=wayland
 
-      #
       # Java environment
-      #
       export _JAVA_AWT_WM_NONREPARENTING=1
 
       # Session
@@ -229,12 +206,6 @@ in
 #      Restart = "always";
 #    };
 #  };
-
-  # Keyring https://github.com/NixOS/nixpkgs/issues/61539
-  security.pam.services.lightdm.enableGnomeKeyring = true;
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
 
 
 

@@ -6,14 +6,14 @@ output $output01 mode 2560x1440 position 0,0
 output $output02 mode 2560x1440 position 2560,0
 output $output03 mode 1920x1080 position 5120,360
 
-workspace 1 output $output01 $output_default
-workspace 2 output $output01 $output_default
-workspace 3 output $output01 $output_default
-workspace 4 output $output01 $output_default
+exec swayws range 1 4 $output01 --away
+exec swayws range 5 8 $output02 --away
+exec swayws range 9 10 $output03
 
-workspace 5 output $output02 $output_default
-workspace 6 output $output02 $output_default
-workspace 7 output $output02 $output_default
-workspace 8 output $output02 $output_default
+exec swayws move 1 $output01
+exec swayws focus 1
 
-workspace 9 output $output_default
+
+exec_always 'if grep -q open /proc/acpi/button/lid/LID/state; then swaymsg output eDP-1 enable; else swaymsg output eDP-1 disable; fi'
+bindswitch --locked lid:on output $output_default disable
+bindswitch --locked lid:off output $output_default enable

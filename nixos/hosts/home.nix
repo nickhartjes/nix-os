@@ -36,6 +36,7 @@
       brave
 
 #      insomnia
+      pywal
 
       # Development
       jetbrains.idea-ultimate # IDE

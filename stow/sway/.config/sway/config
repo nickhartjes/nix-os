@@ -35,9 +35,17 @@ exec --no-startup-id picom -CGb
 ### Idle configuration
 exec swayidle -w \
   timeout 300 'swaylock -f -c 000000' \
-  timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+  timeout 600 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
   before-sleep 'swaylock -f -c 000000'
 
+bindsym $mod+Ctrl+l exec swaylock -f -c 000000
+
+# exec swayidle -w \
+#     timeout 300 'swaylock-fancy --show-failed-attempts --pixelate' \
+#     timeout 600 'swaymsg "output * dpms off"' \
+#         resume 'swaymsg "output * dpms on"' \
+#    before-sleep 'swaylock-fancy'
 
 ### Colour Scheme's
 # https://github.com/rkubosz/base16-sway
@@ -175,10 +183,10 @@ client.background       $base07
   bindsym XF86AudioPrev exec playerctl previous
   bindsym XF86Search exec $menu
   bindsym Print exec grimshot save output
-  bindsym Mod4+p       exec grimshot save active --notify
-  bindsym Mod4+Shift+p exec grimshot save area --notify
-  bindsym Mod4+Mod1+p  exec grimshot save output --notify
-  bindsym Mod4+Ctrl+p  exec grimshot save window --notify
+  bindsym Mod4+p       exec grimshot --notify save active
+  bindsym Mod4+Shift+p exec grimshot --notify save area
+  bindsym Mod4+Mod1+p  exec grimshot --notify save output
+  bindsym Mod4+Ctrl+p  exec grimshot --notify save window
 
 
 #
