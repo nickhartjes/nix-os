@@ -96,6 +96,10 @@
 #      zsh-history
 
       audacity
+
+#      neovim-unwrapped
+#      vimPlugins.packer-nvim
+#      luajit
     ];
 
     # Wallpaper
