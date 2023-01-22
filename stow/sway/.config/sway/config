@@ -84,7 +84,7 @@ client.background       $base07
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Ctrl+q exec nwg-bar
+    bindsym $mod+Ctrl+q exec wlogout99
 
 #
 # Moving around:
@@ -175,7 +175,15 @@ client.background       $base07
 #
 # Media controls:
 #
-  bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  #To raise the volume
+  bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+  #To lower the volume
+  bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+  #To mute/unmute the volume
+  bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+  #To mute/unmute the microphone
+  bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
   bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
   bindsym XF86MonBrightnessUp exec brightnessctl set +5%
   bindsym XF86AudioPlay exec playerctl play-pause

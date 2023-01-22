@@ -97,9 +97,12 @@
 
       audacity
 
-#      neovim-unwrapped
-#      vimPlugins.packer-nvim
-#      luajit
+      pulumi
+      terraform
+
+      wlogout
+
+
     ];
 
     # Wallpaper
