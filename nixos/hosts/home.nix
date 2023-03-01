@@ -44,7 +44,8 @@
 #      jetbrains.pycharm-professional
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      openjdk17               # Java development kit
+      #openjdk17               # Java development kit
+      graalvm17-ce
       act                     # Local Github Actions
       helix
       asciinema
@@ -55,10 +56,12 @@
       adobe-reader
 
       mdbook
+      pkg-config
       cargo
       gcc
       openssl
-      #rustup
+      rustc
+#      rustup
 
       python3Full
       python3Packages.pip
@@ -97,12 +100,14 @@
 
       audacity
 
-      pulumi
+#      pulumi
       terraform
 
       wlogout
 
+      macchina
 
+      gimp
     ];
 
     # Wallpaper

@@ -81,6 +81,7 @@ in
     waybar
     ranger
     pcmanfm
+    dolphin
     swayws
 
     # Launchers
@@ -91,6 +92,7 @@ in
     gcc
 
     dolphin
+    octant
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
@@ -112,8 +114,6 @@ in
     nerdfonts
 
     kanshi
-    flameshot
-
     swaybg
 
     nmon
@@ -231,10 +231,10 @@ in
 #  };
 
   # Keyring https://github.com/NixOS/nixpkgs/issues/61539
-  security.pam.services.lightdm.enableGnomeKeyring = true;
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+#  security.pam.services.lightdm.enableGnomeKeyring = true;
+#  services.gnome.gnome-keyring.enable = true;
+#  programs.seahorse.enable = true;
+#  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
 
 
 

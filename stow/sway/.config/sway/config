@@ -84,7 +84,7 @@ client.background       $base07
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Ctrl+q exec wlogout99
+    bindsym $mod+Ctrl+q exec wlogout
 
 #
 # Moving around:
@@ -192,7 +192,7 @@ client.background       $base07
   bindsym XF86Search exec $menu
   bindsym Print exec grimshot save output
   bindsym Mod4+p       exec grimshot --notify save active
-  bindsym Mod4+Shift+p exec grimshot --notify save area
+  bindsym Mod4+Shift+p exec grimshot --notify copy area
   bindsym Mod4+Mod1+p  exec grimshot --notify save output
   bindsym Mod4+Ctrl+p  exec grimshot --notify save window
 

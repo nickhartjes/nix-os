@@ -47,6 +47,9 @@
 
         export GOCACHE=~/.go-cache
 
+        # Added pulumi
+        export PATH=~/.pulumi/bin:$PATH
+
         # Added cargo
         export PATH=~/.cargo/bin:$PATH
 
@@ -116,8 +119,12 @@
         alias stowConfig="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --verbose=2 *"
         alias stowConfigRemove="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --delete --verbose=2 *"
 
+        alias howMuchTime="sh ~/.setup/nixos/scripts/countDownToDate.sh"
+        
         #pfetch                                # Show fetch logo on terminal start
-        neofetch                                # Show fetch logo on terminal start
+        #neofetch                              # Show fetch logo on terminal start
+        macchina
+        howMuchTime
       '';
     };
   };
