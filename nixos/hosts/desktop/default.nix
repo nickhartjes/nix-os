@@ -22,7 +22,7 @@
     # Enable swap on luks
     boot.initrd.luks.devices."luks-cff073f3-f4ca-43d2-b4d4-66d6f96abbbe".device = "/dev/disk/by-uuid/cff073f3-f4ca-43d2-b4d4-66d6f96abbbe";
     boot.initrd.luks.devices."luks-cff073f3-f4ca-43d2-b4d4-66d6f96abbbe".keyFile = "/crypto_keyfile.bin";
-    #boot.initrd.kernelModules = [ "amdgpu" ];
+    boot.initrd.kernelModules = [ "amdgpu" ];
 
     # Setup keyfile
     boot.initrd.secrets = {
@@ -46,6 +46,6 @@
     };
 
     services = {
-#      xserver.videoDrivers = [ "amdgpu" ];
+      xserver.videoDrivers = [ "amdgpu" ];
     };
 }

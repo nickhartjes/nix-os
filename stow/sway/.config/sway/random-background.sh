@@ -1,7 +1,7 @@
 #!/bin/sh
 waltile() {
     wallpaper=$(find ~/.wallpapers/. -type f | shuf -n1)
-    wal -n -i "$wallpaper"
+#    wal -n -i "$wallpaper"
     swaybg -i $wallpaper -m fill &
 }
 waltile

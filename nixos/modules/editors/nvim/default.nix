@@ -12,13 +12,13 @@
       vimAlias = true;
 
       plugins = with pkgs.vimPlugins; [
-        packer-nvim
-        telescope-nvim
+        #packer-nvim
+        #telescope-nvim
 #        nvim-treesitter.withPlugins (p: [ p.c p.java p.lua p.typescript p.vim p.help p.javascript p.rust p.go p.python ])
-        nvim-treesitter
-        harpoon
+        #nvim-treesitter
+        #harpoon
 
-        rose-pine
+        #rose-pine
 
         # Syntax
 #        vim-nix

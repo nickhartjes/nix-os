@@ -24,6 +24,10 @@
       neofetch                # Fetch
       stow                    # Config file management
 
+      bat # Alternative for cat
+      duf # Alternative for du
+      exa # Alternative for ls
+
       # Video/Audio
       mpv                     # Media Player
       pavucontrol             # Audio control
@@ -61,6 +65,10 @@
       gcc
       openssl
       rustc
+      ripgrep # For use with nvim
+      fd      # For use with nvim
+      gnumake
+      lazygit
 #      rustup
 
       python3Full

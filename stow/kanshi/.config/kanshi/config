@@ -26,3 +26,8 @@ profile "Thinkpad Work ultrawide only setup" {
 	output DP-2 mode 3440x1440@99.982Hz position 0,0
 	output eDP-1 disable
 }
+
+profile "Desktop  2-way setup" {
+	output HDMI-A-1 mode 2560x1440 position 0,0
+	output DP-3 mode 2560x1440 position 2560,0
+}

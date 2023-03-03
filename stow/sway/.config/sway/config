@@ -264,12 +264,14 @@ exec_always ~/.config/waybar/waybar.sh
 
 include ~/.config/sway/$(hostname)/*
 
+#####
+# Startup Applications
+#####
+exec --no-startup-id spotify
+exec --no-startup-id slack
 
-# Open a small terminal at startup
-exec --no-startup-id alacritty -name alacritty_scratchpad --geometry 70x15
-
-# Workaround size&position
-for_window [instance="alacritty_scratchpad"] floating enable; move scratchpad; scratchpad show; move position 865px 512px; move scratchpad
+assign [class="Spotify"] 9
+assign [class="Slack"] 9
 
 exec nm-applet --indicator
 
@@ -279,6 +281,11 @@ font pango:SourceCodePro Regular 11
 # For screensharing
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment WAYLAND_DISPLAY
+exec systemctl start --user kanshi.service
+
 
 
 exec ~/.config/sway/random-background.sh
+
+
+

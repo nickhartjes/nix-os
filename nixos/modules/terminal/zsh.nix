@@ -120,7 +120,11 @@
         alias stowConfigRemove="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --delete --verbose=2 *"
 
         alias howMuchTime="sh ~/.setup/nixos/scripts/countDownToDate.sh"
-        
+
+        alias ls="exa -l"
+        alias cat="bat"
+        alias df="duf"
+
         #pfetch                                # Show fetch logo on terminal start
         #neofetch                              # Show fetch logo on terminal start
         macchina
