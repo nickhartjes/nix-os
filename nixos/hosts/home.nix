@@ -33,7 +33,8 @@
       pavucontrol             # Audio control
 
       # Office
-      onlyoffice-bin
+      #onlyoffice-bin
+      libreoffice
       corefonts               # Fonts for Microsoft
 
       # Browser
@@ -56,12 +57,17 @@
 
       go
 
-#      foxitreader
-      adobe-reader
+      #foxitreader
+      #adobe-reader
+
+      bc  #used for waybar
+      glxinfo #used for waybar
+      font-awesome
 
       mdbook
       pkg-config
       cargo
+      rust-analyzer
       gcc
       openssl
       rustc

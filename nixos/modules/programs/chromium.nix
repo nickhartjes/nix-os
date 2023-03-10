@@ -13,7 +13,6 @@
       extensions = [
         "blipmdconlkpinefehnmjammfjpmpbjk" # Lighthouse
         "bcjindcccaagfpapjjmafapmmgkkhgoa" # JSON Formatter
-        "fjoaledfpmneenckfbpdfhkmimnjocfa" # NORD Vpn
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
         "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
         "mlomiejdfkolichcflejclcbmpeaniij" # Ghostery

@@ -190,6 +190,8 @@ in
       export XDG_CURRENT_DESKTOP=sway
       export XDG_CURRENT_SESSION=sway
 
+      # Replaces Caps for excape
+      export XKB_DEFAULT_OPTIONS=caps:escape
       exec sway
     fi
   '';                                   # Will automatically open sway when logged into tty1

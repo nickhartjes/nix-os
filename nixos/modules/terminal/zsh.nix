@@ -121,13 +121,13 @@
 
         alias howMuchTime="sh ~/.setup/nixos/scripts/countDownToDate.sh"
 
-        alias ls="exa -l"
+        alias ls="exa --long --tree --level=2 --icons"
         alias cat="bat"
         alias df="duf"
 
         #pfetch                                # Show fetch logo on terminal start
-        #neofetch                              # Show fetch logo on terminal start
-        macchina
+        neofetch                              # Show fetch logo on terminal start
+        #macchina
         howMuchTime
       '';
     };
