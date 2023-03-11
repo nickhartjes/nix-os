@@ -52,20 +52,6 @@ main ()
     IFS=',' read -ra bis_val_arr <<< "$bis_val"
     IFS=',' read -ra kro_val_arr <<< "$kro_val"
 
-    bis_primary_shortcut="${bis_val_arr[0]}"
-    bis_secondary_shortcut="${bis_val_arr[1]}"
-    bis_description="${bis_val_arr[2]}"
-
-    kro_primary_shortcut="${kro_val_arr[0]}"
-    kro_secondary_shortcut="${kro_val_arr[1]}"
-    kro_description="${kro_val_arr[2]}"
-
-    kwriteconfig5 --file "${config_file_path}" --group "kwin" --key "${kro_key}" --delete > /dev/null 2>&1
-    kwriteconfig5 --file "${config_file_path}" --group "bismuth" --key "${bis_key}" "${kro_primary_shortcut:-none},${kro_secondary_shortcut:-none},${bis_description}"
+    bis_primary_shortcut="${bis_val_arr[0]}" bis_secondary_shortcut="${bis_val_arr[1]}" bis_description="${bis_val_arr[2]}" kro_primary_shortcut="${kro_val_arr[0]}" kro_secondary_shortcut="${kro_val_arr[1]}" kro_description="${kro_val_arr[2]}" kwriteconfig5 --file "${config_file_path}" --group "kwin" --key "${kro_key}" --delete > /dev/null 2>&1 kwriteconfig5 --file "${config_file_path}" --group "bismuth" --key "${bis_key}" "${kro_primary_shortcut:-none},${kro_secondary_shortcut:-none},${bis_description}"
   done
-
-  # Reload shortcuts configuration
-  systemctl --user restart plasma-kglobalaccel
-}
-
-main $1
+# Reload shortcuts configuration systemctl --user restart plasma-kglobalaccel } main $1

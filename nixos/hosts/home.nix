@@ -106,7 +106,8 @@
       # Desktop
       okular                  # PDF viewer
       obsidian                # Second brain
-      pandoc                  # Markdown convertor
+#      pandoc                  # Markdown convertor
+#      texlive.combined.scheme-full
 #      zsh-autocomplete
 #      zsh-you-should-use
 #      zsh-completions
