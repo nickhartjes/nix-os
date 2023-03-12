@@ -15,7 +15,7 @@
             enableXfwm = false;
           };
        };
-       displayManager.defaultSession = "none+awesome";
+#       displayManager.defaultSession = "none+awesome";
        windowManager.awesome = {
          enable = true;
          luaModules = with pkgs.luaPackages; [
@@ -45,7 +45,6 @@ programs.nm-applet.indicator = true;
       calc
       networkmanager_dmenu
       feh
-
     ];
   };
 
