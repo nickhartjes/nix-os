@@ -6,6 +6,7 @@
     [(import ../../modules/desktop/plasma/default.nix)] ++
     [(import ../../modules/desktop/sway/default.nix)] ++
     [(import ../../modules/desktop/i3/default.nix)] ++
+    [(import ../../modules/desktop/leftwm/default.nix)] ++
     [(import ../../modules/desktop/awesome/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
