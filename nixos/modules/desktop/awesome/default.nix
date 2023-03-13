@@ -45,6 +45,7 @@ programs.nm-applet.indicator = true;
       calc
       networkmanager_dmenu
       feh
+      variety
     ];
   };
 
