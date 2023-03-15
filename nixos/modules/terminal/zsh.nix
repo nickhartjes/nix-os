@@ -121,7 +121,8 @@
 
         alias howMuchTime="sh ~/.setup/nixos/scripts/countDownToDate.sh"
 
-        alias ls="exa --long --tree --level=2 --icons"
+        alias ls="exa --long --icons"
+        alias ll="exa --long --tree --level=2 --icons"
         alias cat="bat"
         alias df="duf"
 

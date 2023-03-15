@@ -86,18 +86,19 @@
       nix-prefetch
       nix-prefetch-git
       nix-prefetch-github
+      tree
     ];
   };
 
   services = {
-    pipewire = {                            # Sound
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-    };
+#    pipewire = {                            # Sound
+#      enable = true;
+#      alsa = {
+#        enable = true;
+#        support32Bit = true;
+#      };
+#      pulse.enable = true;
+#    };
     openssh = {                             # SSH: secure shell (remote connection to shell of server)
       enable = true;                        # local: $ ssh <user>@<ip>
                                             # public:
@@ -170,7 +171,7 @@
       enable = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "22.05";
+    stateVersion = "22 .05";
   };
 }
 

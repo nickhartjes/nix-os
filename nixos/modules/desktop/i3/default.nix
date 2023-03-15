@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }:
-
 {
   programs.dconf.enable = true;
 
@@ -40,6 +39,7 @@
     ulauncher
 
     arandr
+    volumeicon
 
 
     rofi
@@ -63,6 +63,4 @@
       siji
       nerdfonts
   ];
-
-  
 }

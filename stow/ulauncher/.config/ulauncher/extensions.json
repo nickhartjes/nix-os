@@ -1,0 +1,58 @@
+{
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2022-12-02T14:28:09.419344",
+        "last_commit": "667613bf7bb6b4affa4f2121b58589477cd89829",
+        "last_commit_time": "2021-11-08T18:16:55"
+    },
+    "com.github.mikebarkmin.ulauncher-obsidian": {
+        "id": "com.github.mikebarkmin.ulauncher-obsidian",
+        "url": "https://github.com/mikebarkmin/ulauncher-obsidian",
+        "updated_at": "2022-12-02T14:28:33.812719",
+        "last_commit": "1da31425580691328745826376434b3cff69ffcf",
+        "last_commit_time": "2022-06-03T10:38:34"
+    },
+    "com.github.brpaz.ulauncher-jetbrains": {
+        "id": "com.github.brpaz.ulauncher-jetbrains",
+        "url": "https://github.com/brpaz/ulauncher-jetbrains",
+        "updated_at": "2022-12-02T14:29:01.614114",
+        "last_commit": "813b94421424b1195bd39d76677b0b5483e76b1e",
+        "last_commit_time": "2022-06-13T15:48:58"
+    },
+    "com.github.tchar.ulauncher-albert-calculate-anything": {
+        "id": "com.github.tchar.ulauncher-albert-calculate-anything",
+        "url": "https://github.com/tchar/ulauncher-albert-calculate-anything",
+        "updated_at": "2023-03-13T09:50:11.184641",
+        "last_commit": "ee0903174c8b87cd1f7c3b6c1acef10702547507",
+        "last_commit_time": "2021-08-12T06:39:56"
+    },
+    "com.github.ulauncher.ulauncher-timer": {
+        "id": "com.github.ulauncher.ulauncher-timer",
+        "url": "https://github.com/ulauncher/ulauncher-timer",
+        "updated_at": "2023-03-13T09:50:45.305429",
+        "last_commit": "4262fc24db08610d01ea311d2e12f22588c98886",
+        "last_commit_time": "2020-11-03T07:21:30"
+    },
+    "com.github.brpaz.ulauncher-github": {
+        "id": "com.github.brpaz.ulauncher-github",
+        "url": "https://github.com/brpaz/ulauncher-github",
+        "updated_at": "2023-03-13T09:51:07.843962",
+        "last_commit": "c2a4d8f651c326c13290eb9e28c076f14aaac704",
+        "last_commit_time": "2022-10-15T10:36:52"
+    },
+    "com.github.kbialek.ulauncher-bitwarden": {
+        "id": "com.github.kbialek.ulauncher-bitwarden",
+        "url": "https://github.com/kbialek/ulauncher-bitwarden",
+        "updated_at": "2023-03-13T09:51:22.773386",
+        "last_commit": "e5c25ebc24142f064eaebb29f6e473ded6d6b315",
+        "last_commit_time": "2022-10-19T06:09:55"
+    },
+    "com.github.zakuciael.ulauncher-jetbrains-reloaded": {
+        "id": "com.github.zakuciael.ulauncher-jetbrains-reloaded",
+        "url": "https://github.com/zakuciael/ulauncher-jetbrains-reloaded",
+        "updated_at": "2023-03-13T09:52:48.496974",
+        "last_commit": "f6ee473c216881568ecaa3c31c326094ad1d7ba7",
+        "last_commit_time": "2022-07-09T16:17:10"
+    }
+}
