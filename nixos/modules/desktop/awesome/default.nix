@@ -46,7 +46,7 @@
 
       ulauncher
       caffeine-ng
-#      mpd
+      mpd
 
       libgnome-keyring
       rofi
@@ -63,7 +63,10 @@
       xfce.thunar-volman
       xfce.xfce4-pulseaudio-plugin
       xfce.xfce4-power-manager
+      xfce.ristretto
       xarchiver
+
+      volumeicon
     ];
   };
 

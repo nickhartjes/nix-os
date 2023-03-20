@@ -16,6 +16,7 @@ local awful         = require("awful")
                       require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
+--local bling         = require("bling")
 local naughty       = require("naughty")
 local lain          = require("lain")
 --local menubar       = require("menubar")
@@ -345,10 +346,12 @@ globalkeys = mytable.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+
+    awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, "Control" }, "l", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
+
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "Tab",
@@ -540,7 +543,7 @@ globalkeys = mytable.join(
         {description = "show dmenu", group = "launcher"}),
 
     -- rofi
-    awful.key({ modkey }, "d", function () awful.util.spawn( "rofi -show drun" ) end,
+    awful.key({ "Ctrl", modkey }, "d", function () awful.util.spawn( "rofi -show drun" ) end,
         {description = "rofi" , group = "function keys" }),
 
     --[[ dmenu
@@ -750,7 +753,7 @@ awful.rules.rules = {
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
+          "Event Tester"  -- xev.
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -760,18 +763,41 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+    { rule_any = {type = { "normal" }
+    }, properties = { titlebars_enabled = true }
+    },
+    { rule_any = {type = {  "dialog" }
+    }, properties = { titlebars_enabled = false, border_width = 0 }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = "5" } },
+    { rule = { class = "Slack" },
+      properties = { screen = 1, tag = "5" } },
+
+    {
+      rule_any = { instance = { "ulauncher" } },
+      properties = {
+        floating = true,
+        focus = true,
+        ontop = true,
+        titlebars_enabled = false,
+        border_width = 0
+      },
+    }
 }
 
 -- }}}
 
--- {{{ Signals
+---- {{{ Signals
+client.connect_signal("property::floating", function(c)
+    if c.floating then
+        awful.titlebar.hide(c)
+    else
+        awful.titlebar.show(c)
+    end
+end)
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -840,11 +866,22 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+
+client.connect_signal("focus", function(c)
+  if c.instance == "ulauncher" then
+    c.border_color = "transparent"
+  else
+    c.border_color = beautiful.border_focus
+  end
+end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- }}}
 
+--Bling
+--bling.module.flash_focus.enable()
+
 
 -- Autostart applications
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
--- awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")
+awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")

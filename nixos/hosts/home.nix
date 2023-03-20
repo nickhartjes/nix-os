@@ -122,6 +122,8 @@
 
       macchina
 
+      flameshot
+      shutter
       gimp
     ];
 
