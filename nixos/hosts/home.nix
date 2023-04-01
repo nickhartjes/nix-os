@@ -88,6 +88,7 @@
 #      gcc
 
       obs-studio
+      davinci-resolve
       #obs-studio-plugins.obs-ndi
       obs-studio-plugins.wlrobs
 
@@ -113,18 +114,22 @@
 #      zsh-completions
 #      zsh-history
 
+      marktext
+
       audacity
 
 #      pulumi
-      terraform
+#      terraform
 
-      wlogout
+#      wlogout
 
       macchina
-
+      fzf
       flameshot
       shutter
       gimp
+
+      i3lock-blur
     ];
 
     # Wallpaper
