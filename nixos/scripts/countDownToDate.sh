@@ -17,8 +17,5 @@ countDownToDate() {
     echo "";
 }
 
-
-countDownToDate "Inleveren eindverslag voor Feedback" "2023-03-20 12:00:00"
-countDownToDate "Roosteren afstudeerpresentatie" "2023-04-07 12:00:00"
-
 countDownToDate "Inleveren eindverslag" "2023-04-17 12:00:00"
+countDownToDate "Inleveren eindverslag" "2023-04-21 23:59:59"
