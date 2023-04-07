@@ -1,7 +1,6 @@
 { config, lib, pkgs, hyprland, ... }:
 
 {
-#  imports = [ ../../programs/waybar.nix ];
 
   hardware.opengl.enable = true;
 
@@ -27,7 +26,7 @@
 #    };
     systemPackages = with pkgs; [       # Packages installed
       wofi
-#      waybar
+      waybar
       wdisplays
       variety
       slurp

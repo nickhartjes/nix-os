@@ -18,9 +18,10 @@ in
   ##################
   desktop = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location hyprland; };
     modules = [
       nur.nixosModules.nur
+      hyprland.nixosModules.default
       ./desktop
       ./configuration.nix
 
@@ -40,9 +41,10 @@ in
   ##################
   xps-laptop = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location hyprland; };
     modules = [
       nur.nixosModules.nur
+      hyprland.nixosModules.default
       ./xps-laptop
       ./configuration.nix
 
