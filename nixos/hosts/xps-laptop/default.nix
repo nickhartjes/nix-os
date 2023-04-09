@@ -4,6 +4,7 @@
   imports =
     [(import ./hardware-configuration.nix)] ++
     [(import ../../modules/desktop/plasma/default.nix)] ++
+    [(import ../../modules/desktop/hyprland/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
 
@@ -19,8 +20,8 @@
     boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
     # Enable swap on luks
-    boot.initrd.luks.devices."luks-7c638060-9787-4d14-8478-5a7c22c4eb0b".device = "/dev/disk/by-uuid/7c638060-9787-4d14-8478-5a7c22c4eb0b";
-    boot.initrd.luks.devices."luks-7c638060-9787-4d14-8478-5a7c22c4eb0b".keyFile = "/crypto_keyfile.bin";
+    boot.initrd.luks.devices."luks-0aec15c8-9f38-482a-9a6c-0446cb999ca9".device = "/dev/disk/by-uuid/0aec15c8-9f38-482a-9a6c-0446cb999ca9";
+    boot.initrd.luks.devices."luks-0aec15c8-9f38-482a-9a6c-0446cb999ca9".keyFile = "/crypto_keyfile.bin";
 
     # Setup keyfile
     boot.initrd.secrets = {
