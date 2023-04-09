@@ -34,7 +34,7 @@
 
       # Office
       #onlyoffice-bin
-      libreoffice
+      #libreoffice
       corefonts               # Fonts for Microsoft
 
       # Browser
@@ -88,7 +88,7 @@
 #      gcc
 
       obs-studio
-      davinci-resolve
+      #davinci-resolve
       #obs-studio-plugins.obs-ndi
       obs-studio-plugins.wlrobs
 
@@ -128,8 +128,6 @@
       flameshot
       shutter
       gimp
-
-      i3lock-blur
     ];
 
     # Wallpaper
