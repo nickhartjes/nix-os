@@ -4,3 +4,5 @@ result
 stow/kube/.kube/cache/
 stow/kube/.kube/http-cache/
 *.iml
+
+stow/aws/.aws/sso/cache/
