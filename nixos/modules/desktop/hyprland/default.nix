@@ -1,6 +1,10 @@
 { config, lib, pkgs, hyprland, ... }:
 
 {
+
+  imports = [
+    ../../programs/waybar-hyprland.nix
+  ];
   programs.zsh.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -55,7 +59,6 @@
     systemPackages = with pkgs; [       # Packages installed
       xwayland    # Run xorg applications
       wofi        # Launcher
-      waybar      # Statusbar
       eww-wayland # Statusbar
       wdisplays
 
@@ -63,6 +66,8 @@
       grim
 
       mpd
+
+      pcmanfm
 
       kanshi
 

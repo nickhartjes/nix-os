@@ -1,8 +1,6 @@
-#!/bin/bash
-
 ## Files and cmd
 FILE="$HOME/.cache/eww_launch_side.xyz"
-EWW="$HOME/.local/bin/eww/eww -c $HOME/.config/eww/leftbar"
+EWW="/run/current-system/sw/bin/eww -c $HOME/.config/eww/leftbar"
 
 # windows not in use
 # separ
@@ -32,7 +30,7 @@ fi
 # volume
 # fetch
 
-## Open widgets 
+## Open widgets
 run_eww() {
     ${EWW} open-many $w_ls
 }
@@ -40,8 +38,8 @@ run_eww() {
 ## Launch or close widgets accordingly
 if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
-	run_eww 
+	run_eww
 else
-    ${EWW} close $w_ls 
+    ${EWW} close $w_ls
 	rm "$FILE"
 fi
