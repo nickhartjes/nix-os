@@ -1,3 +1,8 @@
+profile "Thinkpad only" {
+	output eDP-1 mode 1920x1080 position 0,0 scale 1
+	exec ~/.config/kanshi/move_workspaces.sh
+}
+
 profile "Thinkpad Home 3-way setup" {
 	output HDMI-A-1 mode 2560x1440 position 0,0
 	output DP-2 mode 2560x1440 position 2560,0

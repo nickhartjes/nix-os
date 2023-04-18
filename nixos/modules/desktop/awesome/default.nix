@@ -4,8 +4,9 @@
 
 
   hardware.opengl.enable = true;
-  hardware.pulseaudio.enable = true;
+#  hardware.pulseaudio.enable = true;
 
+#    hyprland.enable = true;
   services = {
     xserver = {
       enable = true;
@@ -27,13 +28,14 @@
       };
     };
     blueman.enable = true;
-    mpd.extraConfig = ''
-      audio_output {
-        type "pulse"
-        name "My PulseAudio" # this can be whatever you want
-      }
-    '';
+ #   mpd.extraConfig = ''
+ #     audio_output {
+ #       type "pulse"
+ #       name "My PulseAudio" # this can be whatever you want
+ #     }
+#    '';
   };
+
 
 
   programs.zsh.enable = true;
@@ -74,6 +76,5 @@
   };
 
   programs = {
-#    hyprland.enable = true;
   };
 }
