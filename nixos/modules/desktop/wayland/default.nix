@@ -23,5 +23,5 @@
     };
   };
 
-  xdg.portal.wlr.enable;
+  xdg.portal.wlr.enable = true;
 }

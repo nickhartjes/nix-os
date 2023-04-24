@@ -55,13 +55,15 @@
     };
 
     systemPackages = with pkgs; [       # Packages installed
-      xwayland    # Run xorg applications
+      #xwayland    # Run xorg applications
+
       wofi        # Launcher
       eww-wayland # Statusbar
       wdisplays
 
       slurp
       grim
+      brave
 
       mpd
 
@@ -75,8 +77,9 @@
 
       networkmanagerapplet
 
-      xorg.xrandr
-      arandr
+      #xorg.xrandr
+      #arandr
+
       blueberry                             # Bluetooth manager
     # haskellPackages.network-manager-tui # Network manager
       light                               # Brightness control
@@ -87,7 +90,12 @@
   programs = {
     hyprland = {
       enable = true;
-      #package = hyprland.packages.${pkgs.system}.default;
+      nvidiaPatches = true;
+      xwayland = {
+        enable = true;
+        hidpi = false;
+      };
+
     };
     nm-applet = {
       enable = true;
