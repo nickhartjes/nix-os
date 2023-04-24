@@ -3,11 +3,9 @@
 {
 
   imports = [
+    ../wayland/default.nix
     ../../programs/waybar-hyprland.nix
   ];
-  programs.zsh.enable = true;
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment = {
     loginShellInit = ''
@@ -46,9 +44,9 @@
         # Session
         #
 
-        export XDG_CURRENT_DESKTOP=Hyprland
+        export XDG_CURRENT_DESKTOP=sway
         export XDG_SESSION_TYPE=wayland
-        export XDG_SESSION_DESKTOP=Hyprland
+        export XDG_SESSION_DESKTOP=sway
 
         exec Hyprland
       fi
@@ -77,32 +75,14 @@
 
       networkmanagerapplet
 
+      xorg.xrandr
+      arandr
       blueberry                             # Bluetooth manager
     # haskellPackages.network-manager-tui # Network manager
       light                               # Brightness control
       pavucontrol                         # Sound
     ];
   };
-
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-    dbus.enable = true;
-    upower.enable = true;
-  };
-
-  # Hardware Support for Hyprland
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-    };
-  };
-
 
   programs = {
     hyprland = {

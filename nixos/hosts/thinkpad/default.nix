@@ -55,16 +55,17 @@
     networking.hostName = "thinkpad";
 
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
-    # hardware.opengl.enable = true;
-    # hardware.nvidia.modesetting.enable = true;
+    hardware.opengl.enable = true;
+    hardware.nvidia.modesetting.enable = true;
+    services.xserver.videoDrivers = [ "nvidia" ];
+
 
     programs = {
       light.enable = true;                    # No xbacklight, this is the alterantive
     };
 
     services = {
-      xserver.videoDrivers = [ "modesetting" ];
-      logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
+     logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
       auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
       hardware.bolt.enable = true;
     };

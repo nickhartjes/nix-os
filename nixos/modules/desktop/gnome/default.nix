@@ -37,7 +37,6 @@
     gnomeExtensions.forge
     gnomeExtensions.freon
     gnomeExtensions.paperwm
-    gnomeExtensions.pop-theme-switcher
     gnomeExtensions.timepp
     layan-gtk-theme
     materia-theme
