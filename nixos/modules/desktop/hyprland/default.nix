@@ -55,42 +55,41 @@
     };
 
     systemPackages = with pkgs; [       # Packages installed
-      #xwayland    # Run xorg applications
-
       wofi        # Launcher
       eww-wayland # Statusbar
       wdisplays
 
-      slurp
-      grim
-      brave
-
-      mpd
+      swww        # Efficient animated wallpaper daemon for wayland, controlled at runtime
 
       pcmanfm
+      dolphin
 
       kanshi
 
-      swaylock
+      swaylock-effects
       swayidle
       swaybg
 
-      networkmanagerapplet
+      mako                      # Lightweight notification daemon for Wayland
 
-      #xorg.xrandr
-      #arandr
+      pamixer                   # Pulseaudio command-line mixer like amixer
+      pavucontrol               # PulseAudio Volume Control
+      brightnessctl             # Lightweight brightness control tool
+      bluez                     # Daemons for the bluetooth protocol stack
+      blueman                   # GTK+ Bluetooth Manager
+      networkmanagerapplet      # NetworkManager control applet for GNOME
 
-      blueberry                             # Bluetooth manager
-    # haskellPackages.network-manager-tui # Network manager
-      light                               # Brightness control
-      pavucontrol                         # Sound
+      swappy                    # A Wayland native snapshot editing tool
+      grim                      # Screenshot utility for Wayland
+      slurp                     # Select a region in a Wayland compositor
+
+      wlogout                   # Logout menu for wayland
     ];
   };
 
   programs = {
     hyprland = {
       enable = true;
-      nvidiaPatches = true;
       xwayland = {
         enable = true;
         hidpi = false;
