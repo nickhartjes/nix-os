@@ -14,6 +14,14 @@
 { config, lib, pkgs, ... }:
 
 {
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Materia-dark";
+      package = pkgs.materia-theme;
+    };
+  };
 #  home.file = {
 #    ".config/waybar/hyprland.conf".text = ''
 #      monitor=DP-2,1920x1080@60,0x0,1

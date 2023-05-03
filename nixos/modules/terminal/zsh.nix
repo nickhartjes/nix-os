@@ -56,6 +56,9 @@
         # Krew
         export PATH=~/.krew/bin:$PATH
 
+        # Mak0
+        export PATH=~/.config/hypr/mako/scripts:$PATH
+
         ### ALIASES ###
         # List
         alias ls='ls --color=auto'
@@ -119,8 +122,6 @@
         alias stowConfig="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --verbose=2 *"
         alias stowConfigRemove="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --delete --verbose=2 *"
 
-        alias howMuchTime="sh ~/.setup/nixos/scripts/countDownToDate.sh"
-
         alias ls="exa --long --icons"
         alias ll="exa --long --tree --level=2 --icons"
         alias cat="bat"
@@ -129,7 +130,6 @@
         #pfetch                                # Show fetch logo on terminal start
         neofetch                              # Show fetch logo on terminal start
         #macchina
-        howMuchTime
       '';
     };
   };

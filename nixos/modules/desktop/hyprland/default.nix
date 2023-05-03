@@ -71,6 +71,12 @@
       swaybg
 
       mako                      # Lightweight notification daemon for Wayland
+      libnotify                 # For sending notifications with notify-send
+
+
+      playerctl
+      pop-gtk-theme
+      lxappearance
 
       pamixer                   # Pulseaudio command-line mixer like amixer
       pavucontrol               # PulseAudio Volume Control
