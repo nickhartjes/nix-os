@@ -90,6 +90,7 @@
       slurp                     # Select a region in a Wayland compositor
 
       wlogout                   # Logout menu for wayland
+      wl-clipboard
     ];
   };
 
