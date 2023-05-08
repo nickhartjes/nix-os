@@ -125,6 +125,8 @@
 
 #      wlogout
 
+      k6
+
       macchina
       fzf
       flameshot
