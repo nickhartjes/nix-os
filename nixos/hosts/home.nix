@@ -128,6 +128,7 @@
       macchina
       fzf
       flameshot
+      inkscape
       shutter
       gimp
     ];

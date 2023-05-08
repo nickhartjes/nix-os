@@ -7,7 +7,7 @@
 #    [(import ../../modules/desktop/plasma/default.nix)] ++
 #    [(import ../../modules/desktop/awesome/default.nix)] ++
     [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
-#    (import ../../modules/desktop/virtualisation) ++
+    (import ../../modules/desktop/virtualisation) ++
     #[(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 

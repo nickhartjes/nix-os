@@ -89,6 +89,7 @@
       grim                      # Screenshot utility for Wayland
       slurp                     # Select a region in a Wayland compositor
 
+      glib
       wlogout                   # Logout menu for wayland
       wl-clipboard
     ];
