@@ -82,7 +82,9 @@
       pavucontrol               # PulseAudio Volume Control
       brightnessctl             # Lightweight brightness control tool
       bluez                     # Daemons for the bluetooth protocol stack
+      bluez-tools
       blueman                   # GTK+ Bluetooth Manager
+      blueberry
       networkmanagerapplet      # NetworkManager control applet for GNOME
 
       swappy                    # A Wayland native snapshot editing tool
