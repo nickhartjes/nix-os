@@ -34,7 +34,7 @@
 
       # Office
       #onlyoffice-bin
-      #libreoffice
+      libreoffice
       corefonts               # Fonts for Microsoft
 
       # Browser
@@ -82,8 +82,11 @@
       python3Full
       python3Packages.pip
       python3Packages.virtualenv
+      python3Packages.setuptools
       chromedriver
       mkdocs
+
+      jetbrains.pycharm-professional
 #      python39Packages.pytorch-bin
 #      python39Packages.webrtcvad
 #      ffmpeg
