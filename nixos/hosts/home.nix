@@ -136,6 +136,9 @@
       inkscape
       shutter
       gimp
+
+      gcc # Needed for privateGpt
+      cmake
     ];
 
     # Wallpaper

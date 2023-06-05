@@ -162,6 +162,7 @@
     permittedInsecurePackages = [
       "python-2.7.18.6"
       "electron-21.4.0"
+      "nodejs-16.20.0"
     ];
   };
 
@@ -172,7 +173,7 @@
       enable = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "22 .05";
+    stateVersion = "22.05";
   };
 }
 
