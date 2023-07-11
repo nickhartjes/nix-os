@@ -48,9 +48,6 @@
         export XDG_SESSION_TYPE=wayland
         export XDG_SESSION_DESKTOP=sway
 
-        # Add cargo bin to path for hyprsome
-        export PATH="$PATH:$HOME/.cargo/bin
-
         exec Hyprland
       fi
     '';                                   # Will automatically open sway when logged into tty1
