@@ -4,9 +4,9 @@
   imports =
     [(import ./hardware-configuration.nix)] ++
 #    [(import ../../modules/desktop/gnome/default.nix)] ++
-#    [(import ../../modules/desktop/plasma/default.nix)] ++
-#    [(import ../../modules/desktop/awesome/default.nix)] ++
-    [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
+    [(import ../../modules/desktop/plasma/default.nix)] ++
+#    [(import ../../modules/desktop/sway/default.nix)] ++
+#    [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     #[(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
@@ -15,19 +15,22 @@
     ## System boot
     ##################
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    #boot.kernelPackages = pkgs.linuxPackages_latest;
     #boot.kernelPackages = pkgs.linuxPackages_hardkernel_latest;
+#    boot.extraModulePackages = with config.boot.kernelPackages; [
+#      evdi
+#    ];
 
-#     boot.kernelPackages = pkgs.linuxPackages_latest.extend (self: super: {
-#        evdi = super.evdi.overrideAttrs (o: rec {
-#          src = pkgs.fetchFromGitHub {
-#            owner = "DisplayLink";
-#            repo = "evdi";
-#            rev = "bdc258b25df4d00f222fde0e3c5003bf88ef17b5";
-#            sha256 = "mt+vEp9FFf7smmE2PzuH/3EYl7h89RBN1zTVvv2qJ/o=";
-#          };
-#        });
-#    });
+     #boot.kernelPackages = pkgs.linuxPackages_latest.extend (self: super: {
+     #   evdi = super.evdi.overrideAttrs (o: rec {
+     #     src = pkgs.fetchFromGitHub {
+     #       owner = "DisplayLink";
+     #       repo = "evdi";
+     #       rev = "bdc258b25df4d00f222fde0e3c5003bf88ef17b5";
+     #       sha256 = "mt+vEp9FFf7smmE2PzuH/3EYl7h89RBN1zTVvv2qJ/o=";
+     #     };
+     #   });
+    #});
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -55,9 +58,9 @@
     networking.hostName = "thinkpad";
 
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
-    hardware.opengl.enable = true;
-    hardware.nvidia.modesetting.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
+#    hardware.opengl.enable = true;
+    #hardware.nvidia.modesetting.enable = true;
+    services.xserver.videoDrivers = [ "modesetting" ];
 
 
     programs = {

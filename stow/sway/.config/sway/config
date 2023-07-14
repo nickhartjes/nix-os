@@ -70,7 +70,7 @@ client.background       $base07
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+p exec $menu
+    bindsym $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -191,10 +191,10 @@ client.background       $base07
   bindsym XF86AudioPrev exec playerctl previous
   bindsym XF86Search exec $menu
   bindsym Print exec grimshot save output
-  #bindsym Mod4+s       exec grimshot --notify save active
-  bindsym Mod4+Shift+s exec grimshot --notify copy area
-  bindsym Mod4+Mod1+s  exec grimshot --notify save output
-  bindsym Mod4+Ctrl+s  exec grimshot --notify save window
+  bindsym Mod4+p       exec grimshot --notify save active
+  bindsym Mod4+Shift+p exec grimshot --notify copy area
+  bindsym Mod4+Mod1+p  exec grimshot --notify save output
+  bindsym Mod4+Ctrl+p  exec grimshot --notify save window
 
 
 #

@@ -82,15 +82,14 @@
       python3Full
       python3Packages.pip
       python3Packages.virtualenv
-      python3Packages.setuptools
       chromedriver
       mkdocs
-
-      jetbrains.pycharm-professional
 #      python39Packages.pytorch-bin
 #      python39Packages.webrtcvad
 #      ffmpeg
 #      gcc
+
+        yarn
 
       obs-studio
       #davinci-resolve
@@ -128,6 +127,7 @@
 
 #      wlogout
 
+      neo4j-desktop
       k6
 
       macchina
@@ -136,9 +136,6 @@
       inkscape
       shutter
       gimp
-
-      gcc # Needed for privateGpt
-      cmake
     ];
 
     # Wallpaper
