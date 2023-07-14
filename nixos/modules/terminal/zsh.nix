@@ -10,7 +10,7 @@
       enable = true;
       dotDir = ".config/zsh_nix";
       enableAutosuggestions = true;             # Auto suggest options and highlights syntact, searches in history for options
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       history.size = 10000;
 
       oh-my-zsh = {                             # Extra plugins for zsh
