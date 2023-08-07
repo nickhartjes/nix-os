@@ -52,8 +52,8 @@
       #openjdk17               # Java development kit
       graalvm17-ce
       act                     # Local Github Actions
-      helix
-      asciinema
+      #helix
+      #asciinema
 
       go
 
@@ -64,7 +64,6 @@
       glxinfo #used for waybar
       font-awesome
 
-      mdbook
       pkg-config
       cargo
       rust-analyzer
@@ -136,6 +135,8 @@
       inkscape
       shutter
       gimp
+
+      unoconv
     ];
 
     # Wallpaper

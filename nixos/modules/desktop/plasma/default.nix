@@ -13,7 +13,7 @@
           user = "nh";
         };
         sddm = {
-          enable = true;                          # Wallpaper and gtk theme
+          enable = false;                          # Wallpaper and gtk theme
 #          greeters = {
 #            mini = {
 #              enable = true;

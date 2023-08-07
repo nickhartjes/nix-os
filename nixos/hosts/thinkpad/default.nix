@@ -3,8 +3,8 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-#    [(import ../../modules/desktop/gnome/default.nix)] ++
-    [(import ../../modules/desktop/plasma/default.nix)] ++
+    [(import ../../modules/desktop/gnome/default.nix)] ++
+#    [(import ../../modules/desktop/plasma/default.nix)] ++
 #    [(import ../../modules/desktop/sway/default.nix)] ++
 #    [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++

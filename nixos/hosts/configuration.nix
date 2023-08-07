@@ -48,7 +48,7 @@
     };
   };
 
-  fonts.fonts = with pkgs; [                # Fonts
+  fonts.packages = with pkgs; [                # Fonts
     carlito                                 # NixOS
     vegur                                   # NixOS
     source-code-pro
@@ -119,6 +119,13 @@
       '';                                   # Temporary extra config so ssh will work in guacamole
     };
     fwupd.enable = true;
+
+
+    printing.enable = true; # Printer drivers
+    avahi.enable = true;
+    avahi.nssmdns = true;
+    # for a WiFi printer
+    avahi.openFirewall = true;
   };
 
   ##################
