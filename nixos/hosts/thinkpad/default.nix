@@ -60,7 +60,7 @@
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
 #    hardware.opengl.enable = true;
     #hardware.nvidia.modesetting.enable = true;
-    services.xserver.videoDrivers = [ "modesetting" ];
+    services.xserver.videoDrivers = [ "displayLink" "modesetting" ];
 
 
     programs = {

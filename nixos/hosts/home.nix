@@ -129,6 +129,8 @@
       neo4j-desktop
       k6
 
+      pgmodeler
+
       macchina
       fzf
       flameshot
@@ -142,7 +144,7 @@
     # Wallpaper
     file.".config/wall".source = ../modules/themes/wall.jpg;
 
-    stateVersion = "22.05";
+    stateVersion = "23.05";
   };
 
   programs = {
