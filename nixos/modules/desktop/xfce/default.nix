@@ -18,15 +18,19 @@
 #        };
 #      };
       desktopManager= {
+        xterm.enable = false;
         xfce = {                                 # Window Manager
           enable = true;
         };
       };
+      displayManager.defaultSession = "xfce";
     };
   };
 
   programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm
 
   environment.systemPackages = with pkgs; [       # Packages installed
+      xfce.xfce4-panel-profiles
+      xfce.xfce4-appfinder
   ];
 }
