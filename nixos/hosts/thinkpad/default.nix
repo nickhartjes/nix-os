@@ -3,12 +3,12 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/desktop/gnome/default.nix)] ++
-#    [(import ../../modules/desktop/plasma/default.nix)] ++
+#    [(import ../../modules/desktop/gnome/default.nix)] ++
+    [(import ../../modules/desktop/plasma/default.nix)] ++
 #    [(import ../../modules/desktop/sway/default.nix)] ++
 #    [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-    #[(import ../../modules/hardware/displaylink.nix)] ++
+    [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 
     ##################
@@ -60,7 +60,7 @@
     # Enable OpenGl for Nvidia https://nixos.wiki/wiki/Nvidia
 #    hardware.opengl.enable = true;
     #hardware.nvidia.modesetting.enable = true;
-    services.xserver.videoDrivers = [ "displayLink" "modesetting" ];
+    services.xserver.videoDrivers = [ "modesetting" ];
 
 
     programs = {
