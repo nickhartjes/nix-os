@@ -130,7 +130,6 @@
       k6
 
       pgmodeler
-
       macchina
       fzf
       flameshot
