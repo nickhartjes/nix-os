@@ -104,7 +104,7 @@
 
       # Security
       lynis                   # Security audit tool
-      aide                    # A file and directory integrity checker
+      aide                    # A file and directory integrity checkerK
 
       # Desktop
       okular                  # PDF viewer
