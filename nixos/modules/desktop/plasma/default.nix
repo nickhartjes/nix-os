@@ -47,7 +47,7 @@
   programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm
 
   environment.systemPackages = with pkgs; [       # Packages installed
-    plasma-theme-switcher
+
     layan-kde
     materia-theme
     materia-kde-theme
@@ -62,13 +62,17 @@
     oxygenfonts
     iosevka
 
-    ark # Archive utility
 
+
+    # Plasma applications
+    plasma-theme-switcher
     plasma-integration
     plasma-applet-caffeine-plus
     plasma-thunderbolt
+    plasma-systemmonitor
+    ark                           # Archive utility
+    okular
 
-    libsForQt5.bismuth
     libsForQt5.plasma-workspace
     libsForQt5.plasma-workspace-wallpapers
   ];

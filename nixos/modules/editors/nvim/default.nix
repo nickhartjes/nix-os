@@ -57,5 +57,9 @@
 #      '';
     };
   };
+  home.packages = with pkgs; [       # Packages installed
+    ripgrep # For use with nvim
+    fd      # For use with nvim
+  ];
 }
 

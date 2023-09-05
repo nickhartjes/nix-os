@@ -24,81 +24,79 @@
       neofetch                # Fetch
       stow                    # Config file management
 
-      bat # Alternative for cat
-      duf # Alternative for du
-      exa # Alternative for ls
+      bat                     # Alternative for cat
+      duf                     # Alternative for du
+      exa                     # Alternative for ls
 
       # Video/Audio
       mpv                     # Media Player
       pavucontrol             # Audio control
 
       # Office
-      #onlyoffice-bin
       libreoffice
       corefonts               # Fonts for Microsoft
 
       # Browser
       brave
 
+
+
 #      insomnia
-      pywal
+#      pywal
 
       # Development
       jetbrains.idea-ultimate # IDE
-      jetbrains.goland
-#      jetbrains.pycharm-professional
+      # jetbrains.goland
+      # jetbrains.pycharm-professional
       vscode                  # IDE
       graphviz                # For plantuml plugin
       #openjdk17               # Java development kit
       graalvm17-ce
       act                     # Local Github Actions
-      #helix
-      #asciinema
-
+      lazygit
       go
 
       #foxitreader
       #adobe-reader
 
-      bc  #used for waybar
-      glxinfo #used for waybar
-      font-awesome
+#      bc                  #used for waybar
+#      glxinfo             #used for waybar
+#      font-awesome
 
-      pkg-config
-      cargo
-      rust-analyzer
-      gcc
-      openssl
-      rustc
-      ripgrep # For use with nvim
-      fd      # For use with nvim
-      gnumake
-      lazygit
+#      pkg-config
+#      cargo
+#      rust-analyzer
+#      gcc
+#      openssl
+#      rustc
+
+#      gnumake
+
 #      rustup
 
-      protonvpn-gui
+#      protonvpn-gui
 
-      python3Full
-      python3Packages.pip
-      python3Packages.virtualenv
-      chromedriver
-      mkdocs
+#      python3Full
+#      python3Packages.pip
+#      python3Packages.virtualenv
+#      chromedriver
+#      mkdocs
 #      python39Packages.pytorch-bin
 #      python39Packages.webrtcvad
 #      ffmpeg
 #      gcc
 
-        yarn
+      deno
+       yarn
 
       obs-studio
-      #davinci-resolve
-      #obs-studio-plugins.obs-ndi
       obs-studio-plugins.wlrobs
 
       # Communication
       slack
       signal-desktop
       tdesktop
+
       # Authentication
       authy
       bitwarden
@@ -106,38 +104,33 @@
 
       # Security
       lynis                   # Security audit tool
+      aide                    # A file and directory integrity checker
 
       # Desktop
       okular                  # PDF viewer
       obsidian                # Second brain
-#      pandoc                  # Markdown convertor
-#      texlive.combined.scheme-full
-#      zsh-autocomplete
-#      zsh-you-should-use
-#      zsh-completions
-#      zsh-history
-
       marktext
+      inkscape                #
+      gimp                    # Image
 
-      audacity
+      shutter                 # Screenshot utility
 
-#      pulumi
-#      terraform
-
-#      wlogout
-
-      neo4j-desktop
-      k6
+#      neo4j-desktop
+#      k6
 
       pgmodeler
       macchina
       fzf
       flameshot
-      inkscape
-      shutter
-      gimp
 
-      unoconv
+
+      # Database
+      supabase-cli
+      dbeaver
+
+
+      unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
+
     ];
 
     # Wallpaper
