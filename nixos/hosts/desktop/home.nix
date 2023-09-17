@@ -11,13 +11,12 @@
 
   home = {
     packages = with pkgs; [
-#        linuxPackages.rtl88x2bu
+     #  k3s
     ];
   };
 
   programs = {
   };
-
   services = {
   };
 }

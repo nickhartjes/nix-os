@@ -26,7 +26,7 @@
 
       bat                     # Alternative for cat
       duf                     # Alternative for du
-      exa                     # Alternative for ls
+      eza                     # Alternative for ls
 
       # Video/Audio
       mpv                     # Media Player
@@ -50,7 +50,7 @@
       # jetbrains.pycharm-professional
       vscode                  # IDE
       graphviz                # For plantuml plugin
-      #openjdk17               # Java development kit
+      # openjdk17               # Java development kit
       graalvm17-ce
       act                     # Local Github Actions
       lazygit
@@ -123,7 +123,7 @@
       fzf
       flameshot
 
-
+      gnumake
       # Database
       supabase-cli
       dbeaver

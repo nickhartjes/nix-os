@@ -10,7 +10,7 @@
     kubelogin-oidc
     kubent
     kubernetes-helm
-    lens
+    openlens
   ];
 
   home.file.".config/k9s/config.yml".source = ./source/k9s-config.yml;

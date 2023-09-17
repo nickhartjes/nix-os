@@ -6,7 +6,7 @@
     [(import ../../modules/desktop/plasma/default.nix)] ++
 #    [(import ../../modules/desktop/gnome/default.nix)] ++
 #    [(import ../../modules/desktop/xfce/default.nix)] ++
-#    [(import ../../modules/desktop/awesome/default.nix)] ++
+#    [(import ../../modules/desktop/hyprland/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
 
@@ -38,6 +38,13 @@
     # Enable networking
     networking.networkmanager.enable = true;
     networking.hostName = "desktop";
+
+    # networking.firewall.allowedTCPPorts = [ 6443 ];
+    # services.k3s.enable = true;
+    # services.k3s.role = "server";
+    # services.k3s.extraFlags = toString [
+    #   # "--kubelet-arg=v=4" # Optionally add additional args to k3s
+    # ];
 
     environment = {
       systemPackages = [

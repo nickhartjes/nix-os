@@ -38,6 +38,8 @@
 
         export GH_EDITOR='vim'
 
+        export JAVA_HOME=$(readlink -e $(type -p javac) | sed  -e 's/\/bin\/javac//g')
+
         # Add local bin
         export PATH=~/.local/bin:$PATH
 
@@ -122,8 +124,8 @@
         alias stowConfig="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --verbose=2 *"
         alias stowConfigRemove="cd ~/.setup/stow && stow --target="$HOME" --dir="$HOME/.setup/stow" --delete --verbose=2 *"
 
-        alias ls="exa --long --icons"
-        alias ll="exa --long --tree --level=2 --icons"
+        alias ls="eza --long --icons"
+        alias ll="eza --long --tree --level=2 --icons"
         alias cat="bat"
         alias df="duf"
 
