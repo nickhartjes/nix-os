@@ -38,6 +38,7 @@
     gnome-icon-theme
     gnome.adwaita-icon-theme
     gnome.gnome-tweaks
+    gnome.gnome-settings-daemon
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.cpufreq
@@ -60,7 +61,6 @@
     gnome.pomodoro
     gnome-solanum
     corectrl
-#    pomotroid
   ];
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];

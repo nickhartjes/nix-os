@@ -128,6 +128,8 @@
       supabase-cli
       dbeaver
 
+      fluxcd
+      discord
 
       unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
 

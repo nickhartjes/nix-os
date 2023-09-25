@@ -3,10 +3,10 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/desktop/plasma/default.nix)] ++
-#    [(import ../../modules/desktop/gnome/default.nix)] ++
+#    [(import ../../modules/desktop/plasma/default.nix)] ++
+    [(import ../../modules/desktop/gnome/default.nix)] ++
 #    [(import ../../modules/desktop/xfce/default.nix)] ++
-#    [(import ../../modules/desktop/hyprland/default.nix)] ++
+    [(import ../../modules/desktop/hyprland/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
 
