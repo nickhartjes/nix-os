@@ -138,17 +138,6 @@ in
     yaru-theme
     zuki-themes
 
-    # Markdown editors
-    retext
-    marker
-    apostrophe
-    cutemarked-ng
-    zettlr
-    notes-up
-    ghostwriter
-    marktext
-    mindforger
-
     dolphin
   ];
 
@@ -275,7 +264,7 @@ in
     # gtk portal needed to make gtk apps happy
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
+      #xdg-desktop-portal-gtk
     ];
 #    gtkUsePortal = true;
   };

@@ -132,7 +132,7 @@
       discord
 
       unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
-
+      ansible
     ];
 
     # Wallpaper
