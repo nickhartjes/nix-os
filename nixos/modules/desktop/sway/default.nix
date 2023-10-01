@@ -264,6 +264,7 @@ in
     # gtk portal needed to make gtk apps happy
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
       #xdg-desktop-portal-gtk
     ];
 #    gtkUsePortal = true;
