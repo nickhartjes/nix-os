@@ -40,6 +40,9 @@
 
         export JAVA_HOME=$(readlink -e $(type -p javac) | sed  -e 's/\/bin\/javac//g')
 
+        # Sops age key
+        export SOPS_AGE_KEY_FILE=$HOME/.age/home-lab.agekey
+
         # Add local bin
         export PATH=~/.local/bin:$PATH
 

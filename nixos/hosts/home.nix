@@ -51,7 +51,7 @@
       vscode                  # IDE
       graphviz                # For plantuml plugin
       # openjdk17               # Java development kit
-      graalvm17-ce
+      graalvm-ce
       act                     # Local Github Actions
       lazygit
       go
@@ -130,7 +130,8 @@
 
       fluxcd
       discord
-      age # entruption tool
+      age # encryption tool
+      sops # Secrets OPeationS
       unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
       ansible
     ];
