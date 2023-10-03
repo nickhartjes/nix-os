@@ -39,7 +39,7 @@ exec swayidle -w \
         resume 'swaymsg "output * dpms on"' \
   before-sleep 'swaylock -f -c 000000'
 
-bindsym $mod+Ctrl+l exec swaylock -f -c 000000
+bindsym $mod+Ctrl+Shift+l exec swaylock -f -c 000000
 
 # exec swayidle -w \
 #     timeout 300 'swaylock-fancy --show-failed-attempts --pixelate' \
@@ -133,6 +133,17 @@ client.background       $base07
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym $mod+Control+Right move workspace to output right
+    bindsym $mod+Control+Left move workspace to output left
+    bindsym $mod+Control+Down move workspace to output down
+    bindsym $mod+Control+Up move workspace to output up
+    
+    bindsym $mod+Control+$right move workspace to output right
+    bindsym $mod+Control+$left move workspace to output left
+    bindsym $mod+Control+$down move workspace to output down
+    bindsym $mod+Control+$up move workspace to output up
+
 #
 # Layout stuff:
 #
@@ -151,7 +162,7 @@ client.background       $base07
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+space floating toggleX
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle

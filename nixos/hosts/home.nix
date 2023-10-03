@@ -127,7 +127,7 @@
       # Database
       supabase-cli
       dbeaver
-
+      talosctl
       fluxcd
       discord
       age # encryption tool
