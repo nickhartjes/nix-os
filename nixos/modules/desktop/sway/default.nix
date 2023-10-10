@@ -83,7 +83,7 @@ in
     pcmanfm
     dolphin
     swayws
-
+    eww-wayland
     # Launchers
     wofi
     fuzzel
@@ -92,7 +92,6 @@ in
     gcc
 
     dolphin
-    octant
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
