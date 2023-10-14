@@ -48,7 +48,7 @@
       jetbrains.idea-ultimate # IDE
       # jetbrains.goland
       # jetbrains.pycharm-professional
-      vscode                  # IDE
+
       graphviz                # For plantuml plugin
       # openjdk17               # Java development kit
       graalvm-ce
@@ -134,6 +134,9 @@
       sops # Secrets OPeationS
       unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
       ansible
+      isoimagewriter
+      usbimager
+      etcher
     ];
 
     # Wallpaper

@@ -5,3 +5,4 @@ vpn/.vpn/nickhartjes.ovpn filter=git-crypt diff=git-crypt
 vpn/.vpn/de.protonvpn.net.udp.ovpn filter=git-crypt diff=git-crypt
 vpn/.vpn/nl.protonvpn.net.udp.ovpn filter=git-crypt diff=git-crypt
 vpn/.vpn/us.protonvpn.net.udp.ovpn filter=git-crypt diff=git-crypt
+talos/.talos/config filter=git-crypt diff=git-crypt
