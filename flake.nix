@@ -21,7 +21,7 @@
         url = "github:nix-community/NUR";                                   # NUR packages
       };
 
-      hyprland.url = "github:hyprwm/Hyprland";
+#      hyprland.url = "github:hyprwm/Hyprland";
 
       # nixgl = {                                                             # OpenGL
       #   url = "github:guibou/nixGL";
@@ -29,7 +29,7 @@
       # };
     };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, hyprland, ... }:      # Function that tells my flake which to use and what do what to do with the dependencies.
+  outputs = inputs @ { self, nixpkgs, home-manager, nur,  ... }:      # Function that tells my flake which to use and what do what to do with the dependencies.
     let                                                                     # Variables that can be used in the config files.
       user = "nh";
       location = "$HOME/.setup";
@@ -38,14 +38,14 @@
       nixosConfigurations = (                                               # NixOS configurations
         import ./nixos/hosts {                                                    # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user location hyprland;            # Also inherit home-manager so it does not need to be defined here.
+          inherit inputs nixpkgs home-manager nur user location;            # Also inherit home-manager so it does not need to be defined here.
         }
       );
 
       homeConfigurations = (                                                # Non-NixOS configurations
         import ./nixos/nix {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user hyprland;
+          inherit inputs nixpkgs home-manager user;
         }
       );
     };

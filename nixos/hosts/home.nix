@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, nur, hyprland, ... }:
+{ config, lib, pkgs, user, nur, ... }:
 
 {
   imports =                                   # Home Manager Modules
@@ -137,12 +137,14 @@
       isoimagewriter
       usbimager
       etcher
+
+      rivalcfg
     ];
 
     # Wallpaper
     file.".config/wall".source = ../modules/themes/wall.jpg;
 
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 
   programs = {
