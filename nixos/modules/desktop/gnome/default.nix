@@ -42,13 +42,13 @@
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.cpufreq
-    gnomeExtensions.espresso
+#    gnomeExtensions.espresso
     gnomeExtensions.forge
-    gnomeExtensions.freon
+#    gnomeExtensions.freon
     gnomeExtensions.paperwm
-    gnomeExtensions.timepp
+#    gnomeExtensions.timepp
     layan-gtk-theme
-    materia-theme
+#    materia-theme
     pop-gtk-theme
     pop-icon-theme
     roboto-slab

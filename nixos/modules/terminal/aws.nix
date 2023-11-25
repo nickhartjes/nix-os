@@ -1,7 +1,7 @@
 {pkgs, lib, config, ...}:
 {
   home.packages = with pkgs; [
-    awscli2
+    #awscli2
   ];
 
 #  home.file.".aws/config".source = ./source/config.txt;

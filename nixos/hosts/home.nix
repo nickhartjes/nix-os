@@ -37,7 +37,7 @@
       corefonts               # Fonts for Microsoft
 
       # Browser
-      brave
+#      brave
 
 
 
@@ -139,6 +139,8 @@
       etcher
 
       rivalcfg
+
+      calibre
     ];
 
     # Wallpaper
