@@ -122,10 +122,12 @@
 
 
     printing.enable = true; # Printer drivers
-    avahi.enable = true;
-    avahi.nssmdns = true;
-    # for a WiFi printer
-    avahi.openFirewall = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      # for a WiFi printer
+      openFirewall = true;
+    };
   };
 
   ##################
@@ -171,6 +173,7 @@
       "electron-21.4.0"
       "nodejs-16.20.0"
       "electron-19.1.9"
+      "electron-25.9.0"
     ];
   };
 

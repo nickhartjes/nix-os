@@ -60,7 +60,7 @@
     gnome-multi-writer
     gnome.pomodoro
     gnome-solanum
-    corectrl
+    #corectrl
   ];
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];

@@ -51,7 +51,8 @@
 
       graphviz                # For plantuml plugin
       # openjdk17               # Java development kit
-      graalvm-ce
+      #graalvm-ce
+      jdk21
       act                     # Local Github Actions
       lazygit
       go
@@ -122,6 +123,10 @@
       macchina
       fzf
       flameshot
+
+      android-studio
+      android-tools
+
 
       gnumake
       # Database
