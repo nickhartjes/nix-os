@@ -80,6 +80,28 @@ in
   };
 
   ##################
+  ## Thinkpad T15 Profile
+  ##################
+  thinkpad-t15 = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit inputs user location; };
+    modules = [
+      nur.nixosModules.nur
+      ./thinkpad-t15
+      ./configuration.nix
+
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.users.${user} = {
+          imports = [(import ./home.nix)] ++ [(import ./thinkpad-t15/home.nix)];
+        };
+      }
+    ];
+  };
+
+  ##################
   ## VM Profile
   ##################
   vm = lib.nixosSystem {
