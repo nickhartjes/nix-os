@@ -5,3 +5,5 @@ id_ed25519_github_cli filter=git-crypt diff=git-crypt
 id_ed25519_github_cli.pub filter=git-crypt diff=git-crypt
 id_rsa_ubuntu filter=git-crypt diff=git-crypt
 id_rsa_ubuntu.pub filter=git-crypt diff=git-crypt
+id_ed25519_thinkpad_t15 filter=git-crypt diff=git-crypt
+id_ed25519_thinkpad_t15.pub filter=git-crypt diff=git-crypt
