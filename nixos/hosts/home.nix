@@ -28,9 +28,14 @@
       duf                     # Alternative for du
       eza                     # Alternative for ls
 
+      nushellFull
       # Video/Audio
       mpv                     # Media Player
       pavucontrol             # Audio control
+
+      flutter
+      android-tools
+      haskellPackages.adb
 
       # Office
       libreoffice
@@ -77,8 +82,8 @@
 
 #      protonvpn-gui
 
-#      python3Full
-#      python3Packages.pip
+       python3Full
+       python3Packages.pip
 #      python3Packages.virtualenv
 #      chromedriver
 #      mkdocs
