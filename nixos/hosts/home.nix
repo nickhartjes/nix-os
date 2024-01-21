@@ -124,7 +124,7 @@
 #      neo4j-desktop
 #      k6
 
-      pgmodeler
+      # pgmodeler
       macchina
       fzf
       flameshot
