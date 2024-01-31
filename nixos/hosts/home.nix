@@ -35,7 +35,7 @@
 
       flutter
       android-tools
-      haskellPackages.adb
+      #haskellPackages.adb
 
       # Office
       libreoffice
@@ -43,8 +43,7 @@
 
       # Browser
 #      brave
-
-
+      cpufrequtils # for gnome
 
 #      insomnia
 #      pywal

@@ -8,24 +8,16 @@
 #    [(import ../../modules/desktop/sway/default.nix)] ++
 #    [(import ../../modules/desktop/hyprland-nvidia/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-#    [(import ../../modules/hardware/displaylink.nix)] ++
+    [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 
     ##################
     ## System boot
     ##################
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot";
-    
-    # Setup keyfile
-    boot.initrd.secrets = {
-      "/crypto_keyfile.bin" = null;
-    };
   
     ##################
     ## Hardware specific sytem settings

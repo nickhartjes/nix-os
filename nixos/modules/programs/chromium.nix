@@ -17,8 +17,7 @@
         "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
         "mlomiejdfkolichcflejclcbmpeaniij" # Ghostery
         "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
-        "mapjgeachilmcbbokkgcbgpbakaaeehi" # Omni
-        "cimiefiiaegbelhefglklhhakcgmhkai" # Plasma Integration
+        "dbfoemgnkgieejfkaddieamagdfepnff" # 2fas two-factor authenticator
       ];
       commandLineArgs = [
         "--homepage='tweakers.net'"

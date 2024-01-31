@@ -43,9 +43,11 @@
     gnomeExtensions.caffeine
     gnomeExtensions.cpufreq
 #    gnomeExtensions.espresso
-    gnomeExtensions.forge
-#    gnomeExtensions.freon
-    gnomeExtensions.paperwm
+#    gnomeExtensions.forge
+    gnomeExtensions.freon
+    gnomeExtensions.tophat
+    gtop
+#    gnomeExtensions.paperwm
 #    gnomeExtensions.timepp
     layan-gtk-theme
 #    materia-theme
