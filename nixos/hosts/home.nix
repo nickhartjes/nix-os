@@ -37,6 +37,8 @@
       android-tools
       #haskellPackages.adb
 
+      rustdesk
+
       # Office
       libreoffice
       corefonts               # Fonts for Microsoft
