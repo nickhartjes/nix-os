@@ -61,6 +61,9 @@
       lazygit
       go
 
+      gcc
+      fzf   # For vim
+      fzf-zsh
       #foxitreader
       #adobe-reader
 
