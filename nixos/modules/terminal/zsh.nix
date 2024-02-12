@@ -115,7 +115,7 @@
         alias slackMagic="ps aux | grep slack | grep -v grep | grep magic"
 
         # Git
-        alias cloneRepos="sh ~/.setup/nixos/scripts/cloneRepos.sh"
+        alias updateRepos="sh ~/.setup/nixos/scripts/update_repos.sh"
 
         # Nix
         alias nixSwitch="cd ~/.setup && sudo nixos-rebuild switch --flake .#$HOST"
