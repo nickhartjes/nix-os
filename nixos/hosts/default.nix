@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, split-monitor-workspaces, nur, user, location, ... }:
 
 let
   # System architecture
@@ -84,7 +84,7 @@ in
   ##################
   thinkpad-t15 = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location split-monitor-workspaces; };
     modules = [
       nur.nixosModules.nur
       ./thinkpad-t15
@@ -96,7 +96,47 @@ in
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./thinkpad-t15/home.nix)];
-        };
+          wayland.windowManager.hyprland = {
+            enable = true;
+            settings = {
+              decoration = {
+                shadow_offset = "0 5";
+                "col.shadow" = "rgba(00000099)";
+              };
+              plugin = {
+                  split-monitor-workspaces = {
+                      count = 10;
+                      keep_focused = true;
+                  };
+              };
+              "$mod" = "SUPER";
+              bind =
+                [ 
+                  "$mod, F, exec, firefox"
+                  ", Print, exec, grimblast copy area"
+                ]
+                ++ (
+                  # workspaces
+                  # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+                  builtins.concatLists (builtins.genList (
+                      x: let
+                        ws = let
+                          c = (x + 1) / 10;
+                        in
+                          builtins.toString (x + 1 - (c * 10));
+                      in [
+                        "$mod, ${ws}, workspace, ${toString (x + 1)}"
+                        "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                      ]
+                    )
+                  10)
+                );
+            };
+            plugins = [
+              split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+            ];
+          };
+        }; 
       }
     ];
   };

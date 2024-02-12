@@ -83,11 +83,17 @@
 #      gnumake
 
 #      rustup
-
+#
+       fzf
+       libstdcxx5
+       tmux
 #      protonvpn-gui
+
+       awscli2
 
        python3Full
        python3Packages.pip
+       poetry
 #      python3Packages.virtualenv
 #      chromedriver
 #      mkdocs

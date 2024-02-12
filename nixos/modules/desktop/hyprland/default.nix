@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, split-monitor-workspaces, ... }:
 
 {
 
-#  imports = [
+  imports = [
 #    ../wayland/default.nix
-#    ../../programs/waybar-hyprland.nix
-#  ];
+    ../../programs/waybar-hyprland.nix
+  ];
 
   environment = {
 
@@ -14,9 +14,11 @@
       xdg-desktop-portal-hyprland
       hyprland-protocols
 
+      avizo
 
-
-
+      ironbar
+      gbar
+      pyprland
 
       wofi        # Launcher
       eww-wayland # Statusbar
@@ -61,21 +63,9 @@
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland = {
-        enable = true;
-      };
-    };
     nm-applet = {
       enable = true;
       indicator = true;
     };
   };
-
-  #home = {
-  #  wayland.windowManager.hyprland.plugins = [
-  #    inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-  #  ];
-  #};
 }
