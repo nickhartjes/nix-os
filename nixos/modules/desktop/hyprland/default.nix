@@ -1,4 +1,4 @@
-{ config, lib, pkgs, split-monitor-workspaces, ... }:
+{ config, lib, pkgs, inputs, split-monitor-workspaces, ... }:
 
 {
 
@@ -11,8 +11,8 @@
 
 
     systemPackages = with pkgs; [       # Packages installed
-      xdg-desktop-portal-hyprland
-      hyprland-protocols
+      #xdg-desktop-portal-hyprland
+      #hyprland-protocols
 
       avizo
 
@@ -63,6 +63,10 @@
   };
 
   programs = {
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    };
     nm-applet = {
       enable = true;
       indicator = true;
