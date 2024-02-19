@@ -69,8 +69,8 @@
       #foxitreader
       #adobe-reader
 
-#      bc                  #used for waybar
-#      glxinfo             #used for waybar
+      bc                  #used for waybar
+      glxinfo             #used for waybar
 #      font-awesome
 
 #      pkg-config
