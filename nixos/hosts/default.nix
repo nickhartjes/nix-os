@@ -59,7 +59,7 @@ in
                   "$mod SHIFT,Q,exec,wlogout --protocol layer-shell"
                   "$mod,E,exec,dolphin"
                   "$mod,V,togglefloating"
-                  "$mod,P,exec,wofi --show drun"
+                  "$mod,P,exec,wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config"
                   "$mod,S,exec,grim -t jpeg -q 10 -g \"$(slurp)\" - | swappy -f -"
 
                   "$mod,h,movefocus,l"
@@ -110,6 +110,7 @@ in
                 "pypr"
                 "blueman-applet"
                 "~/.config/sway/random-background.sh"
+                "waybar"
               ];
             };
             plugins = [
