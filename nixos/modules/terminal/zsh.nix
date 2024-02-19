@@ -133,8 +133,8 @@
         alias df="duf"
 
         #pfetch                                # Show fetch logo on terminal start
-        neofetch                              # Show fetch logo on terminal start
-        #macchina
+        #neofetch                              # Show fetch logo on terminal start
+        macchina
       '';
     };
   };
