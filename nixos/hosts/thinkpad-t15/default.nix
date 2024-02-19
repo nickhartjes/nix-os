@@ -33,7 +33,7 @@
     services.xserver.videoDrivers = [ "modesetting" ];
 
     # Enable automatic login for the user.
-    services.xserver.displayManager.autoLogin.enable = true;
+    services.xserver.displayManager.autoLogin.enable = false;
     services.xserver.displayManager.autoLogin.user = "nh";
 
     programs = {
@@ -44,5 +44,6 @@
      logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
       auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
       hardware.bolt.enable = true;
+      blueman-applet.enable = true;
     };
 }
