@@ -86,9 +86,11 @@ let
       "avizo-service"
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
-      "blueman-applet"
       "~/.config/sway/random-background.sh"
-      "waybar"
+    ];
+    windowrulev2 = [
+      "opacity 0.9 0.9,title:Visual Studio Code"
+      "opacity 0.9 0.9,class:kitty-dropterm"
     ];
   };
 
