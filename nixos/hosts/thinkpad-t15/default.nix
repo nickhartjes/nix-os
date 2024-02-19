@@ -44,6 +44,5 @@
      logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
       auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
       hardware.bolt.enable = true;
-      blueman-applet.enable = true;
     };
 }
