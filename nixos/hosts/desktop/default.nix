@@ -57,5 +57,6 @@
 
     services = {
       xserver.videoDrivers = [ "amdgpu" ];
+      blueman.enable = true;
     };
 }
