@@ -190,11 +190,11 @@
         "nix-filter": "nix-filter"
       },
       "locked": {
-        "lastModified": 1708365860,
+        "lastModified": 1708453398,
         "narHash": "sha256-0d7jZaInWveDyYJMg95YkuvCWNz3TfqKleQpRxyIR3c=",
         "owner": "zjeffer",
         "repo": "split-monitor-workspaces",
-        "rev": "cc9ad9316609051d2f9c991e510f81381df1bde7",
+        "rev": "20698a709223dd0226bb49f364d78c17de2f2212",
         "type": "github"
       },
       "original": {

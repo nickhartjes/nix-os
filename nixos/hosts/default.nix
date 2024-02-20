@@ -100,7 +100,6 @@ let
         "$mod,mouse:273,resizewindown"
     ];
     exec-once = [
-      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "avizo-service"
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
