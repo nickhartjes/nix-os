@@ -22,6 +22,7 @@
       commandLineArgs = [
         "--homepage='tweakers.net'"
         "--force-dark-mode"
+        "--ozone-platform-hint=auto"
       ];
     };
   };

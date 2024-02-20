@@ -14,6 +14,8 @@
       #xdg-desktop-portal-hyprland
       #hyprland-protocols
 
+      #xwaylandvideobridge
+
       avizo
 
       ironbar
@@ -38,7 +40,6 @@
       mako                      # Lightweight notification daemon for Wayland
       libnotify                 # For sending notifications with notify-send
 
-
       playerctl
       pop-gtk-theme
       lxappearance
@@ -50,7 +51,7 @@
       bluez-tools
       blueman                   # GTK+ Bluetooth Manager
       blueberry
-      networkmanagerapplet      # NetworkManager control applet for GNOME
+      #networkmanagerapplet      # NetworkManager control applet for GNOME
 
       swappy                    # A Wayland native snapshot editing tool
       grim                      # Screenshot utility for Wayland

@@ -12,12 +12,24 @@ let
 
     hyprlandSettings = {
     monitor = [
-      "HDMI-A-1,2560x1440,auto,1"
-      "DP-3,2560x1440,auto,1"
+      "HDMI-A-1,2560x1440,auto,1,bitdepth,10"
+      "DP-3,2560x1440,auto,1,bitdepth,10"
     ];
+    input = {
+      kb_layout = "us";
+      follow_mouse=1;
+      touchpad = {
+        natural_scroll = "no";
+      };
+      sensitivity=0; 
+    };
     decoration = {
       rounding = 3;
-      shadow_offset = "1 5";
+      blur = {
+        enabled = true;
+        size = 4;
+      };
+      shadow_offset = "5 5";
       "col.shadow" = "rgba(00000099)";
     };
     plugin = {
@@ -82,7 +94,13 @@ let
         ",XF86AudioRaiseVolume, exec, volumectl -u up"
         ",XF86AudioLowerVolume, exec, volumectl -u down"
     ];
+    bindm = 
+      [
+        "$mod,mouse:272,movewindow"
+        "$mod,mouse:273,resizewindown"
+    ];
     exec-once = [
+      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "avizo-service"
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
@@ -91,6 +109,11 @@ let
     windowrulev2 = [
       "opacity 0.9 0.9,title:Visual Studio Code"
       "opacity 0.9 0.9,class:kitty-dropterm"
+      "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
+      "noanim,class:^(xwaylandvideobridge)$"
+      "noinitialfocus,class:^(xwaylandvideobridge)$"
+      "maxsize 1 1,class:^(xwaylandvideobridge)$"
+      "noblur,class:^(xwaylandvideobridge)$"
     ];
   };
 

@@ -3,6 +3,7 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
+    [(import ../../modules/programs/display-managers/lightdm.nix)] ++
 #    [(import ../../modules/desktop/plasma/default.nix)] ++
     [(import ../../modules/desktop/gnome/default.nix)] ++
     [(import ../../modules/desktop/cosmic/default.nix)] ++

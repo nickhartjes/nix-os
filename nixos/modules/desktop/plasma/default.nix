@@ -5,29 +5,29 @@
 
   services = {
     xserver = {
-      enable = true;                    # Display Manager
-#      defaultSession = "plasmawayland";
-      displayManager = {                          # Display Manager
-        autoLogin = {
-          enable = false;
-          user = "nh";
-        };
-        sddm = {
-          enable = false;                          # Wallpaper and gtk theme
-#          greeters = {
-#            mini = {
-#              enable = true;
-#              user = "your-username";
-#              extraConfig = ''
-#                  [greeter]
-#                  show-password-label = false
-#                  [greeter-theme]
-#                  background-image = ""
-#              '';
-#            };
-#          };
-        };
-      };
+#       enable = true;                    # Display Manager
+# #      defaultSession = "plasmawayland";
+#       displayManager = {                          # Display Manager
+#         autoLogin = {
+#           enable = false;
+#           user = "nh";
+#         };
+#         sddm = {
+#           enable = false;                          # Wallpaper and gtk theme
+# #          greeters = {
+# #            mini = {
+# #              enable = true;
+# #              user = "your-username";
+# #              extraConfig = ''
+# #                  [greeter]
+# #                  show-password-label = false
+# #                  [greeter-theme]
+# #                  background-image = ""
+# #              '';
+# #            };
+# #          };
+#         };
+#       };
       desktopManager= {
         plasma5 = {                                 # Window Manager
           enable = true;

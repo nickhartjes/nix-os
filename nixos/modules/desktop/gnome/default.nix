@@ -4,12 +4,12 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = {                          # Display Manager
-        gdm = {
-          enable = true;                          # Wallpaper and gtk theme
-        };
-#        defaultSession = "gnome";            # none+bspwm -> no real display manager
-      };
+#       displayManager = {                          # Display Manager
+#         gdm = {
+#           enable = true;                          # Wallpaper and gtk theme
+#         };
+# #        defaultSession = "gnome";            # none+bspwm -> no real display manager
+#       };
       desktopManager= {
         gnome = {                                 # Window Manager
           enable = true;
