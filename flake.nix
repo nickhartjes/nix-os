@@ -21,10 +21,10 @@
         url = "github:nix-community/NUR";                                   # NUR packages
       };
 
-      hyprland.url = "github:hyprwm/Hyprland";
+      hyprland.url = "github:hyprwm/Hyprland/a42b984f51a00e88a13a45e1b5e9e3d4ec470254";
       split-monitor-workspaces = {
-        #url = "github:Duckonaut/split-monitor-workspaces";
-        url = "github:zjeffer/split-monitor-workspaces";
+        url = "github:Duckonaut/split-monitor-workspaces";
+        #url = "github:zjeffer/split-monitor-workspaces";
         inputs.hyprland.follows = "hyprland";
       };
     };
