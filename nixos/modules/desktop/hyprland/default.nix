@@ -11,7 +11,7 @@
 
 
     systemPackages = with pkgs; [       # Packages installed
-      #xdg-desktop-portal-hyprland
+      xdg-desktop-portal-hyprland
       #hyprland-protocols
 
       #xwaylandvideobridge
@@ -62,6 +62,8 @@
       wl-clipboard
     ];
   };
+
+  programs.zsh.enable = true; 
 
   programs = {
     hyprland = {

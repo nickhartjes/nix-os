@@ -28,7 +28,7 @@ separator_color=false
 path="~/.config/macchina/themes/ascii-entrnce.txt"
 
 [keys]
-host=" host"
+host=" hosta"
 kernel=" kernel"
 distro=" distro"
 packages=" packages"

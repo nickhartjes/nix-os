@@ -1,21 +1,8 @@
 [pyprland]
 plugins = [
-  "scratchpads"
+  "scratchpads",
+  "shortcuts_menu"
 ]
-
-[scratchpads.stb]
-animation = "fromBottom"
-command = "kitty --class kitty-stb sstb"
-class = "kitty-stb"
-lazy = true
-size = "75% 45%"
-
-[scratchpads.stb-logs]
-animation = "fromTop"
-command = "kitty --class kitty-stb-logs stbLog"
-class = "kitty-stb-logs"
-lazy = true
-size = "75% 40%"
 
 [scratchpads.term]
 animation = "fromTop"
@@ -23,10 +10,23 @@ command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "75% 60%"
 
-[scratchpads.volume]
-animation = "fromRight"
-command = "pavucontrol"
-class = "pavucontrol"
+[scratchpads.browser]
+animation = "fromTop"
+command = "chromium"
+class = "chromium"
 lazy = true
 size = "40% 90%"
 unfocus = "hide"
+
+[shortcuts_menu.entries]
+"Open Jira ticket" = 'open-jira-ticket "$(wl-paste)"'
+Relayout = "pypr relayout"
+"Fetch window" = "pypr fetch_client_menu"
+"Hyprland socket" = 'kitty  socat - "UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"'
+"Hyprland logs" = 'kitty tail -f /tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log'
+
+"Serial USB Term" = [
+    {name="device", command="ls -1 /dev/ttyUSB*; ls -1 /dev/ttyACM*"},
+    {name="speed", options=["115200", "9600", "38400", "115200", "256000", "512000"]},
+    "kitty miniterm --raw --eol LF [device] [speed]"
+]

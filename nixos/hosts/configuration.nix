@@ -48,19 +48,18 @@
     };
   };
 
-  fonts.packages = with pkgs; [                # Fonts
-    carlito                                 # NixOS
-    vegur                                   # NixOS
-    source-code-pro
-    jetbrains-mono
-    font-awesome                            # Icons
-    corefonts                               # MS
-    (nerdfonts.override {                   # Nerdfont Icons override
-      fonts = [
-        "FiraCode"
-      ];
-    })
-  ];
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [                # Fonts
+      carlito                                 # NixOS
+      vegur                                   # NixOS
+      source-code-pro
+      jetbrains-mono
+      font-awesome                            # Icons
+      corefonts                               # MS
+      nerdfonts
+    ];
+  };
 
   environment = {
     variables = {
@@ -186,5 +185,6 @@
     };
     stateVersion = "24.05";
   };
+
 }
 

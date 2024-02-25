@@ -50,7 +50,7 @@ let
         "$mod,E,exec,dolphin"
         "$mod,V,togglefloating"
         "$mod,P,exec,wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config"
-        "$mod,S,exec,grim -t jpeg -q 10 -g \"$(slurp)\" - | swappy -f -"
+        "$mod,S,exec,grim -t jpeg -q 80 -g \"$(slurp)\" - | swappy -f -"
 
         "$mod,h,movefocus,l"
         "$mod,l,movefocus,r"
