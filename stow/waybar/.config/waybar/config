@@ -4,10 +4,13 @@
     "height": 35, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
+
+    
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "idle_inhibitor", "pulseaudio", "backlight", "network"],
-    "modules-center": ["hyprland/window"],
+    "modules-center": ["hyprland/window", "custom/spotify"],
     "modules-right": ["cpu", "memory", "temperature", "battery", "tray", "clock"],
+
     // Modules configuration
      "hyprland/workspaces": {
          "disable-scroll": true,
@@ -188,14 +191,18 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/updates": {
-        "format": "{} {icon}",
+    "custom/spotify": {
+        "format": "{icon} {}",
+        "escape": true,
         "return-type": "json",
-        "format-icons": {
-            "has-updates": "󱍷",
-            "updated": "󰂪"
-        },
-        "exec-if": "which waybar-module-pacman-updates",
-        "exec": "waybar-module-pacman-updates"
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "killall spotify",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up" : "playerctl -p spotify next",
+        "on-scroll-down" : "playerctl -p spotify previous",
+        "exec": "$HOME/.config/waybar/custom/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+        "exec-if": "pgrep spotify"
     }
 }

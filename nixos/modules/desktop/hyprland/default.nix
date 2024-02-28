@@ -3,7 +3,6 @@
 {
 
   imports = [
-#    ../wayland/default.nix
     ../../programs/waybar-hyprland.nix
   ];
 
@@ -12,9 +11,6 @@
 
     systemPackages = with pkgs; [       # Packages installed
       xdg-desktop-portal-hyprland
-      #hyprland-protocols
-
-      #xwaylandvideobridge
 
       avizo
 
@@ -23,7 +19,7 @@
       pyprland
 
       wofi        # Launcher
-      eww-wayland # Statusbar
+      eww         # Statusbar
       wdisplays
 
       swww        # Efficient animated wallpaper daemon for wayland, controlled at runtime
@@ -73,6 +69,9 @@
     nm-applet = {
       enable = true;
       indicator = true;
+    };
+    waybar = {
+      enable = true;
     };
   };
 }

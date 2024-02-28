@@ -104,9 +104,11 @@ let
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
       "~/.config/sway/random-background.sh"
+      "waybar"
     ];
     windowrulev2 = [
       "opacity 0.9 0.9,title:Visual Studio Code"
+      "opacity 0.9 0.9,title:wofi"
       "opacity 0.9 0.9,class:kitty-dropterm"
       "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
       "noanim,class:^(xwaylandvideobridge)$"

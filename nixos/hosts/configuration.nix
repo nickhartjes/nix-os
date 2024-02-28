@@ -130,18 +130,24 @@
   };
 
   ##################
-  ## Secrurity
+  ## Security
   ##################
 
   security = {
     rtkit.enable = true;
     apparmor.enable = true;
+    pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
   };
 
   services.clamav = {
     daemon.enable = true;
     updater.enable = true;
   };
+
 
   ##################
   ## Nix settings
@@ -168,11 +174,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "python-2.7.18.6"
-      "electron-21.4.0"
-      "nodejs-16.20.0"
-      "electron-19.1.9"
-      "electron-25.9.0"
+      "electron-19.1.9" #etcher-1.18.12
     ];
   };
 

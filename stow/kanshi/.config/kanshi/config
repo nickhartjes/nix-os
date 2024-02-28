@@ -36,3 +36,14 @@ profile "Desktop  2-way setup" {
 	output HDMI-A-1 mode 2560x1440 position 0,0
 	output DP-3 mode 2560x1440 position 2560,0
 }
+
+
+profile "Work 2-way Ultrawide" {
+	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@99.982 position 0,0
+	output eDP-1 mode 1920x1080 position 1000,1440
+}
+
+profile "Work Ultrawide only" {
+	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@59.97300 position 0,0
+	output eDP-1 disable
+}
