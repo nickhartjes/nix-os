@@ -180,7 +180,7 @@ in
   ##################
   thinkpad = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location split-monitor-workspaces; };
     modules = [
       nur.nixosModules.nur
       ./thinkpad
@@ -192,6 +192,13 @@ in
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./thinkpad/home.nix)];
+            wayland.windowManager.hyprland = {
+            enable = true;
+            settings = hyprlandSettings;
+            plugins = [
+              split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+            ];
+          };
         };
       }
     ];
