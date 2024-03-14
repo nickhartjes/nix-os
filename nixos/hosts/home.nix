@@ -56,9 +56,7 @@
       # jetbrains.pycharm-professional
 
       graphviz                # For plantuml plugin
-      # openjdk17               # Java development kit
-      #graalvm-ce
-      jdk21
+      jdk21                   # Java development kit
       act                     # Local Github Actions
       lazygit
       go

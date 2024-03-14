@@ -22,10 +22,10 @@
       };
 
       #hyprland.url = "github:hyprwm/Hyprland";
-      hyprland.url = "github:hyprwm/Hyprland/a42b984f51a00e88a13a45e1b5e9e3d4ec470254";
+      hyprland.url = "github:hyprwm/Hyprland/4bff762d9733ba7334cd37b995cf51552cc80be0";
       split-monitor-workspaces = {
-        #url = "github:Duckonaut/split-monitor-workspaces";
-        url = "github:Duckonaut/split-monitor-workspaces/2b1abdbf9e9de9ee660540167c8f51903fa3d959";
+        url = "github:Duckonaut/split-monitor-workspaces";
+        # url = "github:Duckonaut/split-monitor-workspaces/2b1abdbf9e9de9ee660540167c8f51903fa3d959";
         #url = "github:zjeffer/split-monitor-workspaces";
         inputs.hyprland.follows = "hyprland";
       };

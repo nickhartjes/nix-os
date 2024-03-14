@@ -99,6 +99,11 @@ let
         "$mod,mouse:272,movewindow"
         "$mod,mouse:273,resizewindown"
     ];
+    bindl = 
+      [
+        ",switch:on:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, disable'"
+        ",switch:off:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, 1980x1080, 0x0, 1'"
+    ];
     exec-once = [
       "avizo-service"
       "kanshi -c ~/.config/kanshi/config"

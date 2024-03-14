@@ -44,6 +44,7 @@ TRADER_FOLDER="trader"
 TRADER_REPO_LIST=(
     "git@github.com:EnergyExchangeEnablersBV/entrnce-deal-platform.git"
     "git@github.com:EnergyExchangeEnablersBV/trader-robot.git"
+    "git@github.com:EnergyExchangeEnablersBV/entrnce-brp-messaging-module"
 )
 clone_or_fetch "$TRADER_FOLDER" TRADER_REPO_LIST
 
@@ -57,7 +58,7 @@ DEVOPS_REPO_LIST=(
 )
 clone_or_fetch "$DEVOPS_FOLDER" DEVOPS_REPO_LIST
 
-MATCHER_FOLDER="devops"
+MATCHER_FOLDER="matcher"
 MATCHER_REPO_LIST=(
     "git@github.com:EnergyExchangeEnablersBV/matcher-advisor.git"
 )

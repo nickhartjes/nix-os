@@ -11,7 +11,9 @@
   services = {
     gpg-agent = {
         enable = true;
-        pinentryFlavor = "curses";
+        #pinentryPackage = with pkgs; [ 
+        #  "curses"
+        #];
     };
   };
 }

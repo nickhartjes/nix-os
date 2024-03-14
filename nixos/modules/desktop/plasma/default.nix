@@ -4,34 +4,9 @@
   programs.dconf.enable = true;
 
   services = {
-    xserver = {
-#       enable = true;                    # Display Manager
-# #      defaultSession = "plasmawayland";
-#       displayManager = {                          # Display Manager
-#         autoLogin = {
-#           enable = false;
-#           user = "nh";
-#         };
-#         sddm = {
-#           enable = false;                          # Wallpaper and gtk theme
-# #          greeters = {
-# #            mini = {
-# #              enable = true;
-# #              user = "your-username";
-# #              extraConfig = ''
-# #                  [greeter]
-# #                  show-password-label = false
-# #                  [greeter-theme]
-# #                  background-image = ""
-# #              '';
-# #            };
-# #          };
-#         };
-#       };
-      desktopManager= {
-        plasma5 = {                                 # Window Manager
-          enable = true;
-        };
+    desktopManager= {
+      plasma6 = {                                 # Window Manager
+        enable = true;
       };
     };
     pipewire = {
@@ -48,32 +23,32 @@
 
   environment.systemPackages = with pkgs; [       # Packages installed
 
-    layan-kde
-    materia-theme
-    materia-kde-theme
-    material-design-icons
-    arc-kde-theme
-    adapta-kde-theme
-    graphite-kde-theme
-    nordic
-    sierra-breeze-enhanced
+    #layan-kde
+    #materia-theme
+    #materia-kde-theme
+    #material-design-icons
+    #arc-kde-theme
+    #adapta-kde-theme
+    #graphite-kde-theme
+    #nordic
+    #sierra-breeze-enhanced
 
-    # KDE Fonts
-    oxygenfonts
-    iosevka
+    ## KDE Fonts
+    #oxygenfonts
+    #iosevka
 
 
 
-    # Plasma applications
-    plasma-theme-switcher
-    plasma-integration
-    plasma-applet-caffeine-plus
-    plasma-thunderbolt
-    plasma-systemmonitor
-    ark                           # Archive utility
-    okular
+    ## Plasma applications
+    #plasma-theme-switcher
+    #plasma-integration
+    #plasma-applet-caffeine-plus
+    #plasma-thunderbolt
+    #plasma-systemmonitor
+    #ark                           # Archive utility
+    #okular
 
-    libsForQt5.plasma-workspace
-    libsForQt5.plasma-workspace-wallpapers
+    #libsForQt5.plasma-workspace
+    #libsForQt5.plasma-workspace-wallpapers
   ];
 }
