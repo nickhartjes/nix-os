@@ -14,7 +14,6 @@ size = "75% 60%"
 animation = "fromTop"
 command = "chromium"
 class = "chromium"
-lazy = true
 size = "40% 90%"
 unfocus = "hide"
 

@@ -3,7 +3,7 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/programs/display-managers/lightdm.nix)] ++
+    [(import ../../modules/programs/display-managers/sddm.nix)] ++
     [(import ../../modules/desktop/plasma/default.nix)] ++
     [(import ../../modules/desktop/hyprland/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++

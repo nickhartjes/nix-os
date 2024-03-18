@@ -9,7 +9,7 @@
     zsh = {
       enable = true;
       dotDir = ".config/zsh_nix";
-      enableAutosuggestions = true;             # Auto suggest options and highlights syntact, searches in history for options
+      autosuggestion.enable = true;             # Auto suggest options and highlights syntact, searches in history for options
       syntaxHighlighting.enable = true;
       history.size = 10000;
 

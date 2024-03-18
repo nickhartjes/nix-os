@@ -15,6 +15,9 @@ let
       "HDMI-A-1,2560x1440,auto,1,bitdepth,10"
       "DP-3,2560x1440,auto,1,bitdepth,10"
     ];
+    xwayland = {
+      force_zero_scaling = "true";
+    };
     input = {
       kb_layout = "us";
       follow_mouse=1;
@@ -109,7 +112,7 @@ let
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
       "~/.config/sway/random-background.sh"
-      "waybar"
+      "swaync"
     ];
     windowrulev2 = [
       "opacity 0.9 0.9,title:Visual Studio Code"

@@ -1,10 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, home, lib, pkgs, ... }:
 
 {
   services = {
     xserver = {
-      enable = true;                    # Display Manager
-#      defaultSession = "plasmawayland";
+      enable = true;                              # Display Manager
       displayManager = {                          # Display Manager
         autoLogin = {
           enable = false;
@@ -16,4 +15,8 @@
       };
     };
   };
+
+  #packages = with pkgs; [       # Packages installed
+  #  sddm-chili-theme
+  #];
 }

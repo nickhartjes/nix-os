@@ -10,6 +10,10 @@
 
 
     systemPackages = with pkgs; [       # Packages installed
+      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+      inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
+      inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
+      
       xdg-desktop-portal-hyprland
 
       avizo
@@ -33,7 +37,9 @@
       swayidle
       swaybg
 
-      mako                      # Lightweight notification daemon for Wayland
+      swaynotificationcenter
+
+      #mako                      # Lightweight notification daemon for Wayland
       libnotify                 # For sending notifications with notify-send
 
       playerctl

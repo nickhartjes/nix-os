@@ -154,7 +154,7 @@
       ansible
       isoimagewriter
       usbimager
-      etcher
+      #etcher
 
       rivalcfg
 

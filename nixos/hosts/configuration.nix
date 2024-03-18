@@ -174,7 +174,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "electron-19.1.9" #etcher-1.18.12
+      #"electron-19.1.9" #etcher-1.18.12
     ];
   };
 

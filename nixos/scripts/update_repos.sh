@@ -55,6 +55,7 @@ DEVOPS_REPO_LIST=(
     "git@github.com:EnergyExchangeEnablersBV/ephemeral-environment-playground.git"
     "git@github.com:EnergyExchangeEnablersBV/aws-cdk.git"
     "git@github.com:EnergyExchangeEnablersBV/devops-aws-cdk.git"
+    "git@github.com:EnergyExchangeEnablersBV/devops-helm-charts.git"
 )
 clone_or_fetch "$DEVOPS_FOLDER" DEVOPS_REPO_LIST
 
