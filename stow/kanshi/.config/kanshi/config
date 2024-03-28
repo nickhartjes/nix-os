@@ -18,32 +18,37 @@ profile "Thinkpad  2-way setup" {
 }
 
 profile "Desktop 2-way setup" {
-	output DP-1 mode 2560x1440 position 0,0
-	output DP-2 mode 2560x1440 position 2560,0
+	output DP-1 mode 2560x1440 position 0,0 
+	output DP-2 mode 2560x1440 position 2560,0 scale 1
 }
 
 profile "Thinkpad Work 2-way ultrawide setup" {
-	output DP-2 mode 3440x1440@99.982Hz position 0,0
-	output eDP-1 mode 1920x1080 position 3440,360
+	output DP-2 mode 3440x1440@99.982Hz position 0,0 scale 1
+	output eDP-1 mode 1920x1080 position 3440,360 scale 1
 }
 
 profile "Thinkpad Work ultrawide only setup" {
-	output DP-2 mode 3440x1440@99.982Hz position 0,0
+	output DP-2 mode 3440x1440@99.982Hz position 0,0 scale 1
 	output eDP-1 disable
 }
 
 profile "Desktop  2-way setup" {
-	output HDMI-A-1 mode 2560x1440 position 0,0
-	output DP-3 mode 2560x1440 position 2560,0
+	output HDMI-A-1 mode 2560x1440 position 0,0 scale 1
+	output DP-3 mode 2560x1440 position 2560,0 scale 1
 }
 
 
 profile "Work 2-way Ultrawide" {
-	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@99.982 position 0,0
-	output eDP-1 mode 1920x1080 position 1000,1440
+	output "Philips Consumer Electronics Company PHL 346P1C UK02220030931" mode 3440x1440@99.982 position 0,0 scale 1
+	output eDP-1 mode 1920x1080 position 1000,1440 scale 1
+}
+
+profile "Work 2-way Ultrawide" {
+	output DP-3 mode 3440x1440@99.982 position 0,0 scale 1
+	output eDP-1 mode 1920x1080 position 1000,1440 scale 1
 }
 
 profile "Work Ultrawide only" {
-	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@59.97300 position 0,0
+	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@99.982 position 0,0 scale 1
 	output eDP-1 disable
 }

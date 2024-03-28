@@ -12,7 +12,7 @@
     systemPackages = with pkgs; [       # Packages installed
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
       inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
-      inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
+      #inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
       
       xdg-desktop-portal-hyprland
 
