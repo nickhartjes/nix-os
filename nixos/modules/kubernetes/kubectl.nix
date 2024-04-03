@@ -13,6 +13,6 @@
     openlens
   ];
 
-  home.file.".config/k9s/config.yml".source = ./source/k9s-config.yml;
-  home.file.".config/k9s/skin.yml".source = ./source/k9s-skin.yml;
+  home.file.".config/k9s/config.yaml".source = ./source/k9s-config.yaml;
+  home.file.".config/k9s/skins/one-dark.yaml".source = ./source/skins/one-dark.yaml;
 }

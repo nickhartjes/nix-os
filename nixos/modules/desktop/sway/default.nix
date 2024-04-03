@@ -83,7 +83,10 @@ in
     pcmanfm
     dolphin
     swayws
-    eww-wayland
+    eww
+
+    wshowkeys
+
     # Launchers
     wofi
     fuzzel

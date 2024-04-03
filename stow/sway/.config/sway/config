@@ -70,7 +70,7 @@ client.background       $base07
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+p exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -84,7 +84,7 @@ client.background       $base07
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Ctrl+q exec wlogout
+    bindsym $mod+Shift+q exec wlogout
 
 #
 # Moving around:
@@ -201,8 +201,8 @@ client.background       $base07
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
   bindsym XF86Search exec $menu
-  bindsym Print exec grimshot save output
-  bindsym Mod4+p       exec grimshot --notify save active
+  bindsym Print exec grim -t jpeg -q 80 -g \"$(slurp)\" - | swappy -f -
+  bindsym Mod4+Ctrl+Shift+p exec grim -t jpeg -q 80 -g \"$(slurp)\" - | swappy -f -
   bindsym Mod4+Shift+p exec grimshot --notify copy area
   bindsym Mod4+Mod1+p  exec grimshot --notify save output
   bindsym Mod4+Ctrl+p  exec grimshot --notify save window
