@@ -65,8 +65,9 @@ in
     configure-gtk
 
     sway
-    swaylock
-    swaylock-fancy
+    #swaylock
+    #swaylock-fancy
+    swaylock-effects
     swayidle
     wayland
     glib                       # gsettings
@@ -76,20 +77,28 @@ in
     slurp                      # screenshot functionality
     wl-clipboard               # wl-copy and wl-paste for copy/paste from stdin / stdout
     bemenu                     # wayland clone of dmenu
-    #mako                       # notification system developed by swaywm maintainer
+    # mako                       # notification system developed by swaywm maintainer
     wdisplays
     waybar
     ranger
     pcmanfm
     dolphin
     swayws
-    eww
+    # eww
+
+    dunst                       # Lightweight and customizable notification daemon
+    swww                        # Efficient animated wallpaper daemon 
+    hyprpaper                   # A blazing fast wayland wallpaper utility
+    imagemagick                 # A software suite to create, edit, compose, or convert bitmap images
+
+    pgadmin4-desktopmode
 
     wshowkeys
 
     # Launchers
-    wofi
+  #wofi
     fuzzel
+    rofi
 
     gtk3
     gcc

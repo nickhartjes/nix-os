@@ -15,7 +15,8 @@ set $term alacritty
 
 # Your preferred application launcher
 # set $menu wofi --show drun
-set $menu fuzzel
+# set $menu fuzzel
+set $menu wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config
 
 # Add gaps to Windows
 default_border pixel 5
@@ -23,42 +24,30 @@ gaps inner 5
 gaps outer 5
 
 
-# Auto start
-exec mako
-exec sleep 5; systemctl --user start kanshi.service
-exec dbus-sway-environment
-exec configure-gtk
-
-exec --no-startup-id picom -CGb
-
-
 ### Idle configuration
 exec swayidle -w \
-  timeout 300 'swaylock -f -c 000000' \
+  timeout 300 'swaylock -i ~/.cache/blurred_wallpaper.png' \
   timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock -f -c 000000'
+  before-sleep 'swaylock -i ~/.cache/blurred_wallpaper.png'
 
-bindsym $mod+Ctrl+Shift+l exec swaylock -f -c 000000
-
-# exec swayidle -w \
-#     timeout 300 'swaylock-fancy --show-failed-attempts --pixelate' \
-#     timeout 600 'swaymsg "output * dpms off"' \
-#         resume 'swaymsg "output * dpms on"' \
-#    before-sleep 'swaylock-fancy'
+bindsym $mod+Ctrl+Shift+l exec swaylock -i ~/.cache/blurred_wallpaper.png
 
 ### Colour Scheme's
 # https://github.com/rkubosz/base16-sway
-include colorscheme
+#include colorscheme
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0D
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
+#client.focused          $base05 $base0D $base00 $base0D $base0D
+#client.focused_inactive $base01 $base01 $base05 $base03 $base01
+#client.unfocused        $base01 $base00 $base05 $base01 $base01
+#client.urgent           $base08 $base08 $base00 $base08 $base08
+#client.placeholder      $base00 $base00 $base05 $base00 $base00
+#client.background       $base07
+
+include "$HOME/.cache/wal/colors-sway"
+
 
 ### Key bindings
 # Basics:
@@ -138,7 +127,7 @@ client.background       $base07
     bindsym $mod+Control+Left move workspace to output left
     bindsym $mod+Control+Down move workspace to output down
     bindsym $mod+Control+Up move workspace to output up
-    
+
     bindsym $mod+Control+$right move workspace to output right
     bindsym $mod+Control+$left move workspace to output left
     bindsym $mod+Control+$down move workspace to output down
@@ -268,8 +257,7 @@ bindsym $mod+Ctrl+e mode "$mode_system"
 
 # include /etc/sway/config.d/*
 
-exec swaync
-bindsym $mod+Shift+n exec swaync-client -t -sw
+#bindsym $mod+Shift+n exec swaync-client -t -sw
 
 exec_always ~/.config/waybar/waybar.sh
 
@@ -284,9 +272,9 @@ exec --no-startup-id slack
 assign [class="Spotify"] 9
 assign [class="Slack"] 9
 
-exec nm-applet --indicator
+# exec nm-applet --indicator
 
-font pango:SourceCodePro Regular 11
+font pango:Fira Sans 11
 
 
 # For screensharing
@@ -294,9 +282,20 @@ exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment WAYLAND_DISPLAY
 exec systemctl start --user kanshi.service
 
+# Auto start   
+exec dbus-sway-environment
+exec configure-gtk
+exec v4l2-ctl -d /dev/video4 -c zoom_absolute=160
 
 
-exec ~/.config/sway/random-background.sh
+exec --no-startup-id picom -CGb
+
+# Initialize Wallpaper Engine
+exec = ~/.settings/scripts/init-wallpaper-engine.sh
+# Start Polkit
+exec = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Load Dunst Notification Manager
+exec = dunst
 
 
 

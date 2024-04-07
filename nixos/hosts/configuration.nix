@@ -58,6 +58,8 @@
       font-awesome                            # Icons
       corefonts                               # MS
       nerdfonts
+      fira-code-nerdfont
+      fira
     ];
   };
 
@@ -174,7 +176,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      #"electron-19.1.9" #etcher-1.18.12
+      "adobe-reader-9.5.5"
     ];
   };
 

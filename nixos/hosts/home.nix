@@ -27,6 +27,8 @@
       bat                     # Alternative for cat
       duf                     # Alternative for du
       eza                     # Alternative for ls
+      
+      v4l-utils               # Used setting the zoom to the camera
 
       nushellFull
       # Video/Audio
@@ -45,10 +47,10 @@
 
       # Browser
 #      brave
-      cpufrequtils # for gnome
+#      cpufrequtils # for gnome
 
 #      insomnia
-#      pywal
+      pywal
 
       # Development
       jetbrains.idea-ultimate # IDE
@@ -65,7 +67,8 @@
       fzf   # For vim
       fzf-zsh
       #foxitreader
-      #adobe-reader
+      
+      adobe-reader
 
       bc                  #used for waybar
       glxinfo             #used for waybar
@@ -100,11 +103,11 @@
 #      ffmpeg
 #      gcc
 
-      deno
+#      deno
        yarn
 
-      obs-studio
-      obs-studio-plugins.wlrobs
+#      obs-studio
+#      obs-studio-plugins.wlrobs
 
       # Communication
       slack
@@ -127,7 +130,7 @@
       inkscape                #
       gimp                    # Image
 
-      shutter                 # Screenshot utility
+#      shutter                 # Screenshot utility
 
 #      neo4j-desktop
 #      k6
@@ -148,13 +151,12 @@
       talosctl
       fluxcd
       discord
-      age # encryption tool
-      sops # Secrets OPeationS
+      age                       # encryption tool
+      sops                      # Secrets OPeationS
       unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
       ansible
       isoimagewriter
       usbimager
-      #etcher
 
       rivalcfg
 

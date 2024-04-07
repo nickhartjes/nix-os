@@ -36,6 +36,8 @@
         # Hook direnv
 #       emulate zsh -c "$(direnv hook zsh)"
 
+        source ~/.cache/wal/colors-tty.sh
+
         export GH_EDITOR='vim'
 
         export JAVA_HOME=$(readlink -e $(type -p javac) | sed  -e 's/\/bin\/javac//g')
