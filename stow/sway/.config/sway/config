@@ -16,12 +16,13 @@ set $term alacritty
 # Your preferred application launcher
 # set $menu wofi --show drun
 # set $menu fuzzel
-set $menu wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config
+# set $menu wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config
+set $menu rofi -show drun -replace -i
 
 # Add gaps to Windows
-default_border pixel 5
-gaps inner 5
-gaps outer 5
+default_border pixel 3
+gaps inner 3
+gaps outer 3
 
 
 ### Idle configuration
@@ -259,7 +260,7 @@ bindsym $mod+Ctrl+e mode "$mode_system"
 
 #bindsym $mod+Shift+n exec swaync-client -t -sw
 
-exec_always ~/.config/waybar/waybar.sh
+#exec_always ~/.config/waybar/waybar.sh
 
 include ~/.config/sway/$(hostname)/*
 
@@ -286,16 +287,16 @@ exec systemctl start --user kanshi.service
 exec dbus-sway-environment
 exec configure-gtk
 exec v4l2-ctl -d /dev/video4 -c zoom_absolute=160
-
+exec swww-daemon
 
 exec --no-startup-id picom -CGb
 
 # Initialize Wallpaper Engine
-exec = ~/.settings/scripts/init-wallpaper-engine.sh
+exec = ~/.settings/scripts/wallpaper.sh
 # Start Polkit
-exec = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Load Dunst Notification Manager
 exec = dunst
 
-
+exec =  wl-paste --watch cliphist store
 

@@ -48,6 +48,7 @@
         "idle_inhibitor",
         "tray",
         "custom/spotify",
+        "custom/wallpaper",
         // "custom/ml4w-welcome",
         "clock",
         "custom/exit"

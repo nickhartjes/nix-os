@@ -72,6 +72,7 @@ in
     wayland
     glib                       # gsettings
     dracula-theme              # gtk theme
+    kora-icon-theme
     gnome3.adwaita-icon-theme  # default gnome cursors
     grim                       # screenshot functionality
     slurp                      # screenshot functionality
@@ -85,6 +86,7 @@ in
     dolphin
     swayws
     # eww
+    cliphist
 
     dunst                       # Lightweight and customizable notification daemon
     swww                        # Efficient animated wallpaper daemon 
