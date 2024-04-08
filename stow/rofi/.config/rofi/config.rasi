@@ -13,7 +13,6 @@ configuration {
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    
 }
 
 /* ---- Load pywal colors (custom wal template) ---- */

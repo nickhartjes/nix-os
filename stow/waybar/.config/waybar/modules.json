@@ -85,9 +85,9 @@
     // Cliphist
     "custom/cliphist": {
         "format": "",
-        "on-click": "sleep 0.1 && ~/.config/scripts/cliphist.sh",
-        "on-click-right": "sleep 0.1 && ~/.config/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && ~/.config/scripts/cliphist.sh w",
+        "on-click": "sleep 0.1 && ~/.settings/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/.settings/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/.settings/scripts/cliphist.sh w",
         "tooltip": false
     },
 
@@ -107,15 +107,15 @@
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/.config/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/.config/hypr/scripts/wallpaper.sh",
+        "on-click": "~/.settings/scripts/wallpaper.sh select",
+        "on-click-right": "~/.settings/scripts/wallpaper.sh",
         "tooltip": false
     },
 
     // Waybar Themes
     "custom/waybarthemes": {
         "format": "",
-        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "on-click": "~/.settings/scripts/themeswitcher.sh",
         "tooltip": false
     },
     
