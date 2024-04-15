@@ -45,6 +45,8 @@ TRADER_REPO_LIST=(
     "git@github.com:EnergyExchangeEnablersBV/entrnce-deal-platform.git"
     "git@github.com:EnergyExchangeEnablersBV/trader-robot.git"
     "git@github.com:EnergyExchangeEnablersBV/entrnce-brp-messaging-module"
+    "git@github.com:EnergyExchangeEnablersBV/ebmm-robot"
+    
 )
 clone_or_fetch "$TRADER_FOLDER" TRADER_REPO_LIST
 
@@ -64,3 +66,13 @@ MATCHER_REPO_LIST=(
     "git@github.com:EnergyExchangeEnablersBV/matcher-advisor.git"
 )
 clone_or_fetch "$MATCHER_FOLDER" MATCHER_REPO_LIST
+
+NH_FOLDER="nh"
+NH_REPO_LIST=(
+    "git@github.com:nickhartjes/talos"
+    "git@github.com:nickhartjes/gitops"
+    "git@github.com:nickhartjes/velo-scraper"
+    "git@github.com:nickhartjes/bikeparts-pricewatch"
+    "git@github.com:nickhartjes/bikeparts-frontend-fennec"
+)
+clone_or_fetch "$NH_FOLDER" NH_REPO_LIST

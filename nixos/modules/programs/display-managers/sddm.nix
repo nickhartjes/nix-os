@@ -2,14 +2,13 @@
 
 {
   services = {
-    xserver = {
-      enable = true;                              # Display Manager
-      displayManager = {                          # Display Manager
-        autoLogin = {
-          enable = false;
-          user = "nh";
-        };
-        sddm = {
+    displayManager = {                          # Display Manager
+      autoLogin = {
+        enable = false;
+        user = "nh";
+      };
+      sddm = {
+        wayland = {
           enable = true;                          # Wallpaper and gtk theme
         };
       };

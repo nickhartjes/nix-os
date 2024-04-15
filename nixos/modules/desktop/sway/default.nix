@@ -88,7 +88,8 @@ in
     # eww
     cliphist
 
-    dunst                       # Lightweight and customizable notification daemon
+    mako
+    #dunst                       # Lightweight and customizable notification daemon
     swww                        # Efficient animated wallpaper daemon 
     hyprpaper                   # A blazing fast wayland wallpaper utility
     imagemagick                 # A software suite to create, edit, compose, or convert bitmap images
@@ -251,6 +252,7 @@ in
     };
     dbus.enable = true;
     upower.enable = true;
+
   };
 
   security.polkit.enable = true;

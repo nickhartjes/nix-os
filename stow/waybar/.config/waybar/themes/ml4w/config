@@ -27,13 +27,13 @@
         "group/settings",
         "wlr/taskbar",
         // "group/quicklinks",
-        "sway/window",
+        "hyprland/window",
         "custom/empty"
     ],
 
     // Modules Center
     "modules-center": [
-        "sway/workspaces"
+        "hyprland/workspaces"
     ],
 
     // Modules Right    

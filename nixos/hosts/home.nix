@@ -41,6 +41,8 @@
 
       rustdesk
 
+      podman-desktop
+
       # Office
       libreoffice
       corefonts               # Fonts for Microsoft

@@ -92,8 +92,8 @@ if [ "$wallpaper_engine" == "swww" ] ;then
         --transition-bezier .43,1.19,1,.4 \
         --transition-fps=60 \
         --transition-type=$transition_type \
-        --transition-duration=1.7 
-      #  --transition-pos "$( hyprctl cursorpos )"
+        --transition-duration=1.7 \
+        --transition-pos "$( hyprctl cursorpos )"
 elif [ "$wallpaper_engine" == "hyprpaper" ] ;then
     # hyprpaper
     echo ":: Using hyprpaper"
@@ -110,7 +110,7 @@ if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
     sleep 1
-    dunstify "Changing wallpaper ..." "with image $newwall" -h int:value:33 -h string:x-dunst-stack-tag:wallpaper
+    notify-send "Changing wallpaper ..." "with image $newwall" -h int:value:33 -h string:x-dunst-stack-tag:wallpaper
     sleep 2
 fi
 
@@ -120,7 +120,7 @@ fi
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    dunstify "Creating blurred version ..." "with image $newwall" -h int:value:66 -h string:x-dunst-stack-tag:wallpaper
+    notify-send "Creating blurred version ..." "with image $newwall" -h int:value:66 -h string:x-dunst-stack-tag:wallpaper
 fi
 
 magick $wallpaper -resize 75% $blurred
@@ -143,7 +143,7 @@ echo "* { current-image: url(\"$blurred\", height); }" > "$rasi_file"
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    dunstify "Wallpaper procedure complete!" "with image $newwall" -h int:value:100 -h string:x-dunst-stack-tag:wallpaper
+    notify-send "Wallpaper procedure complete!" "with image $newwall" -h int:value:100 -h string:x-dunst-stack-tag:wallpaper
 fi
 
 echo "DONE!"

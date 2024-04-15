@@ -65,8 +65,8 @@ let
         "$mod SHIFT,j,movewindow,u"
         "$mod SHIFT,k,movewindow,d"
 
-        "$mod CTRL,h,split-changemonitor,prev"
-        "$mod CTRL,l,split-changemonitor,next"
+        #"$mod CTRL,h,split-changemonitor,prev"
+        #"$mod CTRL,l,split-changemonitor,next"
 
         ",XF86AudioMute, exec, volumectl toggle-mute"
         ",XF86AudioPlay, exec, playerctl play-pause"
@@ -86,8 +86,10 @@ let
               in
                 builtins.toString (x + 1 - (c * 10));
             in [
-              "$mod, ${ws}, split-workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}"
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              # "$mod, ${ws}, split-workspace, ${toString (x + 1)}"
+              # "$mod SHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}"
             ]
           )
         10)
@@ -109,10 +111,12 @@ let
     ];
     exec-once = [
       "avizo-service"
+      "swww-daemon"
       "kanshi -c ~/.config/kanshi/config"
       "pypr"
-      "~/.config/sway/random-background.sh"
-      "swaync"
+      "~/.settings/scripts/wallpaper.sh"
+      "dunst"
+      "wl-paste --watch cliphist store"
     ];
     windowrulev2 = [
       "opacity 0.9 0.9,title:Visual Studio Code"
@@ -232,9 +236,6 @@ in
           wayland.windowManager.hyprland = {
             enable = true;
             settings =  hyprlandSettings;
-            plugins = [
-              split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-            ];
           };
         };
       }

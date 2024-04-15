@@ -3,7 +3,7 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/programs/display-managers/sddm.nix)] ++
+    [(import ../../modules/programs/display-managers/lightdm.nix)] ++
     [(import ../../modules/desktop/plasma/default.nix)] ++
     [(import ../../modules/desktop/hyprland/default.nix)] ++
     [(import ../../modules/desktop/sway/default.nix)] ++
@@ -33,8 +33,8 @@
     services.xserver.videoDrivers = [ "modesetting" ];
 
     # Enable automatic login for the user.
-    services.xserver.displayManager.autoLogin.enable = false;
-    services.xserver.displayManager.autoLogin.user = "nh";
+    services.displayManager.autoLogin.enable = false;
+    services.displayManager.autoLogin.user = "nh";
 
     programs = {
       light.enable = true;                    # No xbacklight, this is the alterantive

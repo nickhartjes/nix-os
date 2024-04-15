@@ -13,6 +13,7 @@ in
     kompose
     kubectl
     kubernetes
+    podman-desktop
   ];
 
   services.kubernetes = {

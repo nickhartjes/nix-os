@@ -256,11 +256,7 @@ mode "$mode_system" {
 }
 bindsym $mod+Ctrl+e mode "$mode_system"
 
-# include /etc/sway/config.d/*
-
-#bindsym $mod+Shift+n exec swaync-client -t -sw
-
-#exec_always ~/.config/waybar/waybar.sh
+include /etc/sway/config.d/*
 
 include ~/.config/sway/$(hostname)/*
 
@@ -292,11 +288,11 @@ exec swww-daemon
 exec --no-startup-id picom -CGb
 
 # Initialize Wallpaper Engine
-exec = ~/.settings/scripts/wallpaper.sh
+exec_always = ~/.settings/scripts/wallpaper.sh
 # Start Polkit
 # exec = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Load Dunst Notification Manager
-exec = dunst
+exec = mako
 
 exec =  wl-paste --watch cliphist store
 

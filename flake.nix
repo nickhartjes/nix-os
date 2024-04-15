@@ -21,8 +21,8 @@
         url = "github:nix-community/NUR";                                   # NUR packages
       };
 
-      #hyprland.url = "github:hyprwm/Hyprland";
-      hyprland.url = "github:hyprwm/Hyprland/4bff762d9733ba7334cd37b995cf51552cc80be0";
+      hyprland.url = "github:hyprwm/Hyprland";
+      # hyprland.url = "github:hyprwm/Hyprland/4bff762d9733ba7334cd37b995cf51552cc80be0";
       split-monitor-workspaces = {
         url = "github:Duckonaut/split-monitor-workspaces";
         inputs.hyprland.follows = "hyprland";

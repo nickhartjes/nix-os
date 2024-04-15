@@ -2,13 +2,13 @@
     // Workspaces
     "hyprland/workspaces" : {
         "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
+        "active-only": true,
+        "all-outputs": false,
         "format": "{name}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "focused": "",
+            "default": ""
         },
         "persistent-workspaces": {
             "*": 5
