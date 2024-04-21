@@ -37,7 +37,11 @@
       swayidle
       swaybg
 
-      swaynotificationcenter
+      hypridle
+      hyprlock  # Lockscreen for wayland
+      rofi-wayland
+
+      # swaynotificationcenter
 
       #mako                      # Lightweight notification daemon for Wayland
       libnotify                 # For sending notifications with notify-send
@@ -62,6 +66,7 @@
       glib
       wlogout                   # Logout menu for wayland
       wl-clipboard
+
     ];
   };
 

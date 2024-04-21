@@ -24,16 +24,15 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "group/settings",
-        "wlr/taskbar",
+        // "group/settings",
         // "group/quicklinks",
-        "hyprland/window",
-        "custom/empty"
+        "hyprland/workspaces"
+        //"custom/empty"
     ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/workspaces"
+        "hyprland/window"
     ],
 
     // Modules Right    
@@ -44,11 +43,12 @@
         "battery", 
         "network",
         "group/hardware",
-        "custom/cliphist",
+        // "custom/cliphist",
         "idle_inhibitor",
-        "tray",
-        "custom/spotify",
-        "custom/wallpaper",
+        // "tray",
+        "wlr/taskbar",
+        // "custom/spotify",
+        // "custom/wallpaper",
         // "custom/ml4w-welcome",
         "clock",
         "custom/exit"

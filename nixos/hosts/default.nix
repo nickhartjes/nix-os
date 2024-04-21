@@ -10,7 +10,24 @@ let
     config.allowUnfree = true;
   };
 
-    hyprlandSettings = {
+  hyprlandSettings = {
+    animations = {
+      bezier = [
+        "overshot, 0.05, 0.9, 0.1, 1.05"
+        "smoothOut, 0.5, 0, 0.99, 0.99"
+        "smoothIn, 0.5, -0.5, 0.68, 1.5"
+      ];
+      animation = [
+        "windows, 1, 5, overshot, slide"
+        "windowsOut, 1, 3, smoothOut"
+        "windowsIn, 1, 3, smoothOut"
+        "windowsMove, 1, 4, smoothIn, slide"
+        "border, 1, 5, default"
+        "fade, 1, 5, smoothIn"
+        "fadeDim, 1, 5, smoothIn"
+        "workspaces, 1, 6, default"
+      ];
+    };
     monitor = [
       "HDMI-A-1,2560x1440,auto,1,bitdepth,10"
       "DP-3,2560x1440,auto,1,bitdepth,10"
@@ -52,8 +69,11 @@ let
         "$mod SHIFT,Q,exec,wlogout --protocol layer-shell"
         "$mod,E,exec,dolphin"
         "$mod,V,togglefloating"
-        "$mod,P,exec,wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config"
+       # "$mod,P,exec,wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config"
+        "$mod,P,exec,rofi -show drun -replace -i"
         "$mod,S,exec,grim -t jpeg -q 80 -g \"$(slurp)\" - | swappy -f -"
+        "$mod SHIFT,w,exec, ~/.settings/scripts/wallpaper.sh"
+
 
         "$mod,h,movefocus,l"
         "$mod,l,movefocus,r"
@@ -117,9 +137,9 @@ let
       "~/.settings/scripts/wallpaper.sh"
       "dunst"
       "wl-paste --watch cliphist store"
+      "hypridle"
     ];
     windowrulev2 = [
-      "opacity 0.9 0.9,title:Visual Studio Code"
       "opacity 0.9 0.9,title:wofi"
       "opacity 0.9 0.9,class:kitty-dropterm"
       "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"

@@ -94,8 +94,10 @@
 
        awscli2
 
-       python3Full
+       python311Full
        python3Packages.pip
+       python3Packages.stdenv
+       onnxruntime
        poetry
 #      python3Packages.virtualenv
 #      chromedriver
@@ -104,6 +106,7 @@
 #      python39Packages.webrtcvad
 #      ffmpeg
 #      gcc
+       ollama
 
 #      deno
        yarn
@@ -162,6 +165,9 @@
 
       rivalcfg
 
+      python311Packages.mike
+      jetbrains.pycharm-professional
+      
       calibre
     ];
 

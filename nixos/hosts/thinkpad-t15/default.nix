@@ -30,7 +30,7 @@
 
     networking.hostName = "thinkpad-t15";
 
-    services.xserver.videoDrivers = [ "modesetting" ];
+    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
     # Enable automatic login for the user.
     services.displayManager.autoLogin.enable = false;

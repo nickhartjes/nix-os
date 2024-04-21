@@ -2,17 +2,17 @@
     // Workspaces
     "hyprland/workspaces" : {
         "on-click": "activate",
-        "active-only": true,
+        "active-only": false,
         "all-outputs": false,
         "format": "{name}",
         "format-icons": {
             "urgent": "",
             "focused": "",
             "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5
-        }       
+        }
+        // "persistent-workspaces": {
+        //     "*": 5
+        // }       
     },
 
     "sway/workspaces" : {
@@ -202,7 +202,7 @@
 
     // Power Menu
     "custom/exit": {
-        "format": "x",
+        "format": "",
         "on-click": "wlogout",
         "tooltip": false
     },
@@ -371,7 +371,7 @@
 
     // Bluetooth
     "bluetooth": {
-        "format": " {status}",
+        "format": "  {status}",
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
@@ -390,9 +390,9 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "tooltip": true,
-        "format-icons":{
-            "activated": "",
-            "deactivated": ""
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
         },
         "on-click-right": "hyprlock"        
     }
