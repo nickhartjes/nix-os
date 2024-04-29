@@ -40,6 +40,7 @@
       hypridle
       hyprlock  # Lockscreen for wayland
       rofi-wayland
+      rofi-calc
 
       # swaynotificationcenter
 

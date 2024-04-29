@@ -5,5 +5,6 @@
    ./nodejs.nix
    ./proton.nix
    ./spotify.nix
+   ./nh.nix
 ]
 

@@ -61,6 +61,7 @@
 
       graphviz                # For plantuml plugin
       jdk21                   # Java development kit
+      #jdk11
       act                     # Local Github Actions
       lazygit
       go
@@ -94,7 +95,7 @@
 
        awscli2
 
-       python311Full
+       python312Full
        python3Packages.pip
        python3Packages.stdenv
        onnxruntime
@@ -120,7 +121,7 @@
       tdesktop
 
       # Authentication
-      authy
+      # authy
       bitwarden
       bitwarden-cli
 
