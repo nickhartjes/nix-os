@@ -97,6 +97,7 @@ in
     pgadmin4-desktopmode
 
     wshowkeys
+    swaysettings
 
     # Launchers
   #wofi

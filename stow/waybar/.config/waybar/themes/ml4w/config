@@ -26,13 +26,14 @@
         "custom/appmenu",
         // "group/settings",
         // "group/quicklinks",
-        "hyprland/workspaces"
+        "sway/workspaces"
         //"custom/empty"
     ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/window"
+        "sway/window",
+        "sway/mode"
     ],
 
     // Modules Right    

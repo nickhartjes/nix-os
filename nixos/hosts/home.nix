@@ -39,7 +39,7 @@
       android-tools
       #haskellPackages.adb
 
-      rustdesk
+      #rustdesk
 
       podman-desktop
 
@@ -56,7 +56,7 @@
 
       # Development
       jetbrains.idea-ultimate # IDE
-      # jetbrains.goland
+    
       # jetbrains.pycharm-professional
 
       graphviz                # For plantuml plugin
@@ -64,7 +64,7 @@
       #jdk11
       act                     # Local Github Actions
       lazygit
-      go
+    
 
       gcc
       fzf   # For vim
@@ -99,7 +99,7 @@
        python3Packages.pip
        python3Packages.stdenv
        onnxruntime
-       poetry
+      #  poetry
 #      python3Packages.virtualenv
 #      chromedriver
 #      mkdocs
