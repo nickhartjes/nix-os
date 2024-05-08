@@ -2,7 +2,7 @@
    ./alacritty.nix
    ./chromium.nix
    ./firefox.nix
-   ./nodejs.nix
+   ./ai.nix
    ./proton.nix
    ./spotify.nix
    ./nh.nix

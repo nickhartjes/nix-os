@@ -1,15 +1,12 @@
 #
 # Go
 #
-
-{ config, lib, pkgs, ... }:
-
-  home.packages = with pkgs; [       # Packages installed
-    go
-    air
-  ];
-
+{ pkgs, lib, config, ...}:
 {
-  programs = {
-  };
+  home.packages = with pkgs; [       # Packages installed
+    go      # go language
+    air     # live reload
+    delve   # go debugger
+    gdlv    # gui for go debugger
+  ];
 }

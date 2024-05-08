@@ -9,7 +9,6 @@
     # [(import ../../modules/desktop/hyprland/default.nix)] ++
     [(import ../../modules/desktop/sway/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-    (import ../../modules/programming/default) ++
     [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
 

@@ -5,6 +5,7 @@
     (import ../modules/editors) ++
     (import ../modules/programs) ++
     (import ../modules/services) ++
+    (import ../modules/programming) ++   
     (import ../modules/terminal) ++
     (import ../modules/kubernetes);
 

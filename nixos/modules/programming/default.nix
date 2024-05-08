@@ -1,4 +1,5 @@
 [
    ./go.nix
+   ./nodejs.nix
 ]
 
