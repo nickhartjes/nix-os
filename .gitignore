@@ -8,3 +8,5 @@ stow/kube/.kube/http-cache/
 stow/aws/.aws/sso/cache/
 tmp
 *.luks.key
+private.pgp
+public.pgp

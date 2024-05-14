@@ -45,4 +45,7 @@ curl -Lks https://raw.githubusercontent.com/nickhartjes/nix-os/main/scripts/inst
 
 
 ## More info
+```shell
+git-crypt unlock
+```
 - [Git-crypt](https://www.agwa.name/projects/git-crypt/)
