@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, split-monitor-workspaces, nur, user, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, split-monitor-workspaces, nur, user, location, nixos-cosmic,... }:
 
 let
   # System architecture
@@ -246,6 +246,14 @@ in
       nur.nixosModules.nur
       ./thinkpad-t15
       ./configuration.nix
+
+      {
+        nix.settings = {
+          substituters = [ "https://cosmic.cachix.org/" ];
+          trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+        };
+      }
+      nixos-cosmic.nixosModules.default
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;

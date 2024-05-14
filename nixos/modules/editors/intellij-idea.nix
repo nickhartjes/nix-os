@@ -1,8 +1,6 @@
 {pkgs, lib, config, ...}:
 {
   home.packages = with pkgs; [       # Packages installed
-    # lmstudio
-    ollama
+     jetbrains.idea-ultimate # IDE
   ];
-
 }

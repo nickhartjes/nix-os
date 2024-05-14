@@ -56,12 +56,12 @@
       pywal
 
       # Development
-      jetbrains.idea-ultimate # IDE
+     
     
       # jetbrains.pycharm-professional
 
       graphviz                # For plantuml plugin
-      jdk21                   # Java development kit
+      #jdk21                   # Java development kit
       #jdk11
       act                     # Local Github Actions
       lazygit

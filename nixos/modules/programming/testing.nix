@@ -1,8 +1,7 @@
-{pkgs, lib, config, ...}:
+#
+{ pkgs, lib, config, ...}:
 {
   home.packages = with pkgs; [       # Packages installed
-    # lmstudio
-    ollama
+    k6
   ];
-
 }
