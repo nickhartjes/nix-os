@@ -3,8 +3,9 @@
 {
   services = {
     displayManager = {                          # Display Manager
-       cosmic-greeter = {
+      cosmic-greeter = {
          enable = true;                          # Wallpaper and gtk theme
       };
+    };
   };
 }
