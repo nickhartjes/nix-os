@@ -37,7 +37,7 @@ bw create item '{"type": 2, "name": "'"${hostname} LUKS Keyfile"'", "notes": "'"
 ### Step 01: Clone the repo in `~/.setup` folder
 ```shell
 nix-env -iA nixos.curl
-curl -Lks https://raw.githubusercontent.com/nickhartjes/nix-os/main/scripts/install.sh | /bin/bash
+curl -Lks https://raw.githubusercontent.com/nickhartjes/nix-os/main/nixos/scripts/install.sh | /bin/bash
 ```
 
 ### Step 02:

@@ -1,5 +1,3 @@
-
-
 # Function to set BW_SESSION
 function set_bw_session() {
   # Prompt the user for their Bitwarden master password
@@ -38,6 +36,8 @@ function set_bw_session() {
 
   # Export BW_SESSION to be available in the current shell session
   export BW_SESSION
+  # Save the session to .token file
+  echo "$BW_SESSION" > ~/.token
   # Print the current BW_SESSION for verification
   echo "BW_SESSION is set to: $BW_SESSION"
   # Return the session
@@ -46,11 +46,25 @@ function set_bw_session() {
 
 # Function to ensure Bitwarden session is active
 function ensure_bw_session() {
-  if [ -z "$BW_SESSION" ]; then
+  if [[ ! -f ~/.token ]]; then
     BW_SESSION=$(set_bw_session)
-    if [ $? -ne 0 ]; then
+    if [[ $? -ne 0 ]]; then
       echo "Failed to obtain Bitwarden session."
       exit 1
+    fi
+  else
+    BW_SESSION=$(cat ~/.token)
+    export BW_SESSION
+
+    # Verify if the session is still valid by listing an item
+    bw list items --session "$BW_SESSION" &> /dev/null
+    if [[ $? -ne 0 ]]; then
+      echo "Session expired. Re-authenticating..."
+      BW_SESSION=$(set_bw_session)
+      if [[ $? -ne 0 ]]; then
+        echo "Failed to obtain Bitwarden session."
+        exit 1
+      fi
     fi
   fi
 }
@@ -72,7 +86,7 @@ download_and_import_pgp_keys() {
 
     # Download and save the private key
     bw get attachment "$private_key" --itemid "$item_id" --session "$BW_SESSION" --raw > "$private_key"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         chmod 600 "$private_key"
         echo "Private key retrieved and saved as: $private_key"
     else
@@ -82,7 +96,7 @@ download_and_import_pgp_keys() {
 
     # Download and save the public key
     bw get attachment "$public_key" --itemid "$item_id" --session "$BW_SESSION" --raw > "$public_key"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         chmod 600 "$public_key"
         echo "Public key retrieved and saved as: $public_key"
     else
@@ -92,7 +106,7 @@ download_and_import_pgp_keys() {
 
     # Import the public key into GPG
     gpg --import "$public_key"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         echo "Public key imported successfully."
     else
         echo "Failed to import public key."
@@ -101,7 +115,7 @@ download_and_import_pgp_keys() {
 
     # Import the private key into GPG
     gpg --import "$private_key"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         echo "Private key imported successfully."
     else
         echo "Failed to import private key."
@@ -149,7 +163,7 @@ save_key_to_bitwarden() {
 
     # Save the keyfile to Bitwarden
     bw create attachment --file "${keyfile_name}" --itemid "${item_id}" --session "$BW_SESSION"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         echo "Keyfile saved to Bitwarden."
     else
         echo "Failed to save keyfile to Bitwarden."
@@ -175,7 +189,7 @@ retrieve_key_from_bitwarden() {
 
     # Retrieve the keyfile from Bitwarden
     bw get attachment "${keyfile_name}" --itemid "${item_id}" --session "$BW_SESSION" --raw > "${keyfile_name}"
-    if [ $? -eq 0 ]; then
+    if [[ $? -eq 0 ]]; then
         chmod 600 "${keyfile_name}"
         echo "Keyfile retrieved and saved as: ${keyfile_name}"
     else
