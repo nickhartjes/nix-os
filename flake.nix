@@ -26,17 +26,6 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      hyprland.url = "github:hyprwm/Hyprland";
-      # hyprland.url = "github:hyprwm/Hyprland/4bff762d9733ba7334cd37b995cf51552cc80be0";
-      split-monitor-workspaces = {
-        url = "github:Duckonaut/split-monitor-workspaces";
-        inputs.hyprland.follows = "hyprland";
-      };
-
-      hyprland-contrib = {
-        url = "github:hyprwm/contrib";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
     };
 
   outputs = inputs @ { 
@@ -44,8 +33,6 @@
     nixpkgs, 
     home-manager, 
     nur,
-    split-monitor-workspaces,
-    hyprland-contrib,
     nixos-cosmic,
     ... 
   }:      # Function that tells my flake which to use and what do what to do with the dependencies.
@@ -57,7 +44,7 @@
       nixosConfigurations = (                                               # NixOS configurations
         import ./nixos/hosts {                                                    # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager split-monitor-workspaces hyprland-contrib nur user location nixos-cosmic;            # Also inherit home-manager so it does not need to be defined here.
+          inherit inputs nixpkgs home-manager nur user location nixos-cosmic;            # Also inherit home-manager so it does not need to be defined here.
         }
       );
 

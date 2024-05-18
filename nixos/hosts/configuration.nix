@@ -72,7 +72,7 @@
     # Default packages install system-wide
     systemPackages = with pkgs; [
       curl
-      git
+      #git
       htop
       killall
       nano
