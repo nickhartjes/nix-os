@@ -41,11 +41,16 @@ curl -Lks https://raw.githubusercontent.com/nickhartjes/nix-os/main/nixos/script
 ```
 
 ### Step 02:
-
-
-
-## More info
+Decrypt the secrets in the folder.
 ```shell
 git-crypt unlock
 ```
 - [Git-crypt](https://www.agwa.name/projects/git-crypt/)
+
+
+### Step 03:
+```shell
+cd ~/.setup && sudo nixos-rebuild boot --flake .#$HOST
+```
+If you try building it before decrypting the secrets, it will fail. Encrypted files are in the Nixos store, please remove them first with `sudo nix-collect-garbage -d`. Then decrypt the folder and build again.
+
