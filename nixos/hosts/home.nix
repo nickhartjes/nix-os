@@ -16,7 +16,7 @@
     packages = with pkgs; [
       # Terminal
       btop                    # Resource Manager
-      pfetch                  # Minimal fetch
+      fastfetch               # Minimal fetch
       jq                      # command-line JSON processor
       yq                      # command-line YAML processor
       git-crypt
