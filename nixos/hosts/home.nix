@@ -96,11 +96,6 @@
 
        awscli2
 
-       python312Full
-       python3Packages.pip
-       python3Packages.stdenv
-       onnxruntime
-      #  poetry
 #      python3Packages.virtualenv
 #      chromedriver
 #      mkdocs
