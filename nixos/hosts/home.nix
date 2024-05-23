@@ -149,7 +149,7 @@
       gnumake
       # Database
       supabase-cli
-      dbeaver
+      dbeaver-bin
       talosctl
       fluxcd
       discord

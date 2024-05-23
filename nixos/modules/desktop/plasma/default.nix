@@ -50,5 +50,6 @@
 
     #libsForQt5.plasma-workspace
     #libsForQt5.plasma-workspace-wallpapers
+    kdePackages.yakuake
   ];
 }

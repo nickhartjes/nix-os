@@ -3,5 +3,6 @@
 {
   home.packages = with pkgs; [       # Packages installed
     k6
+    playwright
   ];
 }

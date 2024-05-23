@@ -134,3 +134,6 @@ alias sr="sudo reboot"
 # Information
 alias myip="curl http://ipecho.net/plain; echo"
 alias speed='speedtest-cli --server 2406 --simple'
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
