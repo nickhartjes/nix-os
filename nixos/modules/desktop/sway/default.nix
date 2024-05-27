@@ -298,7 +298,9 @@ in
     };
   };
 
-  nixpkgs.overlays = [(
+  nixpkgs.overlays = [
+    inputs.templ.overlays.default,
+    (
     self: super: {
       slack  = super.slack.overrideAttrs (old: {
         installPhase = old.installPhase + ''
