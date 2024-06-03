@@ -9,7 +9,8 @@
     delve       # go debugger
     gdlv        # gui for go debugger
 
-    templ       # go template generator
+    #templ       # go template generator
     tailwindcss # css framework 
+    minify
   ];
 }

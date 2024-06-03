@@ -137,3 +137,6 @@ alias speed='speedtest-cli --server 2406 --simple'
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
+# export
+export PATH=~/go/bin:$PATH
