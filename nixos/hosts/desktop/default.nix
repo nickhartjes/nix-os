@@ -1,11 +1,14 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, user, lib, ... }:
 
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/programs/display-managers/greetd.nix)] ++
-    [(import ../../modules/desktop/plasma/default.nix)] ++
-    [(import ../../modules/desktop/cosmic/default.nix)] ++
+    [(import ../../modules/programs/display-managers/gdm.nix)] ++
+ #    [(import ../../modules/desktop/plasma/default.nix)] ++
+   [(import ../../modules/desktop/gnome/default.nix)] ++
+    [(import ../../modules/desktop/hyprland/default.nix)] ++
+    [(import ../../modules/desktop/sway/default.nix)] ++
+    # [(import ../../modules/desktop/cosmic/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     (import ../../modules/hardware);
 
@@ -43,4 +46,24 @@
     services = {
       xserver.videoDrivers = [ "amdgpu" ];
     };
+
+    xdg.portal.wlr.enable = lib.mkForce false;
+
+    services.rpcbind.enable = true; # needed for NFS
+    systemd.mounts = [{
+      type = "nfs";
+      mountConfig = {
+        Options = "noatime";
+      };
+      what = "server:/10.0.20.100/data";
+      where = "/mnt/data";
+    }];
+
+    systemd.automounts = [{
+      wantedBy = [ "multi-user.target" ];
+      automountConfig = {
+        TimeoutIdleSec = "600";
+      };
+      where = "/mnt/data";
+    }];
 }

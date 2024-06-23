@@ -16,8 +16,8 @@ set $term alacritty
 # Your preferred application launcher
 # set $menu wofi --show drun
 # set $menu fuzzel
-# set $menu wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config
-set $menu rofi -show drun -replace -i
+set $menu wofi --style ~/.config/wofi/style.css --conf ~/.config/wofi/config
+# set $menu rofi -show drun -replace -i
 
 # Add gaps to Windows
 default_border pixel 3
@@ -47,7 +47,7 @@ bindsym $mod+Ctrl+Shift+l exec swaylock -i ~/.cache/blurred_wallpaper.png
 #client.placeholder      $base00 $base00 $base05 $base00 $base00
 #client.background       $base07
 
-include "$HOME/.cache/wal/colors-sway"
+# include "$HOME/.cache/wal/colors-sway"
 
 
 ### Key bindings
@@ -97,9 +97,11 @@ include "$HOME/.cache/wal/colors-sway"
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
+
+    #
+    # Workspaces:
+    #
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -111,6 +113,7 @@ include "$HOME/.cache/wal/colors-sway"
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -271,7 +274,7 @@ assign [class="Slack"] 9
 
 # exec nm-applet --indicator
 
-font pango:Fira Sans 11
+# font pango:Fira Sans 11
 
 
 # For screensharing
@@ -279,21 +282,23 @@ exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment WAYLAND_DISPLAY
 exec systemctl start --user kanshi.service
 
-# Auto start   
+# Auto start
 exec dbus-sway-environment
 exec configure-gtk
 exec v4l2-ctl -d /dev/video4 -c zoom_absolute=160
 exec swww-daemon
 
-exec --no-startup-id picom -CGb
+# exec --no-startup-id picom -CGb
 
 # Initialize Wallpaper Engine
-exec_always = ~/.settings/scripts/wallpaper.sh
-exec_always = ~/.config/waybar/launch.sh
+# exec_always = ~/.settings/scripts/wallpaper.sh
+# exec_always = ~/.config/waybar/launch.sh
+
+
 # Start Polkit
 # exec = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Load Dunst Notification Manager
 exec = mako
 
-exec =  wl-paste --watch cliphist store
+exec = wl-paste --watch cliphist store
 

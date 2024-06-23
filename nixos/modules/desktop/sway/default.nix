@@ -90,7 +90,7 @@ in
 
     mako
     #dunst                       # Lightweight and customizable notification daemon
-    swww                        # Efficient animated wallpaper daemon 
+    swww                        # Efficient animated wallpaper daemon
     hyprpaper                   # A blazing fast wayland wallpaper utility
     imagemagick                 # A software suite to create, edit, compose, or convert bitmap images
 
@@ -103,15 +103,20 @@ in
   #wofi
     fuzzel
     rofi
-
+    wofi
     gtk3
     gcc
+sfwbar
+ags
+ gtksourceview
+      webkitgtk
+      accountsservice
 
     dolphin
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
-    i3status-rust
+    # i3status-rust
 
     # For desktop/panel controle
     brightnessctl
@@ -120,7 +125,7 @@ in
     swaynotificationcenter
     gopsuinfo
 
-    autotiling
+    #autotiling
     mpd
 
     pango             # Text renderer
@@ -298,20 +303,20 @@ in
     };
   };
 
-  nixpkgs.overlays = [
-    inputs.templ.overlays.default,
-    (
-    self: super: {
-      slack  = super.slack.overrideAttrs (old: {
-        installPhase = old.installPhase + ''
-          rm $out/bin/slack
+  # nixpkgs.overlays = [
+  #   inputs.templ.overlays.default,
+  #   (
+  #   self: super: {
+  #     slack  = super.slack.overrideAttrs (old: {
+  #       installPhase = old.installPhase + ''
+  #         rm $out/bin/slack
 
-          makeWrapper $out/lib/slack/slack $out/bin/slack \
-          --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
-          --prefix PATH : ${lib.makeBinPath [pkgs.xdg-utils]} \
-          --add-flags "--enable-features=WebRTCPipeWireCapturer %U"
-        '';
-      });
-    }
-  )];
+  #         makeWrapper $out/lib/slack/slack $out/bin/slack \
+  #         --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
+  #         --prefix PATH : ${lib.makeBinPath [pkgs.xdg-utils]} \
+  #         --add-flags "--enable-features=WebRTCPipeWireCapturer %U"
+  #       '';
+  #     });
+  #   }
+  # )];
 }

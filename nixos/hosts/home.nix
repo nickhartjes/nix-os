@@ -1,4 +1,4 @@
-{ config, lib, pkgs, user, nur, ... }:
+{inputs, config, lib, pkgs, user, nur, ... }:
 
 {
   imports =                                   # Home Manager Modules
@@ -6,7 +6,7 @@
     (import ../modules/programs) ++
     (import ../modules/services) ++
     (import ../modules/programming) ++   
-    (import ../modules/terminal) ++
+    (import ../modules/terminal)  ++
     (import ../modules/kubernetes);
 
   home = {
@@ -22,7 +22,7 @@
       git-crypt
       dnsutils
       whois
-      neofetch                # Fetch
+      #neofetch                # Fetch
       stow                    # Config file management
 
       bat                     # Alternative for cat
@@ -31,7 +31,7 @@
       
       v4l-utils               # Used setting the zoom to the camera
 
-      nushellFull
+      nushell
       # Video/Audio
       mpv                     # Media Player
       pavucontrol             # Audio control
@@ -53,18 +53,20 @@
 #      cpufrequtils # for gnome
 
 #      insomnia
-      pywal
+ #     pywal
 
       # Development
      
     
       # jetbrains.pycharm-professional
 
-      graphviz                # For plantuml plugin
+   #   graphviz                # For plantuml plugin
       #jdk21                   # Java development kit
       #jdk11
-      act                     # Local Github Actions
+      # act                     # Local Github Actions
       lazygit
+
+
     
 
       gcc
@@ -89,7 +91,6 @@
 
 #      rustup
 #
-       fzf
        libstdcxx5
        tmux
 #      protonvpn-gui
@@ -126,7 +127,7 @@
       aide                    # A file and directory integrity checkerK
 
       # Desktop
-      okular                  # PDF viewer
+      # okular                  # PDF viewer
       obsidian                # Second brain
       marktext
       inkscape                #
@@ -138,13 +139,13 @@
 #      k6
 
       # pgmodeler
-      macchina
-      fzf
+      # macchina
       flameshot
 
-      android-studio
-      android-tools
+      # android-studio
+      # android-tools
 
+      nfs-utils
 
       gnumake
       # Database
@@ -176,5 +177,18 @@
 
   programs = {
     home-manager.enable = true;
+    # ags = {
+    #   enable = true;
+
+    #   # null or path, leave as null if you don't want hm to manage the config
+    #   configDir = ../ags;
+
+    #   # additional packages to add to gjs's runtime
+    #   extraPackages = with pkgs; [
+    #     gtksourceview
+    #     webkitgtk
+    #     accountsservice
+    #   ];
+    # };
   };
 }

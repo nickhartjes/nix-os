@@ -2,18 +2,18 @@
 
 {
 
-  imports = [
-    ../../programs/waybar-hyprland.nix
-  ];
+  # imports = [
+  #   ../../programs/waybar-hyprland.nix
+  # ];
 
   environment = {
 
 
     systemPackages = with pkgs; [       # Packages installed
-      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-      inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
+      # inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+      # inputs.hyprland-contrib.packages.${pkgs.system}.scratchpad
       #inputs.hyprland-contrib.packages.${pkgs.system}.hdrop
-      
+
       xdg-desktop-portal-hyprland
 
       avizo
@@ -71,19 +71,19 @@
     ];
   };
 
-  programs.zsh.enable = true; 
+  programs.zsh.enable = true;
 
   programs = {
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
     nm-applet = {
       enable = true;
       indicator = true;
     };
-    waybar = {
-      enable = true;
-    };
+    # waybar = {
+    #   enable = true;
+    # };
   };
 }

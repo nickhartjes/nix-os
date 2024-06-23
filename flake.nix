@@ -18,14 +18,14 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      nur = {
-        url = "github:nix-community/NUR";                                   # NUR packages
-      };
+      nur.url = "github:nix-community/NUR";                                   # NUR packages
 
       nixos-cosmic = {
         url = "github:lilyinstarlight/nixos-cosmic";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+
+      ags.url = "github:Aylur/ags";
 
     };
 
