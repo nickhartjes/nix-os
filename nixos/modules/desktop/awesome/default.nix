@@ -3,7 +3,7 @@
 {
 
 
-  hardware.opengl.enable = true;
+  # hardware.opengl.enable = true;
 #  hardware.pulseaudio.enable = true;
 
 #    hyprland.enable = true;

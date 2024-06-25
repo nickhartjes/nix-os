@@ -3,9 +3,9 @@
 {
   imports =
     [(import ./hardware-configuration.nix)] ++
-    [(import ../../modules/programs/display-managers/gdm.nix)] ++
- #    [(import ../../modules/desktop/plasma/default.nix)] ++
-   [(import ../../modules/desktop/gnome/default.nix)] ++
+    [(import ../../modules/programs/display-managers/greetd.nix)] ++
+    [(import ../../modules/desktop/plasma/default.nix)] ++
+    #[(import ../../modules/desktop/gnome/default.nix)] ++
     [(import ../../modules/desktop/hyprland/default.nix)] ++
     [(import ../../modules/desktop/sway/default.nix)] ++
     # [(import ../../modules/desktop/cosmic/default.nix)] ++

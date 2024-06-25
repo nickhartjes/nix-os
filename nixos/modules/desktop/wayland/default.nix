@@ -16,12 +16,12 @@
     upower.enable = true;
   };
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-    };
-  };
+  # hardware = {
+  #   opengl = {
+  #     enable = true;
+  #     driSupport = true;
+  #   };
+  # };
 
   # xdg.portal.wlr.enable = true;
 }

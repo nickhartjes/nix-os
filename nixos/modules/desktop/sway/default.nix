@@ -107,7 +107,7 @@ in
     gtk3
     gcc
 sfwbar
-ags
+#ags
  gtksourceview
       webkitgtk
       accountsservice
@@ -262,15 +262,6 @@ ags
   };
 
   security.polkit.enable = true;
-
-
-  # Hardware Support for Wayland Sway
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-    };
-  };
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
