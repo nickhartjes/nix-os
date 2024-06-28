@@ -6,8 +6,8 @@
     [(import ../../modules/programs/display-managers/greetd.nix)] ++
     # [(import ../../modules/desktop/awesome/default.nix)] ++
     [(import ../../modules/desktop/plasma/default.nix)] ++
-    [(import ../../modules/desktop/cosmic/default.nix)] ++
-   # [(import ../../modules/desktop/sway/default.nix)] ++
+   # [(import ../../modules/desktop/cosmic/default.nix)] ++
+    [(import ../../modules/desktop/sway/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
     [(import ../../modules/hardware/displaylink.nix)] ++
     (import ../../modules/hardware);
@@ -43,7 +43,7 @@
 
     services = {
      logind.lidSwitch = "ignore";            # Laptop does not go to sleep when lid is closed
-      auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
+      #auto-cpufreq.enable = true;             # Enable auto-cpufreq daemon
       hardware.bolt.enable = true;
       blueman.enable = true;
     };
