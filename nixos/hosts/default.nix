@@ -121,6 +121,37 @@ in
   };
 
   ##################
+  ## Minisforum 773-lite Profile
+  ##################
+  "773-lite" = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit inputs user location; };
+    modules = [
+      nur.nixosModules.nur
+      ./773-lite
+      ./configuration.nix
+
+      {
+        nix.settings = {
+          substituters = [ "https://cosmic.cachix.org/" ];
+          trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+        };
+      }
+      nixos-cosmic.nixosModules.default
+
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.users.${user} = {
+          imports = [(import ./home.nix)] ++ [(import ./773-lite/home.nix)];
+        };
+      }
+    ];
+  };
+
+
+  ##################
   ## VM Profile
   ##################
   vm = lib.nixosSystem {
