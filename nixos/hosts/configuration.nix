@@ -41,13 +41,6 @@
   ## System settings
   ##################
 
-  sound = {
-    enable = true;
-    mediaKeys = {
-      enable = true;
-    };
-  };
-
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [                # Fonts
@@ -145,10 +138,10 @@
   };
   };
 
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
-  };
+ # services.clamav = {
+ #   daemon.enable = true;
+ #   updater.enable = true;
+ # };
 
 
   ##################
