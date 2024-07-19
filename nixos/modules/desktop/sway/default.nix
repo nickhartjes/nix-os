@@ -141,7 +141,7 @@ sfwbar
 
     networkmanagerapplet
 
-    blueman           # Bluetooth manager
+    #blueman           # Bluetooth manager
     # haskellPackages.network-manager-tui # Network manager
     light                               # Brightness control
     pavucontrol                         # Sound

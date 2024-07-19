@@ -18,6 +18,6 @@
   programs = {
   };
   services = {
-    blueman-applet.enable = true;
+    #blueman-applet.enable = true;
   };
 }
