@@ -1,8 +1,7 @@
-{pkgs, lib, config, ...}:
+{ config, lib, pkgs, ... }:
+
 {
-  home.packages = with pkgs; [
-     ryujinx
+  environment.systemPackages = with pkgs; [
+    ryujinx
   ];
 }
-
-

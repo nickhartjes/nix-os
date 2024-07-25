@@ -10,7 +10,7 @@
     [(import ../../modules/desktop/sway/default.nix)] ++
     # [(import ../../modules/desktop/cosmic/default.nix)] ++
     (import ../../modules/desktop/virtualisation) ++
-    (import ../../modules/gaming) ++
+    (import ../../modules/gaming/default.nix) ++
     (import ../../modules/hardware);
 
     ##################
