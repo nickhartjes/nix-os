@@ -14,57 +14,14 @@
 { config, lib, pkgs, ... }:
 
 let
-  # bash script to let dbus know about important env variables and
-  # propagate them to relevent services run at the end of sway config
-  # see
-  # https://github.com/emersion/xdg-desktop-portal-wlr/wiki/"It-doesn't-work"-Troubleshooting-Checklist
-  # note: this is pretty much the same as  /etc/sway/config.d/nixos.conf but also restarts
-  # some user services to make sure they have the correct environment variables
-  dbus-sway-environment = pkgs.writeTextFile {
-    name = "dbus-sway-environment";
-    destination = "/bin/dbus-sway-environment";
-    executable = true;
-
-    text = ''
-      systemctl --user import DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
-      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-      systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-      systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-      '';
-  };
-
-  # currently, there is some friction between sway and gtk:
-  # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
-  # the suggested way to set gtk settings is with gsettings
-  # for gsettings to work, we need to tell it where the schemas are
-  # using the XDG_DATA_DIR environment variable
-  # run at the end of sway config
-  configure-gtk = pkgs.writeTextFile {
-      name = "configure-gtk";
-      destination = "/bin/configure-gtk";
-      executable = true;
-      text = let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in ''
-        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-        gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Yaru-dark'
-        gsettings set $gnome_schema theme 'Yaru-dark'
-        gsettings set $gnome-schema icon-theme 'Yaru-bark'
-        gsettings set $gnome-schema cursor-theme 'Yaru'
-        gsettings set $gnome-schema font-name 'SourceCodePro'
-        '';
-  };
-
 
 in
 {
   environment.systemPackages = with pkgs; [
-    dbus-sway-environment
-    configure-gtk
+    # dbus-sway-environment
+    # configure-gtk
 
-    sway
+    # sway
     #swaylock
     #swaylock-fancy
     swaylock-effects
@@ -161,91 +118,61 @@ sfwbar
     dolphin
   ];
 
-  environment.loginShellInit = ''
-    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  # environment.loginShellInit = ''
+  #   if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 
-      #
-      # GTK environment
-      #
+  #     #
+  #     # GTK environment
+  #     #
 
-      export GDK_BACKEND="wayland,x11"
-      export TDESKTOP_DISABLE_GTK_INTEGRATION=1
-      export CLUTTER_BACKEND=wayland
-      export BEMENU_BACKEND=wayland
+  #     export GDK_BACKEND="wayland,x11"
+  #     export TDESKTOP_DISABLE_GTK_INTEGRATION=1
+  #     export CLUTTER_BACKEND=wayland
+  #     export BEMENU_BACKEND=wayland
 
-      # Firefox
-      export MOZ_ENABLE_WAYLAND=1
+  #     # Firefox
+  #     export MOZ_ENABLE_WAYLAND=1
 
-      #
-      # Qt environment
-      #
-      export QT_QPA_PLATFORM=wayland
-      export QT_WAYLAND_FORCE_DPI=physical
-      export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+  #     #
+  #     # Qt environment
+  #     #
+  #     export QT_QPA_PLATFORM=wayland
+  #     export QT_WAYLAND_FORCE_DPI=physical
+  #     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
-      #
-      # SDL environment
-      #
-      export SDL_VIDEODRIVER=wayland
+  #     #
+  #     # SDL environment
+  #     #
+  #     export SDL_VIDEODRIVER=wayland
 
-      #
-      # Java environment
-      #
-      export _JAVA_AWT_WM_NONREPARENTING=1
+  #     #
+  #     # Java environment
+  #     #
+  #     export _JAVA_AWT_WM_NONREPARENTING=1
 
-      # Session
-      export XDG_SESSION_TYPE=wayland
-      export XDG_SESSION_DESKTOP=sway
-      export XDG_CURRENT_DESKTOP=sway
-      export XDG_CURRENT_SESSION=sway
+  #     # Session
+  #     export XDG_SESSION_TYPE=wayland
+  #     export XDG_SESSION_DESKTOP=sway
+  #     export XDG_CURRENT_DESKTOP=sway
+  #     export XDG_CURRENT_SESSION=sway
 
-      # Replaces Caps for excape
-      export XKB_DEFAULT_OPTIONS=caps:escape
-      exec sway
-    fi
-  '';                                   # Will automatically open sway when logged into tty1
+  #     # Replaces Caps for excape
+  #     export XKB_DEFAULT_OPTIONS=caps:escape
+  #     exec sway
+  #   fi
+  # '';                                   # Will automatically open sway when logged into tty1
 
   #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configuring Kanshi
+# kanshi systemd service
   systemd.user.services.kanshi = {
-    description = "Kanshi output autoconfig ";
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    environment = { XDG_CONFIG_HOME="~/home/nh/.config"; };
+    description = "kanshi daemon";
     serviceConfig = {
-      # kanshi doesn't have an option to specifiy config file yet, so it looks
-      # at .config/kanshi/config
-      ExecStart = ''
-      ${pkgs.kanshi}/bin/kanshi
-      '';
-      RestartSec = 5;
-      Restart = "always";
+      Type = "simple";
+      ExecStart = ''${pkgs.kanshi}/bin/kanshi -c  ~/.config/kanshi/config'';
     };
   };
-
-#  systemd.user.services.mako = {
-#    Unit = {
-#      Description = "Mako notification daemon";
-#      PartOf = [ "graphical-session.target" ];
-#    };
-#    Install = {
-#      WantedBy = [ "graphical-session.target" ];
-#    };
-#    Service = {
-#      Type = "dbus";
-#      BusName = "org.freedesktop.Notifications";
-#      ExecStart = "${pkgs.mako}/bin/mako";
-#      RestartSec = 5;
-#      Restart = "always";
-#    };
-#  };
-
-  # Keyring https://github.com/NixOS/nixpkgs/issues/61539
-#  security.pam.services.lightdm.enableGnomeKeyring = true;
-#  services.gnome.gnome-keyring.enable = true;
-#  programs.seahorse.enable = true;
-#  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
 
 
 
@@ -263,24 +190,6 @@ sfwbar
 
   security.polkit.enable = true;
 
-  # xdg-desktop-portal works by exposing a series of D-Bus interfaces
-  # known as portals under a well-known name
-  # (org.freedesktop.portal.Desktop) and object path
-  # (/org/freedesktop/portal/desktop).
-  # The portal interfaces include APIs for file access, opening URIs,
-  # printing and others.
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    # gtk portal needed to make gtk apps happy
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
-      #xdg-desktop-portal-gtk
-    ];
-#    gtkUsePortal = true;
-  };
 
   # enable sway window manager
   programs = {
@@ -294,20 +203,4 @@ sfwbar
     };
   };
 
-  # nixpkgs.overlays = [
-  #   inputs.templ.overlays.default,
-  #   (
-  #   self: super: {
-  #     slack  = super.slack.overrideAttrs (old: {
-  #       installPhase = old.installPhase + ''
-  #         rm $out/bin/slack
-
-  #         makeWrapper $out/lib/slack/slack $out/bin/slack \
-  #         --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
-  #         --prefix PATH : ${lib.makeBinPath [pkgs.xdg-utils]} \
-  #         --add-flags "--enable-features=WebRTCPipeWireCapturer %U"
-  #       '';
-  #     });
-  #   }
-  # )];
 }

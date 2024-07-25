@@ -53,5 +53,6 @@
     kdePackages.yakuake
     kdePackages.kpmcore
     kdePackages.partitionmanager
+    kdePackages.kio-admin
   ];
 }

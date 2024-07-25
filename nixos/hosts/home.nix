@@ -5,7 +5,7 @@
     (import ../modules/editors) ++
     (import ../modules/programs) ++
     (import ../modules/services) ++
-    (import ../modules/programming) ++   
+    (import ../modules/programming) ++
     (import ../modules/terminal)  ++
     (import ../modules/kubernetes);
 
@@ -28,7 +28,7 @@
       bat                     # Alternative for cat
       duf                     # Alternative for du
       eza                     # Alternative for ls
-      
+
       v4l-utils               # Used setting the zoom to the camera
 
       nushell
@@ -56,8 +56,8 @@
  #     pywal
 
       # Development
-     
-    
+
+
       # jetbrains.pycharm-professional
 
    #   graphviz                # For plantuml plugin
@@ -67,13 +67,13 @@
       lazygit
 
 
-    
+
 
       gcc
       fzf   # For vim
       fzf-zsh
       #foxitreader
-      
+
       adobe-reader
 
       bc                  #used for waybar
@@ -106,6 +106,7 @@
 #      gcc
        ollama
 
+      pgmodeler
 #      deno
        yarn
 
@@ -165,7 +166,7 @@
 
       python311Packages.mike
       jetbrains.pycharm-professional
-      
+
       calibre
     ];
 

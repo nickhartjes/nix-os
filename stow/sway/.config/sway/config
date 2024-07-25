@@ -267,7 +267,7 @@ include ~/.config/sway/$(hostname)/*
 # Startup Applications
 #####
 exec --no-startup-id spotify
-exec --no-startup-id slack
+#exec --no-startup-id slack
 
 assign [class="Spotify"] 9
 assign [class="Slack"] 9
@@ -278,20 +278,20 @@ assign [class="Slack"] 9
 
 
 # For screensharing
-exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
-exec dbus-update-activation-environment WAYLAND_DISPLAY
-exec systemctl start --user kanshi.service
+#exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+#exec dbus-update-activation-environment WAYLAND_DISPLAY
+#exec systemctl start --user kanshi.service
 
 # Auto start
-exec dbus-sway-environment
-exec configure-gtk
+#exec dbus-sway-environment
+#exec configure-gtk
 exec v4l2-ctl -d /dev/video4 -c zoom_absolute=160
-exec swww-daemon
+#exec swww-daemon
 
 # exec --no-startup-id picom -CGb
 
 # Initialize Wallpaper Engine
-exec_always = ~/.settings/scripts/wallpaper.sh
+#exec_always = ~/.settings/scripts/wallpaper.sh
 # exec_always = ~/.config/waybar/launch.sh
 
 

@@ -53,3 +53,11 @@ profile "Work Ultrawide only" {
 	output "Philips Consumer Electronics Company PHL 346P1C UK02220031039" mode 3440x1440@99.982 position 0,0 scale 1
 	output eDP-1 disable
 }
+
+profile "Home Ultrawide on Laptop" {
+	output "Samsung Electric Company Odyssey G95SC H1AK500000" mode 5120x1440@120.000 position 0,0 scale 1
+	output eDP-1 disable
+}
+profile "Home Ultrawide only" {
+	output "Samsung Electric Company Odyssey G95SC H1AK500000" mode 5120x1440@120.000 position 0,0 scale 1
+}
