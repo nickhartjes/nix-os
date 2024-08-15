@@ -37,7 +37,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
         };
@@ -60,7 +60,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./xps-laptop/home.nix)];
         };
@@ -82,7 +82,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./thinkpad/home.nix)];
         };
@@ -112,7 +112,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./thinkpad-t15/home.nix)];
         };
@@ -142,7 +142,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./773-lite/home.nix)];
         };
@@ -165,7 +165,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit inputs user; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./vm/home.nix)];
         };

@@ -35,6 +35,7 @@
     home-manager, 
     nur,
     nixos-cosmic,
+    ags,
     ... 
   }:      # Function that tells my flake which to use and what do what to do with the dependencies.
     let                                                                     # Variables that can be used in the config files.

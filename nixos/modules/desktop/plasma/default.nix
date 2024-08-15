@@ -54,5 +54,7 @@
     kdePackages.kpmcore
     kdePackages.partitionmanager
     kdePackages.kio-admin
+    kdePackages.plasma-thunderbolt
+
   ];
 }

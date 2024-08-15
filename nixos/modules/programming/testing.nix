@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [       # Packages installed
     k6
-    # playwright
-    # playwright-driver
+    ( lib.hiPrio playwright )
+    playwright-driver
 
       (runCommand "wrapped-playwright" { buildInputs = [ makeWrapper ]; } ''
       mkdir -p "$out/bin"

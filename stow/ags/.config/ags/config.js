@@ -4,6 +4,7 @@ const mpris = await Service.import("mpris")
 const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 const systemtray = await Service.import("systemtray")
+const network = await Service.import('network')
 
 const date = Variable("", {
   poll: [1000, 'date "+%H:%M:%S %b %e."'],
@@ -179,6 +180,30 @@ function SysTray() {
   })
 }
 
+const WifiIndicator = () => Widget.Box({
+  children: [
+      Widget.Icon({
+          icon: network.wifi.bind('icon_name'),
+      }),
+      Widget.Label({
+          label: network.wifi.bind('ssid')
+              .as(ssid => ssid || 'Unknown'),
+      }),
+  ],
+})
+
+const WiredIndicator = () => Widget.Icon({
+  icon: network.wired.bind('icon_name'),
+})
+
+const NetworkIndicator = () => Widget.Stack({
+  children: {
+      wifi: WifiIndicator(),
+      wired: WiredIndicator(),
+  },
+  shown: network.bind('primary').as(p => p || 'wifi'),
+})
+
 
 // layout of the bar
 function Left() {
@@ -208,8 +233,10 @@ function Right() {
     children: [
       Volume(),
       BatteryLabel(),
+      NetworkIndicator(),
       Clock(),
       SysTray(),
+
     ],
   })
 }
@@ -232,11 +259,11 @@ function Bar(monitor = 0) {
 App.config({
   style: "./style.css",
   windows: [
-    // Bar(),
+    Bar(),
 
     // you can call it, for each monitor
-    Bar(0),
-    Bar(1)
+    // Bar(0),
+    // Bar(1)
   ],
 })
 
