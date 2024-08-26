@@ -30,7 +30,7 @@ in
     glib                       # gsettings
     dracula-theme              # gtk theme
     kora-icon-theme
-    gnome3.adwaita-icon-theme  # default gnome cursors
+    adwaita-icon-theme  # default gnome cursors
     grim                       # screenshot functionality
     slurp                      # screenshot functionality
     wl-clipboard               # wl-copy and wl-paste for copy/paste from stdin / stdout

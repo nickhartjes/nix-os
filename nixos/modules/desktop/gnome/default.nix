@@ -36,7 +36,7 @@
     gnome-extension-manager
     gnome-firmware
     gnome-icon-theme
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     gnome.gnome-tweaks
     gnome.gnome-settings-daemon
     gnomeExtensions.appindicator
