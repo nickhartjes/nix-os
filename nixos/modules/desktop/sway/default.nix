@@ -24,7 +24,7 @@ in
     # sway
     #swaylock
     #swaylock-fancy
-    swaylock-effects
+    #swaylock-effects
     swayidle
     wayland
     glib                       # gsettings
@@ -48,7 +48,7 @@ in
     mako
     #dunst                       # Lightweight and customizable notification daemon
     swww                        # Efficient animated wallpaper daemon
-    hyprpaper                   # A blazing fast wayland wallpaper utility
+    #hyprpaper                   # A blazing fast wayland wallpaper utility
     imagemagick                 # A software suite to create, edit, compose, or convert bitmap images
 
     pgadmin4-desktopmode

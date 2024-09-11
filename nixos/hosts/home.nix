@@ -36,8 +36,8 @@
       mpv                     # Media Player
       pavucontrol             # Audio control
 
-      flutter
-      android-tools
+      # flutter
+      # android-tools
       #haskellPackages.adb
 
       #rustdesk

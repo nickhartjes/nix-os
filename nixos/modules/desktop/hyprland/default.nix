@@ -33,7 +33,7 @@
 
       kanshi
 
-      swaylock-effects
+      #swaylock-effects
       swayidle
       swaybg
 
