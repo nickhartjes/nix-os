@@ -145,7 +145,7 @@
 
       # android-studio
       # android-tools
-
+      teams-for-linux
       nfs-utils
 
       gnumake
