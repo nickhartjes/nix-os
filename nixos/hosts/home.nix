@@ -165,9 +165,13 @@
       rivalcfg
 
       python311Packages.mike
-      jetbrains.pycharm-professional
+      # jetbrains.pycharm-professional
 
       calibre
+
+      # Printer
+      epsonscan2
+      epson-escpr2
     ];
 
     # Wallpaper
