@@ -7,6 +7,6 @@
   ./zsh.nix
   # Terminal emulators
   ./kitty.nix
-  # ./wezterm.nix
+  ./wezterm.nix
   ./foot.nix
 ]

@@ -164,10 +164,10 @@
 
       rivalcfg
 
-      python311Packages.mike
+      # python311Packages.mike
       # jetbrains.pycharm-professional
 
-      calibre
+      #calibre
 
       # Printer
       epsonscan2

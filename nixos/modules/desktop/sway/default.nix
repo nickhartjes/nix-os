@@ -43,7 +43,7 @@ in
     dolphin
     swayws
     # eww
-    cliphist
+    #cliphist
 
     mako
     #dunst                       # Lightweight and customizable notification daemon
@@ -51,7 +51,7 @@ in
     #hyprpaper                   # A blazing fast wayland wallpaper utility
     imagemagick                 # A software suite to create, edit, compose, or convert bitmap images
 
-    pgadmin4-desktopmode
+    #pgadmin4-desktopmode
 
     wshowkeys
     swaysettings
