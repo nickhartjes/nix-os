@@ -66,7 +66,7 @@
       # act                     # Local Github Actions
       lazygit
 
-
+      archi
 
 
       gcc
