@@ -91,7 +91,7 @@
 
 #      rustup
 #
-       libstdcxx5
+      #  libstdcxx5
        tmux
 #      protonvpn-gui
 

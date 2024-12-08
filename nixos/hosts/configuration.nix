@@ -46,12 +46,10 @@
     packages = with pkgs; [                # Fonts
       carlito                                 # NixOS
       vegur                                   # NixOS
-      source-code-pro
       jetbrains-mono
       font-awesome                            # Icons
       corefonts                               # MS
-      nerdfonts
-      fira-code-nerdfont
+      # (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
       fira
     ];
   };
@@ -180,7 +178,7 @@
       enable = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
 }

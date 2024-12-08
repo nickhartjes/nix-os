@@ -292,8 +292,7 @@ in
 
       pango             # Text renderer
       dejavu_fonts      # Font
-      noto-fonts
-      nerdfonts
+      noto-fonts\
 
       kanshi
       flameshot

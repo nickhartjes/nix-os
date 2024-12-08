@@ -87,8 +87,7 @@ sfwbar
 
     pango             # Text renderer
     dejavu_fonts      # Font
-    noto-fonts
-    nerdfonts
+    noto-font
 
     kanshi
     swaybg

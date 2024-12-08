@@ -22,8 +22,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./desktop
+      nur.modules.nixos.default      ./desktop
       ./configuration.nix
 
       {
@@ -53,8 +52,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./xps-laptop
+      nur.modules.nixos.default      ./xps-laptop
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
@@ -75,8 +73,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./thinkpad
+      nur.modules.nixos.default      ./thinkpad
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
@@ -97,8 +94,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./thinkpad-t15
+      nur.modules.nixos.default      ./thinkpad-t15
       ./configuration.nix
 
       {
@@ -127,8 +123,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./773-lite
+      nur.modules.nixos.default      ./773-lite
       ./configuration.nix
 
       {
@@ -158,8 +153,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.nixosModules.nur
-      ./vm
+      nur.modules.nixos.default      ./vm
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {

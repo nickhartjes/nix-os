@@ -52,15 +52,14 @@
 
   ];
 
-  fonts.fonts = with pkgs; [
-      noto-fonts
-      material-icons
-      fantasque-sans-mono
-      noto-fonts
-      terminus_font
+  # fonts.fonts = with pkgs; [
+  #     noto-fonts
+  #     material-icons
+  #     fantasque-sans-mono
+  #     noto-fonts
+  #     terminus_font
 
-      iosevka
-      siji
-      nerdfonts
-  ];
+  #     iosevka
+  #     siji
+  # ];
 }

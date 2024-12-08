@@ -7,8 +7,7 @@
 {
 
 #   modules = [
-#          nur.nixosModules.nur
-#  ];
+#          nur.modules.nixos.default#  ];
 #environment = {
 #      systemPackages = [
 #       config.nur.repos.rycee.firefox-addons.bitwarden];
