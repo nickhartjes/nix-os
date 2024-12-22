@@ -6,6 +6,7 @@
    ./proton.nix
    ./spotify.nix
    ./nh.nix
+   ./terraform.nix
    # ./ags.nix
 ]
 

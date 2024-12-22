@@ -86,7 +86,7 @@
 #      gcc
 #      openssl
 #      rustc
-
+       hugo
 #      gnumake
 
 #      rustup
