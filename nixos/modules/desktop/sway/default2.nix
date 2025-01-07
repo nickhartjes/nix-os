@@ -252,7 +252,7 @@ in
       swaylock
       swaylock-fancy
       swayidle
-      glib                       # gsettings
+      # glib                       # gsettings
       #dracula-theme              # gtk theme
       #gnome3.adwaita-icon-theme  # default gnome cursors
       grim                       # screenshot functionality
@@ -292,7 +292,7 @@ in
 
       pango             # Text renderer
       dejavu_fonts      # Font
-      noto-fonts\
+      
 
       kanshi
       flameshot

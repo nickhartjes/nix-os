@@ -44,8 +44,8 @@ TRADER_REPO_LIST=(
   "git@github.com:EnergyExchangeEnablersBV/entrnce-deal-platform.git"
   "git@github.com:EnergyExchangeEnablersBV/trader-robot.git"
   "git@github.com:EnergyExchangeEnablersBV/entrnce-brp-messaging-module"
-  "git@github.com:EnergyExchangeEnablersBV/ebmm-robot"
-
+  "git@github.com:EnergyExchangeEnablersBV/ebmm-robot.git"
+  "git@github.com:EnergyExchangeEnablersBV/trader-gitops.git"
 )
 clone_or_fetch "$TRADER_FOLDER" TRADER_REPO_LIST
 
@@ -54,23 +54,27 @@ DEVOPS_REPO_LIST=(
   "git@github.com:EnergyExchangeEnablersBV/entrnce-k8s-gitops.git"
   "git@github.com:EnergyExchangeEnablersBV/devops-gitops.git"
   "git@github.com:EnergyExchangeEnablersBV/ephemeral-environment-playground.git"
-  "git@github.com:EnergyExchangeEnablersBV/aws-cdk.git"
   "git@github.com:EnergyExchangeEnablersBV/devops-aws-cdk.git"
   "git@github.com:EnergyExchangeEnablersBV/devops-helm-charts.git"
+  "git@github.com:EnergyExchangeEnablersBV/devops-terraform.git"
 )
 clone_or_fetch "$DEVOPS_FOLDER" DEVOPS_REPO_LIST
 
-MATCHER_FOLDER="matcher"
-MATCHER_REPO_LIST=(
-  "git@github.com:EnergyExchangeEnablersBV/matcher-advisor.git"
+NMA_FOLDER="nma"
+NMA_REPO_LIST=(
+  "git@github.com:EnergyExchangeEnablersBV/nma-gitops.git"
+  "git@github.com:EnergyExchangeEnablersBV/nma-documentation.git"
+  "git@github.com:EnergyExchangeEnablersBV/nma-poc.git"
 )
-clone_or_fetch "$MATCHER_FOLDER" MATCHER_REPO_LIST
+clone_or_fetch "$NMA_FOLDER" NMA_REPO_LIST
 
 NH_FOLDER="nh"
 NH_REPO_LIST=(
-  "git@github.com:nickhartjes/obsidian"
-  "git@github.com:nickhartjes/talos"
-  "git@github.com:nickhartjes/gitops"
+  "git@github.com:nickhartjes/obsidian.git"
+  "git@github.com:nickhartjes/talos.git"
+  "git@github.com:nickhartjes/gitops.git"
+  "git@github.com:nickhartjes/codex.git"
+  "git@github.com:nickhartjes/nickhartjes.nl.git"
 )
 clone_or_fetch "$NH_FOLDER" NH_REPO_LIST
 

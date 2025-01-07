@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    steam-tui
+    # steam-tui
   ];
 
   programs.steam = {

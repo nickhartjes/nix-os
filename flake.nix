@@ -25,6 +25,10 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
+      ghostty = {
+        url = "github:ghostty-org/ghostty";
+      };
+
       ags.url = "github:Aylur/ags";
 
     };
@@ -35,6 +39,7 @@
     home-manager, 
     nur,
     nixos-cosmic,
+    ghostty,
     ags,
     ... 
   }:      # Function that tells my flake which to use and what do what to do with the dependencies.
@@ -46,7 +51,7 @@
       nixosConfigurations = (                                               # NixOS configurations
         import ./nixos/hosts {                                                    # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user location nixos-cosmic;            # Also inherit home-manager so it does not need to be defined here.
+          inherit inputs nixpkgs home-manager nur user location nixos-cosmic ghostty;            # Also inherit home-manager so it does not need to be defined here.
         }
       );
 

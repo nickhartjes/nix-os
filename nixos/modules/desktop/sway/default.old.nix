@@ -68,7 +68,7 @@ in
     swaylock
     swayidle
     wayland
-    glib                       # gsettings
+    # glib                       # gsettings
     dracula-theme              # gtk theme
     adwaita-icon-theme  # default gnome cursors
     grim                       # screenshot functionality
@@ -107,7 +107,6 @@ in
 
     pango             # Text renderer
     dejavu_fonts      # Font
-    noto-fonts
 
     kanshi
     flameshot

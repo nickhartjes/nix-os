@@ -1,5 +1,5 @@
 [
   ./ryujinx.nix
   ./steam.nix
-  ./lutris.nix
+  # ./lutris.nix
 ]

@@ -28,8 +28,8 @@
 
       swww        # Efficient animated wallpaper daemon for wayland, controlled at runtime
 
-      pcmanfm
-      dolphin
+      # pcmanfm
+      # dolphin
 
       kanshi
 
@@ -64,7 +64,7 @@
       grim                      # Screenshot utility for Wayland
       slurp                     # Select a region in a Wayland compositor
 
-      glib
+      # glib
       wlogout                   # Logout menu for wayland
       wl-clipboard
 

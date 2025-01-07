@@ -67,6 +67,7 @@
       lazygit
 
       archi
+      just
 
 
       gcc
@@ -87,6 +88,7 @@
 #      openssl
 #      rustc
        hugo
+       dart-sass
 #      gnumake
 
 #      rustup
@@ -95,7 +97,7 @@
        tmux
 #      protonvpn-gui
 
-       awscli2
+
 
 #      python3Packages.virtualenv
 #      chromedriver
@@ -168,6 +170,7 @@
       # jetbrains.pycharm-professional
 
       #calibre
+
 
       # Printer
       epsonscan2

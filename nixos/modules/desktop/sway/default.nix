@@ -27,7 +27,7 @@ in
     #swaylock-effects
     swayidle
     wayland
-    glib                       # gsettings
+    # glib                       # gsettings
     dracula-theme              # gtk theme
     kora-icon-theme
     adwaita-icon-theme  # default gnome cursors
@@ -87,7 +87,6 @@ sfwbar
 
     pango             # Text renderer
     dejavu_fonts      # Font
-    noto-font
 
     kanshi
     swaybg

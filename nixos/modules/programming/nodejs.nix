@@ -1,8 +1,9 @@
 {pkgs, lib, config, ...}:
 {
   home.packages = with pkgs; [       # Packages installed
-    nodejs
+    nodejs_22
     nodePackages.npm
+    npm-check-updates
     yarn
     bun
     cypress
