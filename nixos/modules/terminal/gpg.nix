@@ -1,7 +1,7 @@
 #
 # GPG
 #
-
+{pkgs, ...}:
 {
   programs = {
     gpg = {
@@ -11,9 +11,7 @@
   services = {
     gpg-agent = {
         enable = true;
-        #pinentryPackage = with pkgs; [ 
-        #  "curses"
-        #];
+        pinentryPackage = pkgs.pinentry-all;
     };
   };
 }

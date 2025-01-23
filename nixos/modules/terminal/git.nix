@@ -3,9 +3,9 @@
     git = {
       enable = true;
       userName = "Nick Hartjes";
-      userEmail = "info@nickhartjes.nl ";
+      userEmail = "nick@hartj.es";
       signing = {
-        key = "0x822E878D3406A055";
+        key = "0x867E914AE4D917A6";
         signByDefault = true;
       };
     };

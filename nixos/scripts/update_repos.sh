@@ -65,6 +65,7 @@ NMA_REPO_LIST=(
   "git@github.com:EnergyExchangeEnablersBV/nma-gitops.git"
   "git@github.com:EnergyExchangeEnablersBV/nma-documentation.git"
   "git@github.com:EnergyExchangeEnablersBV/nma-poc.git"
+  "git@github.com:EnergyExchangeEnablersBV/nma-platform.git"
 )
 clone_or_fetch "$NMA_FOLDER" NMA_REPO_LIST
 
