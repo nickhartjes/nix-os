@@ -57,6 +57,7 @@ DEVOPS_REPO_LIST=(
   "git@github.com:EnergyExchangeEnablersBV/devops-aws-cdk.git"
   "git@github.com:EnergyExchangeEnablersBV/devops-helm-charts.git"
   "git@github.com:EnergyExchangeEnablersBV/devops-terraform.git"
+  "git@github.com:EnergyExchangeEnablersBV/github-actions-workflows"
 )
 clone_or_fetch "$DEVOPS_FOLDER" DEVOPS_REPO_LIST
 
