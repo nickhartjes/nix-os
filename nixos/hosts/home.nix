@@ -173,8 +173,8 @@
 
 
       # Printer
-      epsonscan2
-      epson-escpr2
+      #epsonscan2
+      #epson-escpr2
     ];
 
     # Wallpaper
