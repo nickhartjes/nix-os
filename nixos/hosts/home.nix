@@ -124,6 +124,7 @@
       # authy
       bitwarden
       # bitwarden-cli
+      # varia # Downloader
 
       # Security
       lynis                   # Security audit tool

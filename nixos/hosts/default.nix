@@ -33,6 +33,17 @@ in
       }
       nixos-cosmic.nixosModules.default
 
+      {
+        # Add overlay for lldb:
+        nixpkgs.overlays = [
+          (final: prev: {
+            lldb = prev.lldb.overrideAttrs {
+              dontCheckForBrokenSymlinks = true;
+            };
+          })
+        ];
+      }
+
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -41,8 +52,8 @@ in
           imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
         };
       }
-   ];
-   };
+    ];
+  };
 
 
   ##################
