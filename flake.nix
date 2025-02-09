@@ -8,7 +8,7 @@
 {
   description = "NH System Flake Configuration";
 
-  inputs =                                                                  # All flake references used to build my NixOS setup. These are dependencies.
+ inputs =                                                                  # All flake references used to build my NixOS setup. These are dependencies.
     {
       nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";                  # Nix Packages
       templ.url = "github:a-h/templ";
@@ -18,19 +18,23 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      nur.url = "github:nix-community/NUR";                                   # NUR packages
+      nur =  {
+        url = "github:nix-community/NUR";                                   # NUR packages
+      };
 
       nixos-cosmic = {
         url = "github:lilyinstarlight/nixos-cosmic";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
-      ghostty = {
-        url = "github:ghostty-org/ghostty";
+      zen-browser = {
+        url = "github:0xc000022070/zen-browser-flake";
       };
 
-      ags.url = "github:Aylur/ags";
-
+      ags = {
+        url = "github:Aylur/ags";
+      };
+ 
     };
 
   outputs = inputs @ { 
@@ -39,7 +43,7 @@
     home-manager, 
     nur,
     nixos-cosmic,
-    ghostty,
+    zen-browser,
     ags,
     ... 
   }:      # Function that tells my flake which to use and what do what to do with the dependencies.
@@ -51,7 +55,7 @@
       nixosConfigurations = (                                               # NixOS configurations
         import ./nixos/hosts {                                                    # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user location nixos-cosmic ghostty;            # Also inherit home-manager so it does not need to be defined here.
+          inherit inputs nixpkgs home-manager nur user location nixos-cosmic zen-browser;            # Also inherit home-manager so it does not need to be defined here.
         }
       );
 

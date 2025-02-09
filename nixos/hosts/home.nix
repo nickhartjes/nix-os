@@ -1,4 +1,4 @@
-{inputs, config, lib, pkgs, user, nur, ... }:
+{inputs, config, lib, pkgs, user, nur, zen-browser, ... }:
 
 {
   imports =                                   # Home Manager Modules
@@ -123,7 +123,7 @@
       # Authentication
       # authy
       bitwarden
-      bitwarden-cli
+      # bitwarden-cli
 
       # Security
       lynis                   # Security audit tool
@@ -170,11 +170,13 @@
       # jetbrains.pycharm-professional
 
       #calibre
-
-
+      vlc
+      act
       # Printer
       #epsonscan2
-      #epson-escpr2
+      #epson-escpr2      
+      # (inputs.zen-browser.packages."${system}" or {}).specific
+      inputs.zen-browser.packages.x86_64-linux.default
     ];
 
     # Wallpaper

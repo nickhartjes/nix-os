@@ -9,5 +9,5 @@
   ./kitty.nix
   ./wezterm.nix
   ./foot.nix
-  # ./ghostty.nix
+  ./ghostty.nix
 ]

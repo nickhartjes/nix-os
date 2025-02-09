@@ -1,4 +1,4 @@
-{ config, pkgs, user, hyprland, ghostty, ... }:
+{ config, pkgs, user, hyprland, ... }:
 
 {
   imports =

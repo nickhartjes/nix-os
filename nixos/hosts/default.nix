@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, location, nixos-cosmic, ghostty, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, location, nixos-cosmic, ... }:
 
 let
   # System architecture
@@ -20,7 +20,7 @@ in
 
   desktop = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./desktop
       ./configuration.nix
@@ -50,7 +50,7 @@ in
   ##################
   xps-laptop = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./xps-laptop
       ./configuration.nix
@@ -71,7 +71,7 @@ in
   ##################
   thinkpad = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./thinkpad
       ./configuration.nix
@@ -92,7 +92,7 @@ in
   ##################
   thinkpad-t15 = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./thinkpad-t15
       ./configuration.nix
@@ -121,7 +121,7 @@ in
   ##################
   "773-lite" = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./773-lite
       ./configuration.nix
@@ -151,7 +151,7 @@ in
   ##################
   vm = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location ghostty; };
+    specialArgs = { inherit inputs user location; };
     modules = [
       nur.modules.nixos.default      ./vm
       ./configuration.nix
