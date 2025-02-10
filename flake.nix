@@ -52,6 +52,13 @@
       location = "$HOME/.setup";
     in                                                                      # Use above variables in ...
     {
+      nixpkgs.overlays = [
+        (final: prev: {
+          lldb = prev.lldb.overrideAttrs {
+          dontCheckForBrokenSymlinks = true;
+          };
+        })
+      ];
       nixosConfigurations = (                                               # NixOS configurations
         import ./nixos/hosts {                                                    # Imports ./hosts/default.nix
           inherit (nixpkgs) lib;

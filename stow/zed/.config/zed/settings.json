@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "vim_mode": true,
+  "vim_mode": false,
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
