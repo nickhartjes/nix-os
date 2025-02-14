@@ -48,6 +48,8 @@
       libreoffice
       corefonts               # Fonts for Microsoft
 
+      tailscale-systray
+
       # Browser
 #      brave
 #      cpufrequtils # for gnome

@@ -91,6 +91,10 @@
 #      };
 #      pulse.enable = true;
 #    };
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
+    };
     openssh = {                             # SSH: secure shell (remote connection to shell of server)
       enable = true;                        # local: $ ssh <user>@<ip>
                                             # public:
