@@ -2,11 +2,12 @@
 ## Hardware specific applications
 ##################
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
     [
+      # ../../modules/desktop/hyprland/home.nix
     ];
 
   home = {

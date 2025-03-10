@@ -22,6 +22,8 @@
   programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm
 
   environment.systemPackages = with pkgs; [       # Packages installed
+    catppuccin-kde
+    catppuccin-cursors
 
     #layan-kde
     #materia-theme
@@ -48,8 +50,6 @@
     #ark                           # Archive utility
     #okular
 
-    #libsForQt5.plasma-workspace
-    #libsForQt5.plasma-workspace-wallpapers
     kdePackages.yakuake
     kdePackages.kpmcore
     kdePackages.partitionmanager

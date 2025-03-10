@@ -1,4 +1,4 @@
-{inputs, config, lib, pkgs, user, nur, zen-browser, ... }:
+{inputs, config, lib, pkgs, user, nur, zen-browser, hyprland, hy3, ... }:
 
 {
   imports =                                   # Home Manager Modules
@@ -7,7 +7,9 @@
     (import ../modules/services) ++
     (import ../modules/programming) ++
     (import ../modules/terminal)  ++
-    (import ../modules/kubernetes);
+    (import ../modules/kubernetes) ++ [
+    ./thinkpad-t15/home.nix
+  ];
 
   home = {
     username = "${user}";
@@ -114,6 +116,10 @@
 #      deno
        yarn
 
+      #  catppuccin
+
+      poetry
+
 #      obs-studio
 #      obs-studio-plugins.wlrobs
 
@@ -190,18 +196,5 @@
 
   programs = {
     home-manager.enable = true;
-    # ags = {
-    #   enable = true;
-
-    #   # null or path, leave as null if you don't want hm to manage the config
-    #   configDir = ../ags;
-
-    #   # additional packages to add to gjs's runtime
-    #   extraPackages = with pkgs; [
-    #     gtksourceview
-    #     webkitgtk
-    #     accountsservice
-    #   ];
-    # };
   };
 }

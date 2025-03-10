@@ -9,10 +9,9 @@
     vscode = {
       enable = true;
       package = pkgs.vscode;
-      extensions = with pkgs; [
+      profiles.default.extensions = with pkgs; [
         vscode-extensions.redhat.java
     ];
     };
   };
 }
-

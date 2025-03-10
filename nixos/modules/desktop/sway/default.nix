@@ -40,7 +40,6 @@ in
     waybar
     ranger
     pcmanfm
-    dolphin
     swayws
     # eww
     #cliphist
@@ -68,8 +67,6 @@ sfwbar
  gtksourceview
       webkitgtk
       accountsservice
-
-    dolphin
 
     blueberry
     # https://grimoire.science/working-with-wayland-and-sway/
@@ -112,8 +109,6 @@ sfwbar
     pop-gtk-theme
     yaru-theme
     zuki-themes
-
-    dolphin
   ];
 
   # environment.loginShellInit = ''
@@ -200,5 +195,4 @@ sfwbar
       indicator = true;
     };
   };
-
 }

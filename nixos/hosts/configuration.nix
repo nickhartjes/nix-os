@@ -91,6 +91,7 @@
 #      };
 #      pulse.enable = true;
 #    };
+    envfs.enable = true;
     tailscale = {
       enable = true;
       useRoutingFeatures = "client";
@@ -167,14 +168,6 @@
     '';
   };
 
-  # Allow proprietary software.
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "adobe-reader-9.5.5"
-    ];
-  };
-
   # NixOS settings
   system = {
    # Allow auto update
@@ -186,4 +179,3 @@
   };
 
 }
-

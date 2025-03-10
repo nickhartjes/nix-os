@@ -1,0 +1,10 @@
+2025-02-22T12:46:44.711+01:00  INFO 11490 --- [main] n.n.mcpserver.McpServerApplication       : Starting McpServerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 11490 (/home/nh/projects/nh/starter-webflux-server/build/libs/mcpserver-0.0.1-SNAPSHOT.jar started by nh in /home/nh/.setup)
+2025-02-22T12:46:44.720+01:00  INFO 11490 --- [main] n.n.mcpserver.McpServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T12:46:45.412+01:00  INFO 11490 --- [main] o.s.a.a.m.s.MpcServerAutoConfiguration   : Registered tools3 notification: true
+2025-02-22T12:46:45.459+01:00  INFO 11490 --- [pool-1-thread-1] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=Cline, version=3.4.5]
+2025-02-22T12:46:45.556+01:00  INFO 11490 --- [main] n.n.mcpserver.McpServerApplication       : Started McpServerApplication in 1.138 seconds (process running for 1.501)
+2025-02-22T20:38:17.672+01:00  INFO 6863 --- [main] n.n.mcpserver.McpServerApplication       : Starting McpServerApplication v0.0.1-SNAPSHOT using Java 21.0.5 with PID 6863 (/home/nh/projects/nh/starter-webflux-server/build/libs/mcpserver-0.0.1-SNAPSHOT.jar started by nh in /home/nh/.setup)
+2025-02-22T20:38:17.674+01:00  INFO 6863 --- [main] n.n.mcpserver.McpServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-02-22T20:38:18.445+01:00  INFO 6863 --- [main] o.s.a.a.m.s.MpcServerAutoConfiguration   : Registered tools3 notification: true
+2025-02-22T20:38:18.496+01:00  INFO 6863 --- [pool-1-thread-1] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null], Info: Implementation[name=Cline, version=3.4.5]
+2025-02-22T20:38:18.581+01:00  INFO 6863 --- [main] n.n.mcpserver.McpServerApplication       : Started McpServerApplication in 1.25 seconds (process running for 1.682)

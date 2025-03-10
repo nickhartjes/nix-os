@@ -1,0 +1,31 @@
+window.bar {
+    background-color: rgba(30, 30, 46, 0.95);
+    color: #cdd6f4;
+    padding: 8px;
+}
+
+.battery {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.clock {
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.system-tray {
+    padding: 0 8px;
+}
+
+.system-tray button {
+    padding: 0 4px;
+    margin: 0 2px;
+}
+
+.system-tray button:hover {
+    background-color: rgba(205, 214, 244, 0.1);
+    border-radius: 4px;
+}

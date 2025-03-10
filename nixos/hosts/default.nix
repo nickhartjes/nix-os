@@ -1,19 +1,10 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, location, nixos-cosmic, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, location, nixos-cosmic, hyprland, hy3, hyprpanel, commonPkgs, hyprPkgs, ... }:
 
 let
   # System architecture
   system = "x86_64-linux";
-
-  pkgs = import nixpkgs {
-    inherit system;
-    # Allow proprietary software
-    config.allowUnfree = true;
-  };
-
-  lib = nixpkgs.lib;
 in
 {
-
   ##################
   ## Desktop Profile
   ##################
@@ -22,7 +13,9 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.modules.nixos.default      ./desktop
+      { nixpkgs.pkgs = commonPkgs; }
+      nur.modules.nixos.default
+      ./desktop
       ./configuration.nix
 
       {
@@ -33,28 +26,16 @@ in
       }
       nixos-cosmic.nixosModules.default
 
-      {
-        # Add overlay for lldb:
-        nixpkgs.overlays = [
-          (final: prev: {
-            lldb = prev.lldb.overrideAttrs {
-              dontCheckForBrokenSymlinks = true;
-            };
-          })
-        ];
-      }
-
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
+        home-manager.extraSpecialArgs = { inherit inputs user hy3; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
         };
       }
     ];
   };
-
 
   ##################
   ## XPS Profile
@@ -63,36 +44,17 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.modules.nixos.default      ./xps-laptop
+      { nixpkgs.pkgs = commonPkgs; }
+      nur.modules.nixos.default
+      ./xps-laptop
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
+        home-manager.extraSpecialArgs = { inherit inputs user hy3; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./xps-laptop/home.nix)];
-        };
-      }
-    ];
-  };
-
-  ##################
-  ## Thinkpad Profile
-  ##################
-  thinkpad = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit inputs user location; };
-    modules = [
-      nur.modules.nixos.default      ./thinkpad
-      ./configuration.nix
-
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
-        home-manager.users.${user} = {
-          imports = [(import ./home.nix)] ++ [(import ./thinkpad/home.nix)];
         };
       }
     ];
@@ -103,15 +65,27 @@ in
   ##################
   thinkpad-t15 = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user location; };
+    specialArgs = { inherit inputs user location hy3 hyprpanel; };
     modules = [
-      nur.modules.nixos.default      ./thinkpad-t15
+      { nixpkgs.pkgs = hyprPkgs; }
+      nur.modules.nixos.default
+      ./thinkpad-t15
       ./configuration.nix
 
       {
+        environment.systemPackages = [ hyprPkgs.hyprpanel ];
+      }
+
+      {
         nix.settings = {
-          substituters = [ "https://cosmic.cachix.org/" ];
-          trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+          substituters = [ 
+            "https://cosmic.cachix.org/"
+            "https://hyprland.cachix.org"
+          ];
+          trusted-public-keys = [ 
+            "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+            "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          ];
         };
       }
       nixos-cosmic.nixosModules.default
@@ -119,7 +93,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
+        home-manager.extraSpecialArgs = { inherit inputs user hy3 hyprpanel; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./thinkpad-t15/home.nix)];
         };
@@ -134,7 +108,9 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.modules.nixos.default      ./773-lite
+      { nixpkgs.pkgs = commonPkgs; }
+      nur.modules.nixos.default
+      ./773-lite
       ./configuration.nix
 
       {
@@ -148,14 +124,13 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
+        home-manager.extraSpecialArgs = { inherit inputs user hy3; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./773-lite/home.nix)];
         };
       }
     ];
   };
-
 
   ##################
   ## VM Profile
@@ -164,13 +139,15 @@ in
     inherit system;
     specialArgs = { inherit inputs user location; };
     modules = [
-      nur.modules.nixos.default      ./vm
+      { nixpkgs.pkgs = commonPkgs; }
+      nur.modules.nixos.default
+      ./vm
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit inputs user; };
+        home-manager.extraSpecialArgs = { inherit inputs user hy3; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./vm/home.nix)];
         };
@@ -178,4 +155,3 @@ in
     ];
   };
 }
-
