@@ -125,7 +125,7 @@
 
       # Communication
       slack
-      signal-desktop
+      signal-desktop-bin
       tdesktop
 
       # Authentication

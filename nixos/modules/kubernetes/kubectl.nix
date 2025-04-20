@@ -10,6 +10,8 @@
     kubelogin-oidc
     kubent
     kubernetes-helm
+    kubernetes-helmPlugins.helm-unittest
+
     #openlens
   ];
 

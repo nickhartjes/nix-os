@@ -7,6 +7,7 @@
    ./spotify.nix
    ./nh.nix
    ./terraform.nix
+   # ./ssh-fix.nix
    # ./ags.nix
 ]
 
