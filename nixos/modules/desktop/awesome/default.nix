@@ -18,7 +18,7 @@
           enableXfwm = false;
         };
       };
-      displayManager.defaultSession = "xfce+awesome";
+      # displayManager.defaultSession = "xfce+awesome";
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages; [
@@ -60,9 +60,9 @@
 
       rxvt-unicode-emoji
 
-      python310Packages.semver
-      python310Packages.pytz
-      python310Packages.github3_py
+      # python310Packages.semver
+      # python310Packages.pytz
+      # python310Packages.github3_py
 
       xfce.thunar-archive-plugin
       xfce.thunar-volman

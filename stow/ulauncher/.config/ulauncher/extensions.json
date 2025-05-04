@@ -23,9 +23,9 @@
     "com.github.tchar.ulauncher-albert-calculate-anything": {
         "id": "com.github.tchar.ulauncher-albert-calculate-anything",
         "url": "https://github.com/tchar/ulauncher-albert-calculate-anything",
-        "updated_at": "2024-05-05T16:11:13.355659",
-        "last_commit": "7e80281d0eeacf10c2cbd652589e5f18c15c48c3",
-        "last_commit_time": "2024-04-05T04:15:41"
+        "updated_at": "2025-04-21T11:24:15.939477",
+        "last_commit": "037965a44e6f6f496e7ad71ec1651b9edfcde32d",
+        "last_commit_time": "2024-05-29T21:57:26"
     },
     "com.github.ulauncher.ulauncher-timer": {
         "id": "com.github.ulauncher.ulauncher-timer",
@@ -33,13 +33,6 @@
         "updated_at": "2024-05-05T16:11:14.829187",
         "last_commit": "2d3fe82fe1e38670e6eb8887cd2a4b4d1c2baa79",
         "last_commit_time": "2023-03-25T08:07:41"
-    },
-    "com.github.brpaz.ulauncher-github": {
-        "id": "com.github.brpaz.ulauncher-github",
-        "url": "https://github.com/brpaz/ulauncher-github",
-        "updated_at": "2024-05-05T16:11:16.763151",
-        "last_commit": "c2a4d8f651c326c13290eb9e28c076f14aaac704",
-        "last_commit_time": "2022-10-15T10:36:52"
     },
     "com.github.kbialek.ulauncher-bitwarden": {
         "id": "com.github.kbialek.ulauncher-bitwarden",

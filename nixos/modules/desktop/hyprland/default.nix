@@ -15,7 +15,7 @@
       # avizo
       # ironbar
       # pyprland
-      # wofi        # Launcher
+      wofi        # Launcher
       # eww         # Statusbar
       # wdisplays
       # swww        # Efficient animated wallpaper daemon for wayland, controlled at runtime
@@ -37,7 +37,7 @@
       # bluez-tools
       # #blueman                   # GTK+ Bluetooth Manager
       # #blueberry
-      # #networkmanagerapplet      # NetworkManager control applet for GNOME
+      networkmanagerapplet      # NetworkManager control applet for GNOME
       # swappy                    # A Wayland native snapshot editing tool
       # grim                      # Screenshot utility for Wayland
       # slurp                     # Select a region in a Wayland compositor
@@ -47,6 +47,16 @@
 
       hyprlandPlugins.hyprexpo
       hyprlandPlugins.hy3
+
+      # Needed for hyprpanel
+      libgtop
+      bluez
+      bluez-tools
+      networkmanager
+      dart-sass
+      wl-clipboard
+      upower
+      gvfs
     ];
   };
 

@@ -11,7 +11,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
+set $term ghostty
 
 # Your preferred application launcher
 # set $menu wofi --show drun
@@ -292,7 +292,7 @@ exec v4l2-ctl -d /dev/video4 -c zoom_absolute=160
 
 # Initialize Wallpaper Engine
 #exec_always = ~/.settings/scripts/wallpaper.sh
-# exec_always = ~/.config/waybar/launch.sh
+exec_always = ~/.config/waybar/launch.sh
 
 
 # Start Polkit

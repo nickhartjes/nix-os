@@ -11,16 +11,9 @@
     desktopManager= {
       cosmic = {                                 # Window Manager
         enable = true;
+        xwayland.enable = true;               # Xwayland support
       };
     };
-    # pipewire = {
-    #   enable = true;
-    #   alsa.enable = true;
-    #   alsa.support32Bit = true;
-    #   pulse.enable = true;
-    #   # If you want to use JACK applications, uncomment this
-    #   #jack.enable = true;
-    # };
   };
 
   programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm

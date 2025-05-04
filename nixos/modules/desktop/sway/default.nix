@@ -21,6 +21,8 @@ in
     # dbus-sway-environment
     # configure-gtk
 
+    wlogout
+
     # sway
     #swaylock
     #swaylock-fancy

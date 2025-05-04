@@ -18,8 +18,8 @@
     "sway/workspaces" : {
         "on-click": "activate",
         "active-only": false,
-        "all-outputs": false,
-        "format": "{name}",
+        "all-outputs": true,
+        "format": "{name}: {icon}",
         "format-icons": {
             "urgent": "",
             "focused": "",
