@@ -43,14 +43,18 @@
       #haskellPackages.adb
 
       #rustdesk
-
+      alejandra
       podman-desktop
+
+      nixd  # Feature-rich Nix language server interoperating with C++ nix ( for use with Zed editor)
+      nil   # Yet another language server for Nix  ( for use with Zed editor)
 
       # Office
       libreoffice
       corefonts               # Fonts for Microsoft
 
       tailscale-systray
+      pgadmin4-desktopmode
 
       # Browser
 #      brave
@@ -79,7 +83,6 @@
       fzf-zsh
       #foxitreader
 
-      adobe-reader
 
       bc                  #used for waybar
       glxinfo             #used for waybar
@@ -183,7 +186,7 @@
       act
       # Printer
       #epsonscan2
-      #epson-escpr2      
+      #epson-escpr2
       # (inputs.zen-browser.packages."${system}" or {}).specific
       inputs.zen-browser.packages.x86_64-linux.default
     ];

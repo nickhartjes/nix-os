@@ -1,17 +1,13 @@
 #
 # Chromium
 #
-
-{ config, lib, pkgs, nur, ... }:
-
 {
-
-#   modules = [
-#          nur.modules.nixos.default#  ];
-#environment = {
-#      systemPackages = [
-#       config.nur.repos.rycee.firefox-addons.bitwarden];
-#    };
+  config,
+  lib,
+  pkgs,
+  nur,
+  ...
+}: {
   programs = {
     firefox = {
       enable = true;
@@ -22,15 +18,6 @@
           enableGnomeExtensions = true;
         };
       };
-#      extensions =  [
-#        config.nur.repos.rycee.firefox-addons.bitwarden
-#     ];
     };
   };
-#  home.packages = with pkgs; [
-#    config.nur.repos.rycee.firefox-addons.ublock-origin
-#    config.nur.repos.rycee.firefox-addons.surfingkeys
-#    config.nur.repos.rycee.firefox-addons.tomato-clock
-#  ];
-
 }

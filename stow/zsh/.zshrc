@@ -34,7 +34,6 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::git-auto-fetch
 zinit snippet OMZP::vscode
-zinit snippet OMZP::thefuck
 
 # Load completions
 autoload -Uz compinit && compinit
