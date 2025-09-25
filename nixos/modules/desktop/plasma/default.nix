@@ -1,11 +1,15 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.dconf.enable = true;
 
   services = {
-    desktopManager= {
-      plasma6 = {                                 # Window Manager
+    desktopManager = {
+      plasma6 = {
+        # Window Manager
         enable = true;
       };
     };
@@ -19,9 +23,10 @@
     };
   };
 
-  programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm
+  programs.zsh.enable = true; # Weirdly needs to be added to have default user on lightdm
 
-  environment.systemPackages = with pkgs; [       # Packages installed
+  environment.systemPackages = with pkgs; [
+    # Packages installed
     catppuccin-kde
     catppuccin-cursors
 
@@ -39,8 +44,6 @@
     #oxygenfonts
     #iosevka
 
-
-
     ## Plasma applications
     #plasma-theme-switcher
     #plasma-integration
@@ -55,6 +58,5 @@
     kdePackages.partitionmanager
     kdePackages.kio-admin
     kdePackages.plasma-thunderbolt
-
   ];
 }

@@ -15,12 +15,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = { url = "github:nix-community/NUR"; };
+    nur = {url = "github:nix-community/NUR";};
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = { url = "github:0xc000022070/zen-browser-flake"; };
+    zen-browser = {url = "github:0xc000022070/zen-browser-flake";};
     # marble = {
     #   url = "git+ssh://git@github.com/marble-shell/shell.git";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +30,7 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-     hy3 = {
+    hy3 = {
       url = "github:outfoxxed/hy3"; # where {version} is the hyprland release version
       # or "github:outfoxxed/hy3" to follow the development branch.
       # (you may encounter issues if you dont do the same for hyprland)
@@ -42,48 +42,59 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixos-cosmic, zen-browser, hyprland, hy3, hyprpanel, ... }:
-    let
-      user = "nh";
-      location = "$HOME/.setup";
-      system = "x86_64-linux";
-      
-      # Function to create system-specific pkgs with overlays
-      mkPkgs = system: overlays: import nixpkgs {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    nur,
+    nixos-cosmic,
+    zen-browser,
+    hyprland,
+    hy3,
+    hyprpanel,
+    ...
+  }: let
+    user = "nh";
+    location = "$HOME/.setup";
+    system = "x86_64-linux";
+
+    # Function to create system-specific pkgs with overlays
+    mkPkgs = system: overlays:
+      import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
           permittedInsecurePackages = [
             "adobe-reader-9.5.5"
+            "libsoup-2.74.3"
           ];
         };
         inherit overlays;
       };
 
-      # Common overlays
-      commonOverlays = [
-        (final: prev: {
-          lldb = prev.lldb.overrideAttrs (old: {
-            dontCheckForBrokenSymlinks = true;
-          });
-        })
-      ];
+    # Common overlays
+    commonOverlays = [
+      (final: prev: {
+        lldb = prev.lldb.overrideAttrs (old: {
+          dontCheckForBrokenSymlinks = true;
+        });
+      })
+    ];
+  in {
+    nixosConfigurations = (
+      import ./nixos/hosts {
+        inherit (nixpkgs) lib;
+        inherit inputs nixpkgs home-manager nur user location nixos-cosmic zen-browser hyprland hy3 hyprpanel;
+        commonPkgs = mkPkgs system commonOverlays;
+        hyprPkgs = mkPkgs system (commonOverlays ++ [inputs.hyprpanel.overlay]);
+      }
+    );
 
-    in {
-      nixosConfigurations = (
-        import ./nixos/hosts {
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user location nixos-cosmic zen-browser hyprland hy3 hyprpanel;
-          commonPkgs = mkPkgs system commonOverlays;
-          hyprPkgs = mkPkgs system (commonOverlays ++ [ inputs.hyprpanel.overlay ]);
-        }
-      );
-
-      homeConfigurations = (
-        import ./nixos/nix {
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user;
-        }
-      );
-    };
+    homeConfigurations = (
+      import ./nixos/nix {
+        inherit (nixpkgs) lib;
+        inherit inputs nixpkgs home-manager user;
+      }
+    );
+  };
 }

@@ -1,21 +1,25 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   services = {
-    xserver = {
-      enable = true;
-#       displayManager = {                          # Display Manager
-#         gdm = {
-#           enable = true;                          # Wallpaper and gtk theme
-#         };
-# #        defaultSession = "gnome";            # none+bspwm -> no real display manager
-#       };
-      desktopManager= {
-        gnome = {                                 # Window Manager
-          enable = true;
-        };
+    # xserver = {
+    #   enable = true;
+    #       displayManager = {                          # Display Manager
+    #         gdm = {
+    #           enable = true;                          # Wallpaper and gtk theme
+    #         };
+    # #        defaultSession = "gnome";            # none+bspwm -> no real display manager
+    #       };
+    desktopManager = {
+      gnome = {
+        # Window Manager
+        enable = true;
       };
     };
+
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -26,11 +30,12 @@
     };
   };
 
-  programs.zsh.enable = true;                     # Weirdly needs to be added to have default user on lightdm
+  programs.zsh.enable = true; # Weirdly needs to be added to have default user on lightdm
 
   services.pulseaudio.enable = false;
 
-  environment.systemPackages = with pkgs; [       # Packages installed
+  environment.systemPackages = with pkgs; [
+    # Packages installed
     arc-theme
     fira
     gnome-extension-manager
@@ -41,19 +46,19 @@
     gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     # gnomeExtensions.cpufreq
-#    gnomeExtensions.espresso
-#    gnomeExtensions.forge
+    #    gnomeExtensions.espresso
+    #    gnomeExtensions.forge
     gnomeExtensions.freon
     gnomeExtensions.tophat
     gtop
-#    gnomeExtensions.paperwm
-#    gnomeExtensions.timepp
+    #    gnomeExtensions.paperwm
+    #    gnomeExtensions.timepp
     layan-gtk-theme
-#    materia-theme
+    #    materia-theme
     pop-gtk-theme
     pop-icon-theme
     roboto-slab
-    ulauncher
+    # ulauncher
     vimix-gtk-themes
     yaru-theme
     zuki-themes

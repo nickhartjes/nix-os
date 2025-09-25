@@ -1,15 +1,26 @@
-{inputs, config, lib, pkgs, user, nur, zen-browser, hyprland, hy3, ... }:
-
 {
-  imports =                                   # Home Manager Modules
-    (import ../modules/editors) ++
-    (import ../modules/programs) ++
-    (import ../modules/services) ++
-    (import ../modules/programming) ++
-    (import ../modules/terminal)  ++
-    (import ../modules/kubernetes) ++ [
-    ./thinkpad-t15/home.nix
-  ];
+  inputs,
+  config,
+  lib,
+  pkgs,
+  user,
+  nur,
+  zen-browser,
+  hyprland,
+  hy3,
+  ...
+}: {
+  imports =
+    # Home Manager Modules
+    (import ../modules/editors)
+    ++ (import ../modules/programs)
+    ++ (import ../modules/services)
+    ++ (import ../modules/programming)
+    ++ (import ../modules/terminal)
+    ++ (import ../modules/kubernetes)
+    ++ [
+      ./thinkpad-t15/home.nix
+    ];
 
   home = {
     username = "${user}";
@@ -17,26 +28,26 @@
 
     packages = with pkgs; [
       # Terminal
-      btop                    # Resource Manager
-      fastfetch               # Minimal fetch
-      jq                      # command-line JSON processor
-      yq                      # command-line YAML processor
+      btop # Resource Manager
+      fastfetch # Minimal fetch
+      jq # command-line JSON processor
+      yq # command-line YAML processor
       git-crypt
       dnsutils
       whois
       #neofetch                # Fetch
-      stow                    # Config file management
+      stow # Config file management
 
-      bat                     # Alternative for cat
-      duf                     # Alternative for du
-      eza                     # Alternative for ls
+      bat # Alternative for cat
+      duf # Alternative for du
+      eza # Alternative for ls
 
-      v4l-utils               # Used setting the zoom to the camera
+      v4l-utils # Used setting the zoom to the camera
 
       nushell
       # Video/Audio
-      mpv                     # Media Player
-      pavucontrol             # Audio control
+      mpv # Media Player
+      pavucontrol # Audio control
 
       # flutter
       # android-tools
@@ -46,29 +57,28 @@
       alejandra
       podman-desktop
 
-      nixd  # Feature-rich Nix language server interoperating with C++ nix ( for use with Zed editor)
-      nil   # Yet another language server for Nix  ( for use with Zed editor)
+      nixd # Feature-rich Nix language server interoperating with C++ nix ( for use with Zed editor)
+      nil # Yet another language server for Nix  ( for use with Zed editor)
 
       # Office
       libreoffice
-      corefonts               # Fonts for Microsoft
+      corefonts # Fonts for Microsoft
 
       tailscale-systray
       pgadmin4-desktopmode
 
       # Browser
-#      brave
-#      cpufrequtils # for gnome
+      #      brave
+      #      cpufrequtils # for gnome
 
-#      insomnia
- #     pywal
+      #      insomnia
+      #     pywal
 
       # Development
 
-
       # jetbrains.pycharm-professional
 
-      graphviz                # For plantuml plugin
+      graphviz # For plantuml plugin
       #jdk21                   # Java development kit
       #jdk11
       # act                     # Local Github Actions
@@ -77,54 +87,50 @@
       archi
       just
 
-
       gcc
-      fzf   # For vim
+      fzf # For vim
       fzf-zsh
       #foxitreader
 
+      bc #used for waybar
+      glxinfo #used for waybar
+      #      font-awesome
 
-      bc                  #used for waybar
-      glxinfo             #used for waybar
-#      font-awesome
+      #      pkg-config
+      #      cargo
+      #      rust-analyzer
+      #      gcc
+      #      openssl
+      #      rustc
+      hugo
+      dart-sass
+      #      gnumake
 
-#      pkg-config
-#      cargo
-#      rust-analyzer
-#      gcc
-#      openssl
-#      rustc
-       hugo
-       dart-sass
-#      gnumake
-
-#      rustup
-#
+      #      rustup
+      #
       #  libstdcxx5
-       tmux
-#      protonvpn-gui
+      tmux
+      #      protonvpn-gui
 
-
-
-#      python3Packages.virtualenv
-#      chromedriver
-#      mkdocs
-#      python39Packages.pytorch-bin
-#      python39Packages.webrtcvad
-#      ffmpeg
-#      gcc
-       ollama
+      #      python3Packages.virtualenv
+      #      chromedriver
+      #      mkdocs
+      #      python39Packages.pytorch-bin
+      #      python39Packages.webrtcvad
+      #      ffmpeg
+      #      gcc
+      ollama
 
       pgmodeler
-#      deno
-       yarn
+      #      deno
+      yarn
 
       #  catppuccin
 
       poetry
 
-#      obs-studio
-#      obs-studio-plugins.wlrobs
+      #      obs-studio
+      #      obs-studio-plugins.wlrobs
 
       # Communication
       slack
@@ -138,20 +144,20 @@
       # varia # Downloader
 
       # Security
-      lynis                   # Security audit tool
-      aide                    # A file and directory integrity checkerK
+      lynis # Security audit tool
+      aide # A file and directory integrity checkerK
 
       # Desktop
       # okular                  # PDF viewer
-      obsidian                # Second brain
+      obsidian # Second brain
       marktext
-      inkscape                #
-      gimp                    # Image
+      inkscape #
+      gimp # Image
 
-#      shutter                 # Screenshot utility
+      #      shutter                 # Screenshot utility
 
-#      neo4j-desktop
-#      k6
+      #      neo4j-desktop
+      #      k6
 
       # pgmodeler
       # macchina
@@ -169,12 +175,15 @@
       talosctl
       fluxcd
       discord
-      age                       # encryption tool
-      sops                      # Secrets OPeationS
-      unoconv                   # Convert between any document format supported by LibreOffice/OpenOffice
+      age # encryption tool
+      sops # Secrets OPeationS
+      unoconv # Convert between any document format supported by LibreOffice/OpenOffice
       ansible
       isoimagewriter
       usbimager
+
+      claude-code
+      font-manager
 
       rivalcfg
 
@@ -188,7 +197,7 @@
       #epsonscan2
       #epson-escpr2
       # (inputs.zen-browser.packages."${system}" or {}).specific
-      inputs.zen-browser.packages.x86_64-linux.default
+      # inputs.zen-browser.packages.x86_64-linux.default
     ];
 
     # Wallpaper
